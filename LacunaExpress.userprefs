@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="LacunaExpress\LacunaExpress.Droid\LacunaExpress.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.c82edae2" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs">
+    <Files>
+      <File FileName="LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" Line="119" Column="1" />
+      <File FileName="c:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Master.cs" Line="58" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" line="98" column="1" />
+      <Breakpoint file="C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" line="104" column="1" />
+      <Breakpoint file="C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" line="116" column="1" />
+      <Breakpoint file="C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" line="100" column="1" />
+      <Breakpoint file="C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" line="103" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

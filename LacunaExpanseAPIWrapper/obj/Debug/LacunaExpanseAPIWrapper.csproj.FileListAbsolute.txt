@@ -1,0 +1,15 @@
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\LacunaExpanseAPIWrapper.dll.config
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\LacunaExpanseAPIWrapper.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\LacunaExpanseAPIWrapper.pdb
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\System.Net.Http.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\System.Net.Http.xml
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\obj\Debug\LacunaExpanseAPIWrapper.csproj.App.config
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\obj\Debug\LacunaExpanseAPIWrapper.csprojResolveAssemblyReference.cache
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\obj\Debug\LacunaExpanseAPIWrapper.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpanseAPIWrapper\obj\Debug\LacunaExpanseAPIWrapper.pdb
