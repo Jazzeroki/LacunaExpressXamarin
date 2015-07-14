@@ -112,18 +112,20 @@ namespace LacunaExpress.AccountManagement
 		{
 			await Storage.SaveTextAsync(AccountFile, "");
 		}
+
 		public async Task<bool> CreateAndAddAccountAsync(string username, string password, string server, bool? setAsActive) 
 		{
 			string json = Empire.Login(1, username, password);
 			var s = new Server();
 			var response = await  s.GetHttpResultAsync(server, Empire.url, json);
-			if (response != null)
+			if (response.result != null)
 			{
 				var account = new AccountModel(username, password, server, response.result.session_id, setAsActive);
 				account.SessionRenewed = DateTime.Now;
-				account.Colonies = response.result.status.empire.planets;
+				account.Colonies = response.result.status.empire.colonies;
 				account.Stations = response.result.status.empire.stations;
-				account.AllBodies = response.result.status.empire.colonies;
+				account.AllBodies = response.result.status.empire.planets;
+				account.Capital = response.result.status.empire.colonies[response.result.status.empire.home_planet_id];
 				SaveAccountAsync(account);
 				return true;
 			}
@@ -160,6 +162,12 @@ namespace LacunaExpress.AccountManagement
 					accounts.AccountList[Convert.ToInt32(accountIndex)] = account;
 					
 				}
+				await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
+			}
+			else
+			{
+				AccountCollection accounts = new AccountCollection();
+				accounts.AccountList.Add(account);
 				await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
 			}
 		}

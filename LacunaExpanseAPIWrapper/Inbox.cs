@@ -12,7 +12,7 @@ namespace LacunaExpanseAPIWrapper
 
 		public static String ViewInbox(String sessionID, String tag)
 		{
-			return "{\"id\":8,\"method\":\"view_inbox\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",{\"page_number\":1,\"" + tag + "\":[\"Alert\"]}]}";
+			return "{\"id\":8,\"method\":\"view_inbox\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",{\"page_number\":1,\"tags\":[\"" + tag + "\"]}]}";
 			//return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_inbox\",\"params\":[\"" + sessionID + "\",{\"tags\":[\"" + tag + "\"],\"page_number\":1}]}";
 		}
 
@@ -23,7 +23,7 @@ namespace LacunaExpanseAPIWrapper
 
 		public static String ViewInbox(String sessionID, String tag, int pageNumber)
 		{
-			return "{\"id\":8,\"method\":\"view_inbox\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",{\"page_number\":"+pageNumber+",\"" + tag + "\":[\"Alert\"]}]}";
+			return "{\"id\":8,\"method\":\"view_inbox\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",{\"page_number\":"+pageNumber+",\"tags\":[\""+tag+"\"]}]}";
 			//return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_inbox\",\"params\":[\"" + sessionID + "\",{\"tags\":[\"" + tag + "\"],\"page_number\":" + pageNumber + "}]}";
 		}
 

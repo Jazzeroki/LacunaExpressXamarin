@@ -15,8 +15,8 @@ namespace LacunaExpress.Pages.AccountPages
 {
 	public class Login : ContentPage
 	{
-		Entry Username = new Entry() { Text = "ancient"};
-		Entry Password = new Entry() { Text = "Moscow11"};
+		Entry Username = new Entry() { Placeholder = "Empire Name"};
+		Entry Password = new Entry() { Placeholder = "Pass Code" };
 
 
 		Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com"};
@@ -50,7 +50,7 @@ namespace LacunaExpress.Pages.AccountPages
 				{
 					
 					//await Navigation.PushAsync(new MessageList());
-					await Navigation.PopAsync();
+					await Navigation.PopModalAsync();
 				}
 				else
 					Resultlbl.Text = "Request Failed, try again";

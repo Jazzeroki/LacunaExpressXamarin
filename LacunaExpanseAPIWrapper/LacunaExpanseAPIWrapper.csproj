@@ -35,11 +35,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Archaeology.cs" />
+    <Compile Include="BlackHoleGenerator.cs" />
+    <Compile Include="Body.cs" />
+    <Compile Include="Buildings.cs" />
+    <Compile Include="Captcha.cs" />
+    <Compile Include="CaptchaResponse.cs" />
     <Compile Include="CoreClass.cs" />
+    <Compile Include="Embassy.cs" />
     <Compile Include="Empire.cs" />
+    <Compile Include="GeneticsLab.cs" />
     <Compile Include="Inbox.cs" />
+    <Compile Include="Intelligence.cs" />
+    <Compile Include="LibraryOfJith.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MercenaryGuild.cs" />
+    <Compile Include="Modules.cs" />
+    <Compile Include="Observatory.cs" />
+    <Compile Include="OracleOfAnid.cs" />
+    <Compile Include="Parliament.cs" />
+    <Compile Include="PoliceStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="Security.cs" />
+    <Compile Include="Shipyard.cs" />
+    <Compile Include="Spaceport.cs" />
+    <Compile Include="SpaceStationLab.cs" />
+    <Compile Include="TempleOfTheDrajites.cs" />
+    <Compile Include="TheDillonForge.cs" />
+    <Compile Include="TradeMinistry.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

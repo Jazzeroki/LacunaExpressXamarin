@@ -7,6 +7,7 @@ using System.Net.Http;
 
 using Newtonsoft;
 using LacunaExpanseAPIWrapper;
+using System.Threading;
 
 namespace LacunaExpress.Data
 {
@@ -40,5 +41,39 @@ namespace LacunaExpress.Data
 			else
 				return null;
 		}
+
+		public async void ThrottledServer(List<ThrottledServerRequest> requests)
+		{
+			int requestCounter = 0;
+			DateTime minute = DateTime.Now;
+
+			foreach (var r in requests)
+			{
+				if (requestCounter > 50)
+				{
+					while (DateTime.Now < minute.AddSeconds(60)) { }
+					requestCounter = 0;
+					minute = DateTime.Now;
+				}
+				HttpClient client = new HttpClient();
+				var requestUrl = (r.GameServer + "/" + r.Url);
+				try
+				{
+					var result = await client.PostAsync(requestUrl, new StringContent(
+						r.Json,
+						Encoding.UTF8,
+						"application/json"));
+				}
+				catch (Exception e)
+				{
+				}
+				finally
+				{
+					requestCounter++;
+				}
+			}
+			
+		}
 	}
+
 }

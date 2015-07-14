@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
-using AccountManager;
+
 
 using Xamarin.Forms;
 
@@ -24,9 +24,13 @@ namespace LacunaExpress.Pages
 		{
 			Text = "Delete Account"
 		};
+		Button captchaButton = new Button
+		{
+			Text = "Captcha Test"
+		};
 		Picker accountPicker = new Picker
 			{
-				Title = "Message Categories",
+				Title = "Select Account",
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 
@@ -38,6 +42,7 @@ namespace LacunaExpress.Pages
 			{
 				Children = {
 					accountPicker,
+					captchaButton,
 					loadAccount,
 					saveAccount,
 					deletAccount
@@ -52,6 +57,12 @@ namespace LacunaExpress.Pages
 			{
 				accountManager.ClearAccount();
 			};
+			captchaButton.Clicked += async (sender, e) =>
+			{
+				var accountMgr = new AccountManagement.AccountManager();
+				var account = await accountManager.GetActiveAccountAsync();
+				await Navigation.PushAsync(new CaptchaPage.CaptchaPage(account));
+			};
 			accountPicker.SelectedIndexChanged += async (sender, e) =>
 			{
 				//await LoadMessagesAsync(messageCategories.Items[messageCategories.SelectedIndex]);
@@ -64,8 +75,15 @@ namespace LacunaExpress.Pages
 			AccountManagement.AccountManager accountManger = new AccountManagement.AccountManager();
 			var accounts = await accountManager.LoadAccountsAsync();
 			var activeAccount = await accountManager.GetActiveAccountAsync();
-			foreach (var a in accounts.AccountList)
-				accountPicker.Items.Add(a.EmpireName+" " + a.Server);
+			if (accounts != null)
+			{
+				foreach (var a in accounts.AccountList)
+					accountPicker.Items.Add(a.EmpireName + " " + a.Server);
+			}
+			else
+			{
+				await Navigation.PushModalAsync(new LacunaExpress.Pages.AccountPages.Login());
+			}
 		}
 	}
 }

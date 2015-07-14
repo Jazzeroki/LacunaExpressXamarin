@@ -31,6 +31,11 @@ namespace LacunaExpress.Pages.Mail
 
 		Picker messageCategories;
 		ListView messages = new ListView { HasUnevenRows = true };
+		Button compose = new Button
+		{
+			Text = "Compose",
+			TextColor = Color.Black
+		};
 
 		async Task<bool> LoadMessagesAsync(string category)
 		{
@@ -89,7 +94,7 @@ namespace LacunaExpress.Pages.Mail
 					messages,
 					
 					messageCategories,
-					//messages
+					compose
 					//new Label { Text = "Hello ContentPage" }
 				}
 			};
@@ -110,13 +115,17 @@ namespace LacunaExpress.Pages.Mail
 				var response = await s.GetHttpResultAsync(account.Server, Inbox.url, json);
 				if(response.result != null)
 					await Navigation.PushAsync(new ReadMessage(sessionID, account.Server, response.result.message));
-
 			};
 
 
 			messageCategories.SelectedIndexChanged += async (sender, e) =>
 			{
 				await LoadMessagesAsync(messageCategories.Items[messageCategories.SelectedIndex]);
+			};
+
+			compose.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new ComposeReply(account));
 			};
 
 		}
@@ -138,7 +147,7 @@ namespace LacunaExpress.Pages.Mail
 
 	class MenuItem : ViewCell
 	{
-		StackLayout OuterHorizontal = new StackLayout { Orientation = StackOrientation.Horizontal };
+		//StackLayout OuterHorizontal = new StackLayout { Orientation = StackOrientation.Horizontal };
 		StackLayout VerticalInner = new StackLayout { Orientation = StackOrientation.Vertical };
 
 		Label GoogleLetter = new Label { TextColor = Color.White };

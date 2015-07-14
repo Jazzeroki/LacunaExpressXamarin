@@ -28,7 +28,6 @@ namespace LacunaExpanseAPIWrapper
 				public Status status;
 				public Error error;
 				public Body body;
-				//public HashMap<Integer, Building>buildings; //Testing changing first paramete to a string for ease of later programming.
 				public Dictionary<String, Building> buildings;
 				public List<Messages> messages;
 				//Messages messages[];//used when previewing multiple messages
@@ -37,13 +36,18 @@ namespace LacunaExpanseAPIWrapper
 				public List<Stars> stars;
 				public List<Orbiting> orbiting;
 				public List<Incoming> incoming;
-				//ArrayList<Unavailable> unavailable;
+				public List<Unavailable> unavailable; //comment out if this starts causing problems it has before
 				public List<Available> available;
 				public List<Prisoner> prisoners;
 				public List<Excavators> excavators;
 				public List<Ship> ships;
 				public List<Glyph> glyphs;
-
+				public List<Empires> empires;
+				public List<string> sent; //used when sending messages, says who the messages went to.
+			}
+			public class Empires  //used with the find request from Empire
+			{
+				public string name, id;
 			}
 			public class Glyph
 			{
@@ -101,7 +105,7 @@ namespace LacunaExpanseAPIWrapper
 			}
 			public class Spies
 			{
-				public String started_assignment, defense_rating, id, available_on, intel, offense_rating, politics, assignment, name, level, is_available, mayhem, seconds_remaining, theft;
+				public String started_assignment, defense_rating, id, available_on, intel, offense_rating, politics, assignment, name, level, is_available, mayhem, seconds_remaining, theft, task, next_mission;
 				public List<PossibleAssignments> possible_assignments;
 				public AssignedTo assigned_to;
 				public AssignedTo based_from;

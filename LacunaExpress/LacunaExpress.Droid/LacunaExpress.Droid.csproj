@@ -100,8 +100,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
@@ -109,6 +107,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\ham.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ham.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ham.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LacunaExpress\LacunaExpress.csproj">

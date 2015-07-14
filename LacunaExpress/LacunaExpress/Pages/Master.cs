@@ -10,18 +10,21 @@ using LacunaExpress.Pages.AccountPages;
 using LacunaExpress.AccountManagement;
 using LacunaExpress.Data;
 using LacunaExpanseAPIWrapper;
+using LacunaExpress.Pages.Bodies;
+using LacunaExpress.Pages.Stations;
+using LacunaExpress.Pages.Planets;
+using LacunaExpress.Pages.EmpireWide;
 
 namespace LacunaExpress.Pages
 {
 	public class Master : MasterDetailPage
 	{
 		AccountModel activeAccount;
-		Response.Messages messages;
 		NavigationPage nav;
 
 		static List<string> menuItems = new List<string>
 		{
-			"Planets", "Stations", "Mail"
+			"Planets", "Stations", "Mail", "Empire", "Map", "Account"
 		};
 
 		ListView menu = new ListView { ItemsSource = menuItems };
@@ -29,6 +32,7 @@ namespace LacunaExpress.Pages
 		public Master()
 		{
 			nav = new NavigationPage(new Splash());
+			//nav = new NavigationPage(new blank());
 			nav.Title = "Lacuna Express";
 			this.Detail = nav;
 			this.Master = new ContentPage
@@ -53,18 +57,30 @@ namespace LacunaExpress.Pages
 				Command = new Command(() => this.IsPresented = true)
 			});
 
-			menu.ItemSelected += async (sender, e) =>
+			menu.ItemTapped+= async (sender, e) =>
 			{
+				var text = menu.SelectedItem.ToString();//(menu.SelectedItem as MenuItems).ItemText;
+				menu.SelectedItem = null;
+
 				this.IsPresented = false;
-				switch (e.SelectedItem.ToString())
+				await nav.Navigation.PopToRootAsync();
+				switch (text)
 				{
+					case "Planets":
+						await nav.Navigation.PushAsync(new PlanetMenu());
+						break;
+					case "Stations":
+						await nav.Navigation.PushAsync(new StationsMain());
+						break;
 					case "Mail":
-						LoadMessages();
 						await nav.Navigation.PushAsync(new MessageList());
+						break;
+					case "Empire":
+						await nav.Navigation.PushAsync(new EmpireWideMain());
 						break;
 				}
 			};
-			GetActiveAccount();
+			//GetActiveAccount();
 		}
 
 		async void  GetActiveAccount()
@@ -74,26 +90,9 @@ namespace LacunaExpress.Pages
 			 if (activeAccount == null)
 			{
 				await Navigation.PushModalAsync(new Login());
-				GetActiveAccount();
+				//GetActiveAccount();
 			}
 		}
 
-		async void LoadMessages()
-		{
-			var s = new Server();
-			var json = Inbox.ViewInbox(activeAccount.SessionID);
-			var response = await s.GetHttpResultAsync("https://us1.lacunaexpanse.com", Inbox.url, json);
-			s = null;
-			if (response.result == null)
-			{
-
-			}
-			else
-			{
-				var messageList = response.result.messages;
-			}
-
-			//
-		}
 	}
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LacunaExpanseAPIWrapper
 {
-	class Captcha : CoreClass
+	public class Captcha : CoreClass
 	{
 		public static string url = "captcha";
 		public static string Fetch(String sessionID)

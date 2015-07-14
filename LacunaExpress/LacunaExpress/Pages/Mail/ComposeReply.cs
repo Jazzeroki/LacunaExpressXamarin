@@ -13,9 +13,13 @@ namespace LacunaExpress.Pages.Mail
 		AccountManagement.AccountModel account;
 		Response.Messages message;
 
-		Entry to = new Entry();
-		Entry subject = new Entry();
-		Editor body = new Editor();
+		Entry to = new Entry() { Placeholder = "To"};
+		Entry subject = new Entry() { 
+		Placeholder = "Subject"};
+		Editor body = new Editor()
+		{
+			VerticalOptions = LayoutOptions.FillAndExpand
+		};
 		Button send = new Button
 		
 		{
@@ -59,7 +63,7 @@ namespace LacunaExpress.Pages.Mail
 				var s = new LacunaExpress.Data.Server();
 				var response = await s.GetHttpResultAsync(account.Server, Inbox.url, json);
 				if (response.result != null)
-					await Navigation.PushAsync(new MessageList());
+					await Navigation.PopAsync();
 			};
 			cancel.Clicked += async (sender, e) =>
 			{

@@ -21,6 +21,7 @@ namespace LacunaExpress.AccountManagement
 		public string Password { get; set; }
 		public string SessionID { get; set; }
 		public string Server { get; set; }
+		public string Capital { get; set; }
 		public bool ActiveAccount { get; set; }
 		public DateTime CaptchaLastRenewed { get; set; }
 		public DateTime SessionRenewed { get; set; }

@@ -14,8 +14,9 @@ namespace LacunaExpress
 	{
 		public App()
 		{
-			//MainPage = new Login();
+			//MainPage = new Splash();
 			MainPage = new Master();
+			//MainPage = new blank();
 			////var s = new Empire();
 			//var p = Empire.Login(1, "356", "helloworld");
 			//// The root page of your application
