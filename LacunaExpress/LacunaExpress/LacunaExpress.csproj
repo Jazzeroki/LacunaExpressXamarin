@@ -39,18 +39,27 @@
     <Compile Include="AccountManagement\AccountModel.cs" />
     <Compile Include="App.cs" />
     <Compile Include="DataModels\BuildingData.cs" />
+    <Compile Include="DataModels\BuildingStats.cs" />
     <Compile Include="Data\IIsolatedStorage.cs" />
     <Compile Include="Data\Server.cs" />
     <Compile Include="Data\ThrottledServerRequest.cs" />
+    <Compile Include="Pages\About\AboutMain.cs" />
+    <Compile Include="Pages\AccountPages\AccountMain.cs" />
     <Compile Include="Pages\blank.cs" />
     <Compile Include="Pages\Bodies\BodyStatus.cs" />
     <Compile Include="Pages\Bodies\BodyStatusDetail.cs" />
+    <Compile Include="Pages\Bodies\StationsStatus.cs" />
     <Compile Include="Pages\CaptchaPage\CaptchaPage.cs" />
     <Compile Include="Pages\EmpireWide\EmpireWideMain.cs" />
+    <Compile Include="Pages\Help\HelpMain.cs" />
     <Compile Include="Pages\Mail\ComposeReply.cs" />
+    <Compile Include="Pages\Map\MapMain.cs" />
+    <Compile Include="Pages\Planets\BuildingToolsView.cs" />
     <Compile Include="Pages\Planets\PlanetBuildingDetail.cs" />
     <Compile Include="Pages\Planets\PlanetBuildings.cs" />
+    <Compile Include="Pages\Planets\PlanetMap.cs" />
     <Compile Include="Pages\Planets\PlanetMenu.cs" />
+    <Compile Include="Pages\Planets\ShipTools.cs" />
     <Compile Include="Pages\Spies\SpiesMain.cs" />
     <Compile Include="Pages\Splash.cs" />
     <Compile Include="Pages\AccountPages\Login.cs" />
@@ -59,6 +68,8 @@
     <Compile Include="Pages\Master.cs" />
     <Compile Include="Pages\Stations\StationsMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\BuildingToolsScripts.cs" />
+    <Compile Include="Scripts\MapScripts.cs" />
     <Compile Include="Scripts\ShipYardScripts.cs" />
     <Compile Include="Scripts\SpaceStationScripts.cs" />
     <Compile Include="Scripts\SpyScripts.cs" />
@@ -97,6 +108,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewCells\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Demolish.png" />
+    <EmbeddedResource Include="Images\Downgrade.png" />
+    <EmbeddedResource Include="Images\Repair.png" />
+    <EmbeddedResource Include="Images\Upgrade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\Microsoft.AnalyzerPowerPack.1.0.1\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.Common.dll" />
+    <Analyzer Include="..\..\packages\Microsoft.AnalyzerPowerPack.1.0.1\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.CSharp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -6,38 +6,17 @@ using System.Threading.Tasks;
 
 namespace LacunaExpanseAPIWrapper
 {
-	class SpaceStationLab
+	public class SpaceStationLab : Buildings
 	{
-		/*
-		 * view_prisoners ( session_id, building_id, [ page_number ])
-session_id
-building_id
-page_number
-execute_prisoner ( session_id, building_id, prisoner_id )
-session_id
-building_id
-prisoner_id
-release_prisoner ( session_id, building_id, prisoner_id )
-session_id
-building_id
-prisoner_id
-view_foreign_spies ( session_id, building_id, [ page_number ])
-session_id
-building_id
-page_number
-view_foreign_ships ( session_id, building_id, page_number )
-session_id
-building_id
-page_number
-view_ships_travelling ( session_id, building_id, [ page_number ])
-session_id
-building_id
-page_number
-view_ships_orbiting ( session_id, building_id, [ page_number ])
-session_id
-building_id
-page_number
-		 */
+		public static string URL = "ssla";
+		public static string MakePlan(string sessionID, string buildingID, string plan, string level)
+		{
+			return BasicRequest(1, "make_plan", sessionID, buildingID, plan, level);
+		}
+		public static string SubsidizePlan(string sessionID, string buildingID)
+		{
+			return BasicRequest(1, "subsidize_plan", sessionID, buildingID);
+		}
 	}
 }
 

@@ -16,7 +16,9 @@ namespace LacunaExpress.AccountManagement
 			Password = password;
 			Server = server;
 			SessionID = sessionID;
+			DisplayName = empireName + " " + server;
 		}
+		public string DisplayName { get; set; }
 		public string EmpireName { get; set; }
 		public string Password { get; set; }
 		public string SessionID { get; set; }

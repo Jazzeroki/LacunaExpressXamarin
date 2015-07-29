@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace LacunaExpress.DataModels
 {
@@ -14,5 +15,6 @@ namespace LacunaExpress.DataModels
 		public string Efficiency { get; set; }
 		public string ImageName { get; set; }
 		public string url { get; set; }
+		public string BuildingURL { get; set; }
 	}
 }

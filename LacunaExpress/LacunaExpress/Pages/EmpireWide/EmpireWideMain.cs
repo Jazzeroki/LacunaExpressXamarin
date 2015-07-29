@@ -16,19 +16,28 @@ namespace LacunaExpress.Pages.EmpireWide
 		{
 			Text = "Planet Status Check"
 		};
+		Button stationStatusCheck = new Button
+		{
+			Text = "Station Status Check"
+		};
 		public EmpireWideMain()
 		{
 			
 			Content = new StackLayout
 			{
 				Children = {
-					planetStatusCheck
+					planetStatusCheck,
+					stationStatusCheck
 				}
 			};
 
 			planetStatusCheck.Clicked += async (sender, e) =>
 			{
 				await Navigation.PushAsync(new BodyStatus(account, false));
+			};
+			stationStatusCheck.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new BodyStatus(account, true));
 			};
 
 			this.Appearing += async (sender, e) =>

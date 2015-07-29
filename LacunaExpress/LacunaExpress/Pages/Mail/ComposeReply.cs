@@ -1,4 +1,5 @@
 ﻿using LacunaExpanseAPIWrapper;
+using LacunaExpanseAPIWrapper.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace LacunaExpress.Pages.Mail
 	public class ComposeReply : ContentPage
 	{
 		AccountManagement.AccountModel account;
-		Response.Messages message;
+		Messages message;
 
 		Entry to = new Entry() { Placeholder = "To"};
 		Entry subject = new Entry() { 
@@ -36,11 +37,11 @@ namespace LacunaExpress.Pages.Mail
 			subject.Placeholder = "Subject";
 			BuildPage();
 		}
-		public ComposeReply(string sessionID, string server, Response.Messages message, string type)
+		public ComposeReply(string sessionID, string server, Messages message, string type)
 		{
 			this.message = message;
 
-			to.Text = message.to;
+			to.Text = message.from;
 			subject.Text = type + message.subject;
 			body.Text = message.body;
 			BuildPage();
@@ -62,6 +63,7 @@ namespace LacunaExpress.Pages.Mail
 				var json = Inbox.SendMessage(1, account.SessionID, to.Text, subject.Text, body.Text); 
 				var s = new LacunaExpress.Data.Server();
 				var response = await s.GetHttpResultAsync(account.Server, Inbox.url, json);
+				var x = response;
 				if (response.result != null)
 					await Navigation.PopAsync();
 			};

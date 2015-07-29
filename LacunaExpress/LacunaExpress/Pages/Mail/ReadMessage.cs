@@ -7,6 +7,7 @@ using System.Text;
 using Xamarin.Forms;
 using LacunaExpanseAPIWrapper;
 using LacunaExpress.Data;
+using LacunaExpanseAPIWrapper.ResponseModels;
 
 namespace LacunaExpress.Pages.Mail
 {
@@ -39,7 +40,7 @@ namespace LacunaExpress.Pages.Mail
 			Text = "Delete"
 		};
 		
-		public ReadMessage(string sessionID, string server, Response.Messages message)
+		public ReadMessage(string sessionID, string server, Messages message)
 		{
 			Date.Text = message.date;
 			From.Text = message.from;
@@ -69,7 +70,7 @@ namespace LacunaExpress.Pages.Mail
 			Archive.Clicked += async (sender, e) => 
 			{
 				var json = Inbox.ArchiveMessages(1, sessionID, message.id);
-				var s = new Server();
+				var s = new LacunaExpress.Data.Server();
 				var response = await s.GetHttpResultAsync(server, Inbox.url, json);
 				await Navigation.PopAsync();
 			};
@@ -80,7 +81,7 @@ namespace LacunaExpress.Pages.Mail
 			};
 			Delete.Clicked += async (sender, e) => {
 				var json = Inbox.TrashMessages(1, sessionID, message.id);
-				var s = new Server();
+				var s = new LacunaExpress.Data.Server();
 				var response = await s.GetHttpResultAsync(server, Inbox.url, json);
 				await Navigation.PopAsync();
 			};

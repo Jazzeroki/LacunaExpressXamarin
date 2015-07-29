@@ -26,17 +26,34 @@ namespace LacunaExpress.Pages.AccountPages
 
 		Button Submit = new Button() { Text = "Submit" };
 
+		StackLayout switchLayout = new StackLayout
+		{
+			Orientation = StackOrientation.Horizontal
+		};
+		Label activeLbl = new Label
+		{
+			Text = "Make Account Primary"
+		};
+		Switch activeSwitch = new Switch
+		{
+			IsToggled = false
+		};
+
 
 		public Login()
 		{
+			switchLayout.Children.Add(activeLbl);
+			switchLayout.Children.Add(activeSwitch);
 			Content = new StackLayout
 			{
+				Padding = new Thickness(6, 6, 6, 6),
 				Children = {
 					Usernamelbl,
 					Username,
 					Passwordlbl,
 					Password,
 					Serverlbl,
+					switchLayout,
 					Submit,
 					Resultlbl
 				}
@@ -44,8 +61,10 @@ namespace LacunaExpress.Pages.AccountPages
 
 			Submit.Clicked += async (sender, e) =>
 			{
+				activeSwitch.IsEnabled = false;
+				Submit.IsEnabled = false;
 				var aMgr = new AccountManagement.AccountManager();
-				var status = await aMgr.CreateAndAddAccountAsync(Username.Text, Password.Text, Serverlbl.Text, true);
+				var status = await aMgr.CreateAndAddAccountAsync(Username.Text, Password.Text, Serverlbl.Text, activeSwitch.IsToggled);
 				if (status)
 				{
 					
@@ -54,6 +73,8 @@ namespace LacunaExpress.Pages.AccountPages
 				}
 				else
 					Resultlbl.Text = "Request Failed, try again";
+				activeSwitch.IsEnabled = true;
+				Submit.IsEnabled = true;
 
 			};
 			

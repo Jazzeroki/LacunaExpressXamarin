@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace LacunaExpanseAPIWrapper
 {
@@ -19,6 +21,18 @@ namespace LacunaExpanseAPIWrapper
 		public static String ViewInbox(String sessionID)
 		{
 			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_inbox\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
+		}
+		public static String ViewSent(String sessionID)
+		{
+			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_sent\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
+		}
+		public static String ViewArchive(String sessionID)
+		{
+			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_archive\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
+		}
+		public static String ViewTrash(String sessionID)
+		{
+			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_trashed\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
 		}
 
 		public static String ViewInbox(String sessionID, String tag, int pageNumber)
@@ -44,7 +58,9 @@ namespace LacunaExpanseAPIWrapper
 		}
 		public static String SendMessage(int requestID, String sessionID, String recipients, String subject, String body)
 		{
-
+			
+			subject = cleanForJSON(subject);
+			body = cleanForJSON(body);
 			return "{\"id\":" + requestID + ",\"method\":\"send_message\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",\"" + recipients + "\",\"" + subject + "\",\"" + body + "\",null]}";
 			//return i;
 		}

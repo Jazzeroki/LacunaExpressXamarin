@@ -37,9 +37,13 @@ namespace LacunaExpress.Pages.Planets
 		{
 			Text = "Buildings"
 		};
+		Button planetMapBtn = new Button
+		{
+			Text = "Planet Map"
+		};
 		public PlanetMenu()
 		{
-			
+
 
 			Content = new StackLayout
 			{
@@ -49,7 +53,8 @@ namespace LacunaExpress.Pages.Planets
 					shipOptions,
 					buildingOptions,
 					tradeOptions,
-					buildingsBtn
+					buildingsBtn,
+					planetMapBtn
 
 				}
 			};
@@ -59,7 +64,7 @@ namespace LacunaExpress.Pages.Planets
 				activeAccount = await accountMngr.GetActiveAccountAsync();
 
 				selectedPlanet = activeAccount.Capital;
-				
+
 
 				var plist = activeAccount.Colonies.Values.ToList();
 				plist.Sort();
@@ -82,6 +87,18 @@ namespace LacunaExpress.Pages.Planets
 			spyOptions.Clicked += async (sender, e) =>
 			{
 				await Navigation.PushAsync(new SpiesMain(activeAccount, selectedPlanet));
+			};
+			buildingOptions.Clicked += async (sender, e) =>
+				{
+					await Navigation.PushAsync(new BuildingToolsView(activeAccount, selectedPlanet));
+				};
+			shipOptions.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new ShipTools(activeAccount, selectedPlanet));
+			};
+			planetMapBtn.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new PlanetMap(activeAccount, selectedPlanet));
 			};
 		}
 	}

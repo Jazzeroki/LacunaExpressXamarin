@@ -50,10 +50,26 @@ namespace LacunaExpress.Pages.Mail
 			{
 				messageList.Clear();
 				String json;
-				if (category == "All")
-					json = Inbox.ViewInbox(account.SessionID);
-				else
-					json = Inbox.ViewInbox(account.SessionID, category);				
+				switch (category)
+				{
+					case "All":
+						json = Inbox.ViewInbox(account.SessionID);
+						break;
+					case "Sent":
+						json = Inbox.ViewSent(account.SessionID);
+						break;
+					case "Trashed":
+						json = Inbox.ViewTrash(account.SessionID);
+						break;
+					case "Archived":
+						json = Inbox.ViewArchive(account.SessionID);
+						break;
+					default:
+						json = Inbox.ViewInbox(account.SessionID, category);
+						break;
+				}
+				
+								
 				try
 				{
 					var s = new Server();
@@ -106,7 +122,7 @@ namespace LacunaExpress.Pages.Mail
 			messages.ItemTemplate = new DataTemplate(typeof(MenuItem));
 			if (messageList.Count > 0)
 			{
-				messages.ItemsSource = messageList;//error is occuring after this
+				messages.ItemsSource = messageList;
 			}
 			messages.ItemSelected += async (sender, e) =>
 			{

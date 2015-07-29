@@ -13,6 +13,7 @@ using LacunaExpress.Data;
 using LacunaExpress.Pages.AccountPages;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using LacunaExpanseAPIWrapper.ResponseModels;
 
 namespace LacunaExpress.Pages.Bodies
 {
@@ -50,7 +51,8 @@ namespace LacunaExpress.Pages.Bodies
 
 			bodies.ItemTapped += async (sender, e) =>
 			{
-				await Navigation.PushModalAsync(new BodyStatusDetail((bodies.SelectedItem as BodyStatusModel).response));
+				await Navigation.PushModalAsync(new BodyStatusDetail((bodies.SelectedItem as BodyStatusModel).response,
+					(bodies.SelectedItem as BodyStatusModel).Name));
 				bodies.SelectedItem = null;
 			};
 		}
@@ -81,6 +83,7 @@ namespace LacunaExpress.Pages.Bodies
 				InnerHorizontal.Children.Add(X);
 				InnerHorizontal.Children.Add(Y);
 				InnerHorizontal.Children.Add(Zone);
+				InnerHorizontal.Children.Add(Warning);
 				View = OuterVertical;
 			}
 		}
@@ -91,16 +94,36 @@ namespace LacunaExpress.Pages.Bodies
 
 			if (typeStation)
 			{
+				bodyList.Clear();
+				foreach(var s in account.Stations.Keys)
+				{
+					var json = LacunaExpanseAPIWrapper.Body.GetBuildings(1, account.SessionID, s);
+					var server = new LacunaExpress.Data.Server();
+					var response = await server.GetHttpResultAsync(account.Server, LacunaExpanseAPIWrapper.Body.url, json);
+					if (response.result != null)
+					{
+						BodyStatusModel bdy = new BodyStatusModel();
+						bdy.response = response;
+						bdy.Name = response.result.status.body.name;
+						bdy.Star = response.result.status.body.star_name;
+						bdy.Zone = response.result.status.body.zone;
+						bdy.X = response.result.status.body.x;
+						bdy.Y = response.result.status.body.y;
+						if (!stationOk(response))
+							bdy.Status = "Warning";
+						bodyList.Add(bdy);
+					}
 
+				}
 			}
 			else
 			{
 				bodyList.Clear();
 				foreach (var c in account.Colonies.Keys)
 				{
-					var json = Body.GetBuildings(1, account.SessionID, c);
+					var json = LacunaExpanseAPIWrapper.Body.GetBuildings(1, account.SessionID, c);
 					var s = new LacunaExpress.Data.Server();
-					var response = await s.GetHttpResultAsync(account.Server, Body.url, json);
+					var response = await s.GetHttpResultAsync(account.Server, LacunaExpanseAPIWrapper.Body.url, json);
 					if (response.result != null)
 					{
 						BodyStatusModel bdy = new BodyStatusModel();
@@ -151,10 +174,31 @@ namespace LacunaExpress.Pages.Bodies
 				if (p.Value.name.Contains("issure"))
 					return false;
 			}
-			//if(r.result.buildings.Values.)
-			//bleeder check
-			//damaged buildings check
-
+			return true;
+		}
+		Boolean stationOk(Response r)
+		{
+			if (Convert.ToDouble(r.result.status.body.num_incoming_enemy) > 0)
+				return false;
+			if (Convert.ToDouble(r.result.status.body.plots_available) < 0)
+				return false;
+			if (Convert.ToDouble(r.result.status.body.water_hour) < 0)
+				return false;
+			if (Convert.ToDouble(r.result.status.body.ore_hour) < 0)
+				return false;
+			if (Convert.ToDouble(r.result.status.body.energy_hour) < 0)
+				return false;
+			if (Convert.ToDouble(r.result.status.body.food_hour) < 0)
+				return false;
+			foreach (var p in r.result.buildings)
+			{
+				if (Convert.ToDouble(p.Value.efficiency) < 100)
+					return false;
+				if (p.Value.name.Contains("leeder"))
+					return false;
+				if (p.Value.name.Contains("issure"))
+					return false;
+			}
 			return true;
 		}
 		public class BodyStatusModel

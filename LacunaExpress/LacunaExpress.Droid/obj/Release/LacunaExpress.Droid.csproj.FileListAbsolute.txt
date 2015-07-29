@@ -1,8 +1,6 @@
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.Droid.dll.config
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.Droid.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.Droid.pdb
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\Lacuna_Express.Lacuna_Express.apk
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\Lacuna_Express.Lacuna_Express-Signed.apk
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\FormsViewGroup.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\Newtonsoft.Json.dll
@@ -24,7 +22,6 @@ C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\LacunaExpress.Droid.csprojResolveAssemblyReference.cache
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\LacunaExpress.Droid.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\LacunaExpress.Droid.pdb
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\android\bin\Lacuna_Express.Lacuna_Express.apk
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable\icon.png
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable-hdpi\icon.png
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable-xhdpi\icon.png
@@ -35,3 +32,6 @@ C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable-xxhdpi\ham.png
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\R.cs.flag
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\uploadflags.txt
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\com.jazzdevstudio.lacunaexpress.apk
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\com.jazzdevstudio.lacunaexpress-Signed.apk
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\android\bin\com.jazzdevstudio.lacunaexpress.apk

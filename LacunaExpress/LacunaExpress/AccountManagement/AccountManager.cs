@@ -14,54 +14,48 @@ using LacunaExpress.AccountManagement;
 using Xamarin.Forms;
 
 namespace LacunaExpress.AccountManagement
-{/*
-  * Method setup public
-  * AddAccount()
-  * checks file exists
-  * checks if account exists
-  * 
-  * DeleteAccount()
-  * searches accounts removes and saves
-  * 
-  * GetActiveAccount()
-  * loads all accounts and returns the active account
-  * 
-  * GetAllAccounts()
-  * 
-  * ModifyAccount(oldAccount, newAccount)
-  * 
-  * 
-  * private 
-  * 
-  * Load()
-  * 
-  * Save()
-  * 
-  * FileExists()
-  */
+{
 	class AccountManager
 	{
-		private string AccountFile { get { return "Account.Jazz"; } }
+		private string AccountFile { get { return "Acnt.Jazz"; } }
 		IIsolatedStorage Storage = DependencyService.Get<IIsolatedStorage>();
 
 
 
-		public async void ModifyAccount(AccountModel modifiedAccount, AccountModel originalAccount)
+		public async void ModifyAccountAsync(AccountModel modifiedAccount, AccountModel originalAccount)
 		{
 			var accounts = await LoadAccountsAsync();
 			if (accounts != null)
 			{
-				var acc = from a in accounts.AccountList
-						  where a.EmpireName == originalAccount.EmpireName && a.Server == originalAccount.Server
-						  select a;
-				foreach (var a in acc)
-					accounts.AccountList.Remove(a);
+				var index = accounts.AccountList.Find(x => x.DisplayName.Equals(originalAccount.DisplayName));
+				accounts.AccountList.Remove(index);
+
+				
+				if (modifiedAccount.ActiveAccount)
+				{
+
+					var updatedList = MakeAllAccountsNotActive(accounts);
+					accounts.AccountList.Clear();
+					accounts.AccountList = updatedList.AccountList;
+				}
+				accounts.AccountList.Add(modifiedAccount);
 			}
-			accounts.AccountList.Add(modifiedAccount);
+			
 			await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
 		}
-		
-		public async Task<AccountModel> GetActiveAccountAsync() 
+
+		private static AccountCollection MakeAllAccountsNotActive(AccountCollection accounts)
+		{
+			var accountCollection = new AccountCollection();
+			foreach (var a in accounts.AccountList)
+			{
+				a.ActiveAccount = false;
+				accountCollection.AccountList.Add(a);
+			}
+			return accountCollection;
+		}
+
+		public async Task<AccountModel> GetActiveAccountAsync()
 		{
 			if (Storage.Exists(AccountFile))
 			{
@@ -71,35 +65,33 @@ namespace LacunaExpress.AccountManagement
 
 					foreach (var a in accounts.AccountList)
 					{
-						a.ActiveAccount = true;
+						//a.ActiveAccount = true;
 						if (a.ActiveAccount)
 						{
 							if (a.SessionRenewed < DateTime.Now.AddHours(-2))
 							{
+								var oldAccount = a;
 								string json = Empire.Login(1, a.EmpireName, a.Password);
 								var s = new Server();
 								var response = await s.GetHttpResultAsync(a.Server, Empire.url, json);
 								s = null;
 								a.SessionID = response.result.session_id;
 								a.SessionRenewed = DateTime.Now;
-								SaveAccountAsync(a);
+								ModifyAccountAsync(a, oldAccount);
 							}
 							return a;
 						}
-						else
-							return null;  //no accounts are active
-
 					}
 				}
 				else
 					return null;
 
 			}
-			
-				return null;
+
+			return null;
 		}
 		//public void ChangeActiveAccount() { }
-		public async void DeleteAccountAsync(AccountModel account) 
+		public async void DeleteAccountAsync(AccountModel account)
 		{
 			var accounts = await LoadAccountsAsync();
 			if (accounts != null)
@@ -113,64 +105,51 @@ namespace LacunaExpress.AccountManagement
 			await Storage.SaveTextAsync(AccountFile, "");
 		}
 
-		public async Task<bool> CreateAndAddAccountAsync(string username, string password, string server, bool? setAsActive) 
+		public async Task<bool> CreateAndAddAccountAsync(string username, string password, string server, bool setAsActive)
 		{
 			string json = Empire.Login(1, username, password);
 			var s = new Server();
-			var response = await  s.GetHttpResultAsync(server, Empire.url, json);
+			var response = await s.GetHttpResultAsync(server, Empire.url, json);
 			if (response.result != null)
 			{
 				var account = new AccountModel(username, password, server, response.result.session_id, setAsActive);
 				account.SessionRenewed = DateTime.Now;
+				account.ActiveAccount = setAsActive;
 				account.Colonies = response.result.status.empire.colonies;
 				account.Stations = response.result.status.empire.stations;
 				account.AllBodies = response.result.status.empire.planets;
 				account.Capital = response.result.status.empire.colonies[response.result.status.empire.home_planet_id];
-				SaveAccountAsync(account);
-				return true;
-			}
-			else
-				return false;
-			
-		}
-		private async void SaveAccountAsync(AccountModel account)
-		{
-			Boolean accountNotFound = true;
-			String accountIndex = null;
-			if (Storage.Exists(AccountFile))
-			{
+
+				account.Colonies.OrderBy(x => x.Value);
+				account.Stations.OrderBy(x => x.Value);
+				account.AllBodies.OrderBy(x => x.Value);
 				var accounts = await LoadAccountsAsync();
 				if (accounts != null)
 				{
-					foreach (var a in accounts.AccountList)
+					var accountCollection = new AccountCollection();
+					if (setAsActive)
 					{
-						if (a.EmpireName == account.EmpireName && a.Server == account.Server)
-						{
-							accountIndex = accounts.AccountList.IndexOf(a).ToString();
-							accountNotFound = false;
-							break;
-						}				
+						accountCollection = MakeAllAccountsNotActive(accounts);
 					}
+					accountCollection.AccountList.Add(account);
+					await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accountCollection));
+					return true;
 				}
-				if (accounts == null || accountNotFound)
+				else
 				{
-					accounts = new AccountCollection();
-					accounts.AccountList.Add(account);
+					var accountCollection = new AccountCollection();
+					account.ActiveAccount = true;
+					accountCollection.AccountList.Add(account);
+					await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accountCollection));
+					return true;
 				}
-				if (accountIndex != null)
-				{
-					accounts.AccountList[Convert.ToInt32(accountIndex)] = account;
-					
-				}
-				await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
+
 			}
 			else
-			{
-				AccountCollection accounts = new AccountCollection();
-				accounts.AccountList.Add(account);
-				await Storage.SaveTextAsync(AccountFile, Newtonsoft.Json.JsonConvert.SerializeObject(accounts));
-			}
+				return false;
+
 		}
+
 		public async Task<AccountCollection> LoadAccountsAsync()
 		{
 			if (Storage.Exists(AccountFile))
@@ -187,6 +166,6 @@ namespace LacunaExpress.AccountManagement
 			else
 				return null;
 		}
-		
+
 	}
 }

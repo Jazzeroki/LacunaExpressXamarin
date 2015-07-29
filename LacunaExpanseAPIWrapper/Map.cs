@@ -42,3 +42,34 @@ namespace LacunaExpanseAPIWrapper
 
 }
 
+/*
+get_stars ( session_id, x1, y1, x2, y2 )
+session_id
+x1
+y1
+x2
+y2
+check_star_for_incoming_probe ( session_id, star_id )
+session_id
+star_id
+get_star (session_id, star_id)
+session_id
+star_id
+get_star_by_name (session_id, name)
+session_id
+name
+get_star_by_xy (session_id, x, y)
+session_id
+x
+y
+search_stars (session_id, name)
+session_id
+name
+probe_summary_fissures
+session_id (required)
+zone (optional)
+RESPONSE
+view_laws (session_id, star_id )
+session_id
+star_id
+*/

@@ -77,7 +77,9 @@ namespace LacunaExpanseAPIWrapper
 			}
 			public class Ship
 			{
-				public String can_recall, fleet_speed, name, date_available, task, max_occupants, combat, stealth, can_scuttle, speed, berth_level, hold_size, id, type, type_human, date_started;
+				public String can_recall, fleet_speed, name, date_available, task, max_occupants, 
+					combat, stealth, can_scuttle, speed, berth_level, hold_size, id, type, type_human, 
+					date_started, number_of_docks, task, image, can_scuttle;
 				//payload[]  Don't know how this would look like yet
 			}
 			public class Available

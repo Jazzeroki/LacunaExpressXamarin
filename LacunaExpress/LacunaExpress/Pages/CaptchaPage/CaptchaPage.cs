@@ -42,6 +42,10 @@ namespace LacunaExpress.Pages.CaptchaPage
 					{
 						var r = Newtonsoft.Json.JsonConvert.DeserializeObject<CaptchaResponse>(response);
 						if(r.result==1){
+							var oldacnt = account;
+							account.CaptchaLastRenewed = DateTime.Now;
+							AccountManager accountMan = new AccountManager();
+							accountMan.ModifyAccountAsync(account, oldacnt);
 							await Navigation.PopModalAsync();
 						}
 					}
@@ -51,7 +55,17 @@ namespace LacunaExpress.Pages.CaptchaPage
 					}
 				}
 			};
-			GetCaptcha(account);
+			this.Appearing += async (sender, e) =>
+			{
+				var captchaValidUntil = DateTime.Now.AddMinutes(-25);
+				if (account.CaptchaLastRenewed > captchaValidUntil) 
+				{
+					await Navigation.PopModalAsync();
+				}else
+				{
+					GetCaptcha(account);
+				}
+			};			
 		}
 
 		async void GetCaptcha(AccountModel account)

@@ -1,6 +1,8 @@
 ﻿using LacunaExpanseAPIWrapper;
+using LacunaExpanseAPIWrapper.ResponseModels;
 using LacunaExpress.AccountManagement;
 using LacunaExpress.Data;
+using LacunaExpress.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,9 @@ namespace LacunaExpress.Pages.Spies
 	{
 		Label planetName = new Label();
 		AccountModel account;
-		Response.Building intelTrain, mayhemTrain, politicalTrain, theftTrain, intelMinistry;
-		List<Response.Prisoner> prisonersList = new List<Response.Prisoner>();
-		List<Response.Spies> planetSpies = new List<Response.Spies>();
+		Building intelTrain, mayhemTrain, politicalTrain, theftTrain, intelMinistry;
+		List<Prisoner> prisonersList = new List<Prisoner>();
+		List<LacunaExpanseAPIWrapper.ResponseModels.Spies> planetSpies = new List<LacunaExpanseAPIWrapper.ResponseModels.Spies>();
 		string secMinID, intelMinID;
 		Label totalSpies = new Label { TextColor = Color.White };
 		Label spiesOnCounter = new Label { TextColor = Color.White };
@@ -78,23 +80,74 @@ namespace LacunaExpress.Pages.Spies
 						var json = Security.ExecutePrisoner(account.SessionID, secMinID, prisoner.id);
 						requests.Add(new ThrottledServerRequest(account.Server, Security.URL, json));
 					}
-					var server = new Server();
+					var server = new LacunaExpress.Data.Server();
 					server.ThrottledServer(requests);
 				}
 			};
 			trainSpiesBtn.Clicked += async (sender, e) =>
 			{
-				TrainSpies(planetSpies, account, intelMinID, intelMinistry, intelTrain, mayhemTrain, theftTrain, politicalTrain, selectedPlanet, 6);
+				if (intelMinID != null)
+				{
+					TrainSpies(planetSpies, account, intelMinID, intelMinistry, intelTrain, mayhemTrain, theftTrain, politicalTrain, selectedPlanet, 6);
+				}
+			};
+			runSweepsBtn.Clicked += async (sender, e) =>
+			{
+				
+				if (intelMinID != null)
+				{
+					var idleSpies = SpyScripts.GetIdleSpiesFromList(planetSpies);
+					var orderedIdleSpies = idleSpies.OrderByDescending(x => x.level);
+					var spiesToUse = new List<LacunaExpanseAPIWrapper.ResponseModels.Spies>();
+					int i = 0;
+					foreach (var spy in orderedIdleSpies)
+					{
+						spiesToUse.Add(spy);
+						i++;
+						if (i == 6)
+							break;
+					}
+					foreach (var spy in spiesToUse)
+					{
+						var server = new LacunaExpress.Data.Server();
+						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Security Sweep");
+						var response = await server.GetHttpResultStringAsyncAsString(account.Server, Intelligence.URL, json);
+						if (response != null)
+						{
+
+						}
+					}
+					
+				}
 			};
 
 		}
 
+		async void Spyrun() { }
+
+		async void MakeAllSpiesIdle(AccountModel account, string intelMinID, List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spies)
+		{
+			List<ThrottledServerRequest> requests = new List<ThrottledServerRequest>();
+			foreach (var spy in spies)
+			{
+				if (spy.assignment != "Idle")
+				{
+					var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Idle");
+					requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
+				}
+			}
+			if (requests.Count > 0)
+			{
+				var server = new LacunaExpress.Data.Server();
+				server.ThrottledServer(requests);
+			}
+		}
 		async void LoadSpyInfo(string bodyID)
 		{
 			IsBusy = true;
-			var json = Body.GetBuildings(1, account.SessionID, bodyID);
+			var json = LacunaExpanseAPIWrapper.Body.GetBuildings(1, account.SessionID, bodyID);
 			var s = new LacunaExpress.Data.Server();
-			var response = await s.GetHttpResultAsync(account.Server, Body.url, json);
+			var response = await s.GetHttpResultAsync(account.Server, LacunaExpanseAPIWrapper.Body.url, json);
 			if (response.result != null)
 			{
 				var building = response.result.buildings.Where(x => x.Value.name.Contains("Security")).First();
@@ -104,7 +157,7 @@ namespace LacunaExpress.Pages.Spies
 				intelTrain = response.result.buildings.FirstOrDefault(x => x.Value.name.Contains("Intel Training")).Value;
 				mayhemTrain = response.result.buildings.FirstOrDefault(x => x.Value.name.Contains("Mayhem Training")).Value;
 				theftTrain = response.result.buildings.FirstOrDefault(x => x.Value.name.Contains("Theft Training")).Value;
-				politicalTrain= response.result.buildings.FirstOrDefault(x => x.Value.name.Contains("Politics Training")).Value;
+				politicalTrain = response.result.buildings.FirstOrDefault(x => x.Value.name.Contains("Politics Training")).Value;
 
 				if (secMinID.Length > 0 || !secMinID.Contains("Uknown ident"))
 				{
@@ -162,7 +215,7 @@ namespace LacunaExpress.Pages.Spies
 			IsBusy = false;
 		}
 
-		async void TrainSpies(List<Response.Spies> spies, AccountModel account, string intelMinID, Response.Building intelMin, Response.Building intelTrain, Response.Building mayhemTrain, Response.Building theftTrain, Response.Building politicalTrain,  string planetID, int numToTrain)
+		async void TrainSpies(List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spies, AccountModel account, string intelMinID, Building intelMin, Building intelTrain, Building mayhemTrain, Building theftTrain, Building politicalTrain, string planetID, int numToTrain)
 		{
 			if (intelMin.efficiency == "100")
 			{
@@ -187,13 +240,13 @@ namespace LacunaExpress.Pages.Spies
 									 select counterCount).Count();
 
 				var idleSpies = from s in spies
-								where s.assignment.Contains("Idle") 
+								where s.assignment.Contains("Idle")
 								select s;
 
 				//350 + $view->{building}{level} * 75
 				foreach (var spy in idleSpies)
 				{
-					if (Convert.ToInt64(spy.intel) < 350 + (Convert.ToInt64(intelTrain.level) * 75) && intelTrain.efficiency == "100" && intelCounter < numToTrain) 
+					if (Convert.ToInt64(spy.intel) < 350 + (Convert.ToInt64(intelTrain.level) * 75) && intelTrain.efficiency == "100" && intelCounter < numToTrain)
 					{
 						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Intel Training");
 						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
@@ -235,12 +288,13 @@ namespace LacunaExpress.Pages.Spies
 
 				if (requests.Count > 0)
 				{
-					var server = new Server();
+					var server = new LacunaExpress.Data.Server();
 					server.ThrottledServer(requests);
 				}
 			}
 		}
 		//System.out.println(2600/(30/numbToTrain)+" is the approximate number of hours until max training is reached \nif training building is level 30");
+
 	}
 
 

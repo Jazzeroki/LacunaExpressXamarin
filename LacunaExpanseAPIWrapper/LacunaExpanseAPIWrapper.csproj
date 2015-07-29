@@ -35,13 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Alliance.cs" />
     <Compile Include="Archaeology.cs" />
     <Compile Include="BlackHoleGenerator.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="Buildings.cs" />
+    <Compile Include="Capital.cs" />
     <Compile Include="Captcha.cs" />
     <Compile Include="CaptchaResponse.cs" />
     <Compile Include="CoreClass.cs" />
+    <Compile Include="Development.cs" />
     <Compile Include="Embassy.cs" />
     <Compile Include="Empire.cs" />
     <Compile Include="GeneticsLab.cs" />
@@ -50,20 +53,72 @@
     <Compile Include="LibraryOfJith.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MercenaryGuild.cs" />
+    <Compile Include="MiningMinistry.cs" />
     <Compile Include="Modules.cs" />
     <Compile Include="Observatory.cs" />
     <Compile Include="OracleOfAnid.cs" />
+    <Compile Include="ParamsModels\OptionsLists.cs" />
     <Compile Include="Parliament.cs" />
     <Compile Include="PoliceStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Response.cs" />
+    <Compile Include="ResponseModels\AssignedTo.cs" />
+    <Compile Include="ResponseModels\Available.cs" />
+    <Compile Include="ResponseModels\Bodies.cs" />
+    <Compile Include="ResponseModels\Body.cs" />
+    <Compile Include="ResponseModels\Building.cs" />
+    <Compile Include="ResponseModels\Data.cs" />
+    <Compile Include="ResponseModels\DockedShips.cs" />
+    <Compile Include="ResponseModels\Empire.cs" />
+    <Compile Include="ResponseModels\Empires.cs" />
+    <Compile Include="ResponseModels\Error.cs" />
+    <Compile Include="ResponseModels\Excavators.cs" />
+    <Compile Include="ResponseModels\Glyph.cs" />
+    <Compile Include="ResponseModels\Incoming.cs" />
+    <Compile Include="ResponseModels\IncomingShips.cs" />
+    <Compile Include="ResponseModels\Laws.cs" />
+    <Compile Include="ResponseModels\LevelCosts.cs" />
+    <Compile Include="ResponseModels\MakePlan.cs" />
+    <Compile Include="ResponseModels\Members.cs" />
+    <Compile Include="ResponseModels\Messages.cs" />
+    <Compile Include="ResponseModels\Mission.cs" />
+    <Compile Include="ResponseModels\Orbiting.cs" />
+    <Compile Include="ResponseModels\Ore.cs" />
+    <Compile Include="ResponseModels\PendingBuild.cs" />
+    <Compile Include="ResponseModels\PossibleAssignments.cs" />
+    <Compile Include="ResponseModels\Prisoner.cs" />
+    <Compile Include="ResponseModels\Profile.cs" />
+    <Compile Include="ResponseModels\ProposedBy.cs" />
+    <Compile Include="ResponseModels\Propositions.cs" />
+    <Compile Include="ResponseModels\Response.cs" />
+    <Compile Include="ResponseModels\Result.cs" />
+    <Compile Include="ResponseModels\Server.cs" />
+    <Compile Include="ResponseModels\Ship.cs" />
+    <Compile Include="ResponseModels\ShipsBuilding.cs" />
+    <Compile Include="ResponseModels\SpaceStations.cs" />
+    <Compile Include="ResponseModels\Spies.cs" />
+    <Compile Include="ResponseModels\Stars.cs" />
+    <Compile Include="ResponseModels\Station.cs" />
+    <Compile Include="ResponseModels\Status.cs" />
+    <Compile Include="ResponseModels\TaskOptions.cs" />
+    <Compile Include="ResponseModels\Tasks.cs" />
+    <Compile Include="ResponseModels\Types.cs" />
+    <Compile Include="ResponseModels\Unavailable.cs" />
+    <Compile Include="ResponseModels\Work.cs" />
     <Compile Include="Security.cs" />
     <Compile Include="Shipyard.cs" />
     <Compile Include="Spaceport.cs" />
     <Compile Include="SpaceStationLab.cs" />
+    <Compile Include="StarMapJson\Alliances.cs" />
+    <Compile Include="StarMapJson\Bounds.cs" />
+    <Compile Include="StarMapJson\Data.cs" />
+    <Compile Include="StarMapJson\Info.cs" />
+    <Compile Include="StarMapJson\Map.cs" />
+    <Compile Include="StarMapJson\StarMapJson.cs" />
+    <Compile Include="Stats.cs" />
     <Compile Include="TempleOfTheDrajites.cs" />
     <Compile Include="TheDillonForge.cs" />
-    <Compile Include="TradeMinistry.cs" />
+    <Compile Include="Trade.cs" />
+    <Compile Include="Transporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -81,6 +136,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.0.1\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.Common.dll" />
+    <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.0.1\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.CSharp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

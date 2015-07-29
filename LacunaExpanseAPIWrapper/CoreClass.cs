@@ -33,46 +33,65 @@ namespace LacunaExpanseAPIWrapper
 					writer.WriteValue(p);
 				writer.WriteEndArray();
 				writer.WriteEndObject();
-				//writer.WriteComment("(broken)");
-				//writer.WriteValue("500 gigabyte hard drive");
-				//writer.WriteValue("200 gigabype hard drive");
-				//writer.WriteEnd();
-				//writer.WriteEndObject();
-
 				return sb.ToString().Replace("\n","");
-
-				/*
-				 * protected static String Request(String method, String sessionID, String id){
-		String b = "0";
-		try{
-			StringWriter w = new StringWriter();
-			JsonWriter writer = new JsonWriter(w);
-			writer.beginObject();
-			writer.name("jsonrpc").value(2);
-			writer.name("id").value(1);
-			writer.name("method").value(method);
-			writer.name("params").beginArray();
-			writer.value(sessionID);
-			writer.value(id);
-			writer.endArray();
-			writer.endObject();
-			writer.flush();
-			writer.close();
-			b = gson.toJson(writer);
-			//writer.flush();
-			b = CleanJsonObject(b);
-		}catch(IOException e){
-			System.out.println("ioexception");
-		}catch(NullPointerException e){
-			System.out.println("null pointer exception");
-		}finally{
-		}
-		return b;
-	}
-				 * 
-				 * 
-				 */
 			}
+		}
+		protected static string cleanForJSON(string s)
+		{
+			if (s == null || s.Length == 0)
+			{
+				return "";
+			}
+
+			char c = '\0';
+			int i;
+			int len = s.Length;
+			StringBuilder sb = new StringBuilder(len + 4);
+			String t;
+
+			for (i = 0; i < len; i += 1)
+			{
+				c = s[i];
+				switch (c)
+				{
+					case '\\':
+					case '"':
+						sb.Append('\\');
+						sb.Append(c);
+						break;
+					case '/':
+						sb.Append('\\');
+						sb.Append(c);
+						break;
+					case '\b':
+						sb.Append("\\b");
+						break;
+					case '\t':
+						sb.Append("\\t");
+						break;
+					case '\n':
+						sb.Append("\\n");
+						break;
+					case '\f':
+						sb.Append("\\f");
+						break;
+					case '\r':
+						sb.Append("\\r");
+						break;
+					default:
+						if (c < ' ')
+						{
+							t = "000" + String.Format("X", c);
+							sb.Append("\\u" + t.Substring(t.Length - 4));
+						}
+						else
+						{
+							sb.Append(c);
+						}
+						break;
+				}
+			}
+			return sb.ToString();
 		}
 	}
 }
