@@ -9,7 +9,7 @@ namespace LacunaExpanseAPIWrapper
 	public class Captcha : CoreClass
 	{
 		public static string url = "captcha";
-		public static string Fetch(String sessionID)
+		public static string Fetch(string sessionID)
 		{
 			return BasicRequest(1, "fetch", sessionID);
 		}

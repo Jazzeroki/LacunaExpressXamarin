@@ -9,6 +9,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 	public class AssignedTo
 	{
 		//can also be used for based from
-		public String y, x, body_id, name;
+		public string y, x, body_id, name;
 	}
 }

@@ -9,7 +9,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 	public class Response
 	{
 		public int id;
-		public String jsonrpc;
+		public string jsonrpc;
 		public Result result;
 		public Error error;
 	}

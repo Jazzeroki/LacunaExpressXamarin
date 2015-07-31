@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class PossibleAssignments
 	{
-		public String skill, recovery, task;
+		public string skill, recovery, task;
 	}
 }

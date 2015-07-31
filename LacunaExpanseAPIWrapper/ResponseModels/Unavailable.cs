@@ -8,7 +8,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Unavailable
 	{
-		public Dictionary<String, String> reason;
+		public Dictionary<string, string> reason;
 		public Ship ship;
 	}
 }

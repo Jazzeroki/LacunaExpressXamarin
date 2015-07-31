@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Station
 	{
-		public String x, y, name, id;
+		public string x, y, name, id;
 	}
 }

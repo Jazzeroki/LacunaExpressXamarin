@@ -29,21 +29,35 @@ namespace LacunaExpress.Scripts
 			else
 				return null;
 		}
-		//static List<Stars> GetAllBodiesInRange(int centerx, int centery, int range){
-		//	//method to support getting stars by a much larger range still in development
+        public static async Task<List<Stars>> GetAllStarsInRange300(AccountModel account, int x, int y)
+        {
+            int max, min;
+            max = 1500;
+            min = -1500;
+           
+            int x1, x2, y1, y2, maxRangePerRequest;
+            maxRangePerRequest = 30;
 
-		//	int x1, x2, y1, y2;
-		//	x1 = centerx-15;
-		//	x2 = centerx+15;
-		//	y1 = centery-15;
-		//	y2 = centery+15;
-		//	//Map map = new Map();
-		//	String request = map.GetStars(sessionID, Integer.toString(x1), Integer.toString(y1), Integer.toString(x2), Integer.toString(y2));
-		//	String reply = server.ServerRequest(gameServer, map.url, request);
-		//	Response r = gson.fromJson(reply, Response.class);
-		//	return r.result.stars;
-		//}
-		static bool CheckSystemHostile(List<Bodies> bodies){
+            x1 = x - 300;
+            x2 = x1 + maxRangePerRequest;
+
+            return null;
+        }
+        //static List<Stars> GetAllBodiesInRange(int centerx, int centery, int range){
+        //	//method to support getting stars by a much larger range still in development
+
+        //	int x1, x2, y1, y2;
+        //	x1 = centerx-15;
+        //	x2 = centerx+15;
+        //	y1 = centery-15;
+        //	y2 = centery+15;
+        //	//Map map = new Map();
+        //	String request = map.GetStars(sessionID, Integer.toString(x1), Integer.toString(y1), Integer.toString(x2), Integer.toString(y2));
+        //	String reply = server.ServerRequest(gameServer, map.url, request);
+        //	Response r = gson.fromJson(reply, Response.class);
+        //	return r.result.stars;
+        //}
+        static bool CheckSystemHostile(List<Bodies> bodies){
     	
     	foreach(var b in bodies)
 		{

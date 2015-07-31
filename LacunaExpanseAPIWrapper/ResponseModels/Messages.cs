@@ -8,8 +8,8 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Messages
 	{
-		public String from, to, subject, date, in_reply_to, body_preview, body, has_read, has_replied, has_archived, has_trashed, id, from_id, to_id;
-		public String[] tags, recipients;
+		public string from, to, subject, date, in_reply_to, body_preview, body, has_read, has_replied, has_archived, has_trashed, id, from_id, to_id;
+		public string[] tags, recipients;
 		//public int has_read, has_replied, has_archived, has_trashed, id, from_id, to_id;
 			
 	}

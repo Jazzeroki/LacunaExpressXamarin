@@ -8,9 +8,11 @@ namespace LacunaExpanseAPIWrapper
 {
 	class BlackHoleGenerator : Buildings
 	{
-        public static string URL { get; } = "blackholegenerator";
-        public static string SubsidizeCooldown(string sessionID, string buildingID) =>
-            BasicRequest(1, "subsidize_cooldown", sessionID, buildingID);
+        public static string URL = "blackholegenerator";
+        public static string SubsidizeCooldown(string sessionID, string buildingID)
+		{
+			return BasicRequest (1, "subsidize_cooldown", sessionID, buildingID);
+		}
 
         //public void GenerateSingularity(string buildingID, string target, BHGTask task, params string[] param)
         //{

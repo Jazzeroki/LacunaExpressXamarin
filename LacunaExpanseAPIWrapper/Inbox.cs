@@ -12,43 +12,43 @@ namespace LacunaExpanseAPIWrapper
 	{
 		public static string url = "inbox";
 
-		public static String ViewInbox(String sessionID, String tag)
+		public static string ViewInbox(string sessionID, string tag)
 		{
 			return "{\"id\":8,\"method\":\"view_inbox\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",{\"page_number\":1,\"tags\":[\"" + tag + "\"]}]}";
 			//return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_inbox\",\"params\":[\"" + sessionID + "\",{\"tags\":[\"" + tag + "\"],\"page_number\":1}]}";
 		}
 
-		public static String ViewInbox(String sessionID)
+		public static string ViewInbox(string sessionID)
 		{
 			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_inbox\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
 		}
-		public static String ViewSent(String sessionID)
+		public static string ViewSent(string sessionID)
 		{
 			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_sent\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
 		}
-		public static String ViewArchive(String sessionID)
+		public static string ViewArchive(string sessionID)
 		{
 			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_archive\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
 		}
-		public static String ViewTrash(String sessionID)
+		public static string ViewTrash(string sessionID)
 		{
 			return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_trashed\",\"params\":[\"" + sessionID + "\",{\"page_number\":1}]}";
 		}
 
-		public static String ViewInbox(String sessionID, String tag, int pageNumber)
+		public static string ViewInbox(string sessionID, string tag, int pageNumber)
 		{
 			return "{\"id\":8,\"method\":\"view_inbox\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",{\"page_number\":"+pageNumber+",\"tags\":[\""+tag+"\"]}]}";
 			//return "{\"jsonrpc\":2,\"id\":1,\"method\":\"view_inbox\",\"params\":[\"" + sessionID + "\",{\"tags\":[\"" + tag + "\"],\"page_number\":" + pageNumber + "}]}";
 		}
 
-		public static String ReadMessage(String sessionID, String MessageID)
+		public static string ReadMessage(string sessionID, string MessageID)
 		{
 			return BasicRequest(1, "read_message", sessionID, MessageID);
 		}
 
-		public static String SendMessage(int requestID, String sessionID, List<String> recipients, String subject, String body)
+		public static string SendMessage(int requestID, string sessionID, List<string> recipients, string subject, string body)
 		{
-			String r = "";
+            string r = "";
 			foreach (var s in recipients)
 			{
 				r += s + ",";
@@ -56,18 +56,18 @@ namespace LacunaExpanseAPIWrapper
 			r = r.Remove(r.Length - 2);
 			return "{\"id\":" + requestID + ",\"method\":\"send_message\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",\"" + r + "\",\"" + subject + "\"," + body + "\",null]}";
 		}
-		public static String SendMessage(int requestID, String sessionID, String recipients, String subject, String body)
+		public static string SendMessage(int requestID, string sessionID, string recipients, string subject, string body)
 		{
 			
-			subject = cleanForJSON(subject);
-			body = cleanForJSON(body);
+			subject = CleanForJSON(subject);
+			body = CleanForJSON(body);
 			return "{\"id\":" + requestID + ",\"method\":\"send_message\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",\"" + recipients + "\",\"" + subject + "\",\"" + body + "\",null]}";
 			//return i;
 		}
 
-		public static String TrashMessages(int requestID, String sessionID, List<String> messageIds)
+		public static string TrashMessages(int requestID, string sessionID, List<string> messageIds)
 		{
-			String r = "";
+            string r = "";
 			//if(messageIds.Count()>1){
 			//	for(int z=0;z <messageIds.Count(); z++){
 			//		if(z < (messageIds.Count()-1))
@@ -81,12 +81,12 @@ namespace LacunaExpanseAPIWrapper
 			return "{\"id\":" + requestID + ",\"method\":\"trash_messages\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",[\"" + r + "\"]]}";
 
 		}
-		public static String TrashMessages(int requestID, String sessionID, String messageId)
+		public static string TrashMessages(int requestID, string sessionID, string messageId)
 		{
 			return "{\"id\":" + requestID + ",\"method\":\"trash_messages\",\"jsonrpc\":\"2.0\",\"params\":[\"" + sessionID + "\",[\"" + messageId + "\"]]}";
 			//return Request("trash_messages", sessionID, String.valueOf(requestID), messageId);
 		}
-		public static String ArchiveMessages(int requestID, String sessionID, String messageId)
+		public static string ArchiveMessages(int requestID, string sessionID, string messageId)
 		{
 			return BasicRequest(requestID, "archive_messages", sessionID, messageId);
 		}

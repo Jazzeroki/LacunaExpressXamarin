@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Work
 	{
-		public String start, end, seconds_remaining;
+		public string start, end, seconds_remaining;
 	}
 }

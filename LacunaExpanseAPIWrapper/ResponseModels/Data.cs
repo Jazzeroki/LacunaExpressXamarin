@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Data
 	{
-		public String guid, url;
+		public string guid, url;
 	}
 }

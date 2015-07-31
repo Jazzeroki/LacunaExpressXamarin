@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Glyph
 	{
-		public String quantity, name, type, id;
+		public string quantity, name, type, id;
 	}
 }

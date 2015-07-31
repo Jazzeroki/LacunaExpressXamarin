@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Newtonsoft;
-
 using LacunaExpanseAPIWrapper;
 using LacunaExpress.Data;
-using LacunaExpress.AccountManagement;
-//using LacunaExpress.Data;
-
 using Xamarin.Forms;
 
 namespace LacunaExpress.AccountManagement

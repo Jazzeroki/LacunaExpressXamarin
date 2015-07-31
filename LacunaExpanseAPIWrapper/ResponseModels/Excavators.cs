@@ -8,7 +8,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Excavators
 	{
-		public String resource, artifact, date_landed, plan, id, glyph;
+		public string resource, artifact, date_landed, plan, id, glyph;
 		public Body body;
 	}
 }

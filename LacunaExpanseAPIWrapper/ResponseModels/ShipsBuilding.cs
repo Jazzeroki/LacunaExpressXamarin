@@ -8,7 +8,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class ShipsBuilding
 	{
-		public String date_completed, id, type, type_human; //type is the server recognized name, type human is for human readibility
+		public string date_completed, id, type, type_human; //type is the server recognized name, type human is for human readibility
 			
 	}
 }

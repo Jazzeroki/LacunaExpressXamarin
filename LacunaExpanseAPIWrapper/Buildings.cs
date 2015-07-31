@@ -150,27 +150,27 @@ namespace LacunaExpanseAPIWrapper
 		//		url = "ssld";
 
 		//}
-		public static String Build(String sessionID, String bodyID, String x, String y)
+		public static string Build(string sessionID, string bodyID, string x, string y)
 		{
 			return BasicRequest(1, "build", sessionID, bodyID, x, y);
 		}
-		public static String View(String sessionID, String buildingID)
+		public static string View(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "view", sessionID, buildingID);
 		}
-		public static String Upgrade(String sessionID, String buildingID)
+		public static string Upgrade(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "upgrade", sessionID, buildingID);
 		}
-		public static String Demolish(String sessionID, String buildingID)
+		public static string Demolish(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "demolish", sessionID, buildingID);
 		}
-		public static String Downgrade(String sessionID, String buildingID)
+		public static string Downgrade(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "downgrade", sessionID, buildingID);
 		}
-		public static String Repair(String sessionID, String buildingID)
+		public static string Repair(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "repair", sessionID, buildingID);
 		}

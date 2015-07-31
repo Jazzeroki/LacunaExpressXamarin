@@ -49,7 +49,7 @@ namespace LacunaExpress.Pages.Mail
 			else
 			{
 				messageList.Clear();
-				String json;
+                string json;
 				switch (category)
 				{
 					case "All":
@@ -130,7 +130,7 @@ namespace LacunaExpress.Pages.Mail
 				var s = new Server();
 				var response = await s.GetHttpResultAsync(account.Server, Inbox.url, json);
 				if(response.result != null)
-					await Navigation.PushAsync(new ReadMessage(sessionID, account.Server, response.result.message));
+					await Navigation.PushAsync(new ReadMessage(account.SessionID, account.Server, response.result.message));
 			};
 
 
@@ -141,7 +141,7 @@ namespace LacunaExpress.Pages.Mail
 
 			compose.Clicked += async (sender, e) =>
 			{
-				await Navigation.PushAsync(new ComposeReply(account));
+				await Navigation.PushAsync(new ComposeReply(account.SessionID, account.Server));
 			};
 
 		}

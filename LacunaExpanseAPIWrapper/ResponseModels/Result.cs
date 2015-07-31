@@ -9,22 +9,22 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 	public class Result
 	{
 		public bool isStaff, isModerator;
-		public String session_id, url, guid, number_of_ships_building, cost_to_subsidize, spy_count, fleet_send_limit, captured_count, gravatar_url, chat_name, chat_auth;
+		public string session_id, url, guid, number_of_ships_building, cost_to_subsidize, spy_count, fleet_send_limit, captured_count, gravatar_url, chat_name, chat_auth;
 		public string quantity, item_name;//these have values when combining glyphs
 		public string rename_empire_cost;
-		public String[] success;
+		public string[] success;
 		public DockedShips docked_ships;
 		public List<Spies> spies;
-		public List<String> possible_assignments;
+		public List<string> possible_assignments;
 		public List<ShipsBuilding> ships_building;
 		public Status status;
 		//public Error error;
 		public Body body;
-		public Dictionary<String, Building> buildings;
+		public Dictionary<string, Building> buildings;
 		public List<Messages> messages;
 		//Messages messages[];//used when previewing multiple messages
 		public Messages message; //used when reading a single message
-		public String message_count;
+		public string message_count;
 		public List<Stars> stars;
 		public List<Orbiting> orbiting;
 		public List<Incoming> incoming;

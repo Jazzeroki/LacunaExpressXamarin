@@ -13,21 +13,21 @@ namespace LacunaExpanseAPIWrapper
 	 */
 	public class Security : Buildings
 	{
-		public static String URL = "security";
+		public static string URL = "security";
 
-		public static String ViewPrisoners(String sessionID, String buildingID, String pageNumber)
+		public static string ViewPrisoners(string sessionID, string buildingID, string pageNumber)
 		{
 			return BasicRequest(1, "view_prisoners", sessionID, buildingID, pageNumber);
 		}
-		public static String ExecutePrisoner(String sessionID, String buildingID, String prisonerID)
+		public static string ExecutePrisoner(string sessionID, string buildingID, string prisonerID)
 		{
 			return BasicRequest(1, "execute_prisoner", sessionID, buildingID, prisonerID);
 		}
-		public static String ReleasePrisoner(String sessionID, String buildingID, String prisonerID)
+		public static string ReleasePrisoner(string sessionID, string buildingID, string prisonerID)
 		{
 			return BasicRequest(1, "release_prisoner", sessionID, buildingID, prisonerID);
 		}
-		public static String ViewForeignSpies(String sessionID, String buildingID, String pageNumber)
+		public static string ViewForeignSpies(string sessionID, string buildingID, string pageNumber)
 		{
 			return BasicRequest(1, "view_foreign_spies", sessionID, buildingID, pageNumber);
 		}

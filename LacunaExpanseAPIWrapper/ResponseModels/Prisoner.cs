@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Prisoner
 	{
-		public String level, name, task, id, sentence_expires;
+		public string level, name, task, id, sentence_expires;
 	}
 }

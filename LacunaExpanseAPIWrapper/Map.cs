@@ -13,28 +13,28 @@ namespace LacunaExpanseAPIWrapper
 	 */
 	public class Map : CoreClass
 	{
-		public static String URL = "map";
-		public static String CheckStarForIncomingProbe(String sessionID, String starID)
+		public static string URL = "map";
+		public static string CheckStarForIncomingProbe(string sessionID, string starID)
 		{
 			return BasicRequest(1, "check_star_for_incoming_probe", sessionID, starID);
 		}
-		public static String GetStar(String sessionID, String starID)
+		public static string GetStar(string sessionID, string starID)
 		{
 			return BasicRequest(1, "get_star", sessionID, starID);
 		}
-		public static String GetStarByName(String sessionID, String name)
+		public static string GetStarByName(string sessionID, string name)
 		{
 			return BasicRequest(1, "get_star_by_name", sessionID, name);
 		}
-		public static String SearchStars(String sessionID, String name)
+		public static string SearchStars(string sessionID, string name)
 		{
 			return BasicRequest(1, "search_stars", sessionID, name);
 		}
-		public static String GetStars(String sessionID, String x1, String x2, String y1, String y2)
+		public static string GetStars(string sessionID, string x1, string x2, string y1, string y2)
 		{
 			return BasicRequest(1, "get_stars", sessionID, x1, x2, y1, y2);
 		}
-		public static String GetStarsByXY(String sessionID, String x1, String y1)
+		public static string GetStarsByXY(string sessionID, string x1, string y1)
 		{
 			return BasicRequest(1, "get_stars_by_xy", sessionID, x1, y1);
 		}

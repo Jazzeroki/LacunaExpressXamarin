@@ -8,7 +8,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class IncomingShips
 	{
-		public String id, date_arrives;
+		public string id, date_arrives;
 		public string is_ally, is_own;
 	}
 }

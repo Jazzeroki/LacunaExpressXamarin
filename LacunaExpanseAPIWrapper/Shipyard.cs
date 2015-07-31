@@ -13,13 +13,13 @@ namespace LacunaExpanseAPIWrapper
 	 */
 	public class Shipyard : Buildings
 	{
-		public static String URL = "shipyard";
+		public static string URL = "shipyard";
 
-		public static String BuildShip(String sessionID, String buildingID, String type)
+		public static string BuildShip(string sessionID, string buildingID, string type)
 		{
 			return BasicRequest(1, "build_ship", buildingID, type);
 		}
-		public static String BuildShip(String sessionID, String buildingID, String type, String numberToBuild)
+		public static string BuildShip(string sessionID, string buildingID, string type, string numberToBuild)
 		{
 			return BasicRequest(1, "build_ship", buildingID, type, numberToBuild);
 		}

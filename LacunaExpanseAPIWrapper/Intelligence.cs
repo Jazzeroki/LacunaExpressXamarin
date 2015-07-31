@@ -14,29 +14,29 @@ namespace LacunaExpanseAPIWrapper
 	 */
 	public class Intelligence : Buildings
 	{
-		public static String URL = "intelligence";
+		public static string URL = "intelligence";
 
-		public static String SubsidizeTraining(String sessionID, String buildingID)
+		public static string SubsidizeTraining(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "subsidize_training", sessionID, buildingID);
 		}
-		public static String ViewAllSpies(String sessionID, String buildingID)
+		public static string ViewAllSpies(string sessionID, string buildingID)
 		{
 			return BasicRequest(1, "view_all_spies", sessionID, buildingID);
 		}
-		public static String AssignSpy(String sessionID, String buildingID, String spyID, String assignment)
+		public static string AssignSpy(string sessionID, string buildingID, string spyID, string assignment)
 		{
 			return BasicRequest(1, "assign_spy", sessionID, buildingID, spyID, assignment);
 		}
-		public static String NameSpy(String sessionID, String buildingID, String spyID, String name)
+		public static string NameSpy(string sessionID, string buildingID, string spyID, string name)
 		{
 			return BasicRequest(1, "name_spy", sessionID, buildingID, spyID, name);
 		}
-		public static String BurnSpy(String sessionID, String buildingID, String spyID)
+		public static string BurnSpy(string sessionID, string buildingID, string spyID)
 		{
 			return BasicRequest(1, "burn_spy", sessionID, buildingID, spyID);
 		}
-		public static String TrainSpy(String sessionID, String buildingID, String quantity)
+		public static string TrainSpy(string sessionID, string buildingID, string quantity)
 		{
 			return BasicRequest(1, "train_spy", sessionID, buildingID, quantity);
 

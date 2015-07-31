@@ -8,6 +8,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Server
 	{
-		public String rpc_limit, version, time;
+		public string rpc_limit, version, time;
 	}
 }

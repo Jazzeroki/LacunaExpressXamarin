@@ -9,7 +9,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 	public class Building
 	{
 		public string x, y, id;
-		public String name, url, efficiency, level, image;
+		public string name, url, efficiency, level, image;
 		public Work work;
 		public PendingBuild pending_build;
 	}

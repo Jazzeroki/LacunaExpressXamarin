@@ -13,11 +13,11 @@ namespace LacunaExpress.Pages.Mail
 {
 	public class ReadMessage : ContentPage
 	{
-		Label Date = new Label { };
-		Label From = new Label { };
-		Label To = new Label { };
-		Label Subject = new Label { };
-		Label Message = new Label { };
+		Label Date = new Label { BackgroundColor = Color.Black };
+		Label From = new Label { BackgroundColor = Color.Black };
+		Label To = new Label { BackgroundColor = Color.Black };
+		Label Subject = new Label { BackgroundColor = Color.Black };
+		Label Message = new Label { BackgroundColor = Color.Black };
 
 		Button Reply = new Button 
 		{ 
@@ -52,14 +52,16 @@ namespace LacunaExpress.Pages.Mail
 				Children = {
 					Date, From, To, Subject,
 					new ScrollView{
-						Content = Message
-					},
+						Content = Message,
+                        VerticalOptions = LayoutOptions.FillAndExpand,
+                    },
 					new StackLayout{
 						
 						Orientation = StackOrientation.Horizontal,
-						Children = {Reply, Archive, Forward, Delete}
-
-					}
+						Children = {Reply, Archive, Forward, Delete},
+                        VerticalOptions = LayoutOptions.End, 
+                        BackgroundColor = Color.Black
+                    }
 				}
 			};
 

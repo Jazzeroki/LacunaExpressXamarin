@@ -11,7 +11,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 		public Empire empire;
 		public Station station;
 		public Ore ore;
-		public String star_id, zone, name, x, y, size, image, orbit, id, type, star_name;
+		public string star_id, zone, name, x, y, size, image, orbit, id, type, star_name;
 			
 	}
 }

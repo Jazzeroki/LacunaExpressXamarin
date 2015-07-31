@@ -8,7 +8,7 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 {
 	public class Spies
 	{
-		public String started_assignment, defense_rating, id, available_on, intel, offense_rating, politics, assignment, name, level, is_available, mayhem, seconds_remaining, theft, task, next_mission;
+		public string started_assignment, defense_rating, id, available_on, intel, offense_rating, politics, assignment, name, level, is_available, mayhem, seconds_remaining, theft, task, next_mission;
 		public List<PossibleAssignments> possible_assignments;
 		public AssignedTo assigned_to;
 		public AssignedTo based_from;
