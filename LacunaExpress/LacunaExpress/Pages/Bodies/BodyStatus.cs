@@ -26,6 +26,9 @@ namespace LacunaExpress.Pages.Bodies
 			HasUnevenRows = true,
  			SeparatorColor = Color.Red
 		};
+
+        Button notifyAllianceOfStations = new Button { Text = "Notify Allies of Troubled Stations" };
+        List<string> warningStations = new List<string>();
 		public BodyStatus(AccountModel account, Boolean typeStation)
 		{
 			//Adding something to the collection otherwise the listview doesn't like to display
@@ -40,7 +43,8 @@ namespace LacunaExpress.Pages.Bodies
 			Content = new StackLayout
 			{
 				Children = {
-					bodies
+					bodies, 
+                    notifyAllianceOfStations
 				}
 			};
 			this.Appearing += async (sender, e) =>
@@ -49,6 +53,16 @@ namespace LacunaExpress.Pages.Bodies
 				
 			};
 
+            notifyAllianceOfStations.IsVisible = false;
+            notifyAllianceOfStations.Clicked += async (sender, e) =>{
+                var bodyString = "The following stations have warning indicators: ";
+                foreach (var station in warningStations)
+                    bodyString += station + ", \n";
+                var json = Inbox.SendMessage(1, account.SessionID, "@ally", "Stations in trouble", bodyString);
+                var server = new Data.Server();
+                var response = await server.GetHttpResultStringAsyncAsString(account.Server, Inbox.url, json);
+                var s = response;
+            };
 			bodies.ItemTapped += async (sender, e) =>
 			{
 				await Navigation.PushModalAsync(new BodyStatusDetail((bodies.SelectedItem as BodyStatusModel).response,
@@ -109,9 +123,21 @@ namespace LacunaExpress.Pages.Bodies
 						bdy.Zone = response.result.status.body.zone;
 						bdy.X = response.result.status.body.x;
 						bdy.Y = response.result.status.body.y;
-						if (!stationOk(response))
-							bdy.Status = "Warning";
+                        if (!stationOk(response))
+                        {
+                            bdy.Status = "Warning";
+                            notifyAllianceOfStations.IsVisible = true;
+                            warningStations.Add(bdy.Name +"{ Planet "+bdy.Name+" "+ response.result.status.body.id+" }");
+                            if (response.result.buildings != null)
+                            {
+                                var parliament = (from p in response.result.buildings
+                                                  where p.Value.url.Equals(Parliament.URL)
+                                                  select new { id = p.Key, level = p.Value.level, }).First();
+                                account.Parliaments.Add(new BuildingCache { planetID = bdy.Name, buildingID = parliament.id, level = Convert.ToInt16(parliament.level) });
+                            }
+                        }
 						bodyList.Add(bdy);
+                        
 					}
 
 				}

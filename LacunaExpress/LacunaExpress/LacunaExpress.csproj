@@ -38,6 +38,8 @@
     <Compile Include="AccountManagement\AccountCollection.cs" />
     <Compile Include="AccountManagement\AccountManager.cs" />
     <Compile Include="AccountManagement\AccountModel.cs" />
+    <Compile Include="AccountManagement\BuildingCache.cs" />
+    <Compile Include="AccountManagement\BuildingCacheList.cs" />
     <Compile Include="App.cs" />
     <Compile Include="DataModels\BuildingData.cs" />
     <Compile Include="DataModels\BuildingStats.cs" />

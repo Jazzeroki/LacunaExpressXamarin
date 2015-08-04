@@ -33,19 +33,23 @@ namespace LacunaExpanseAPIWrapper
 					writer.WriteValue(p);
 				writer.WriteEndArray();
 				writer.WriteEndObject();
-				return sb.ToString().Replace("\n","");
+                return sb.ToString();
+				//return sb.ToString().Replace("\n","");
 			}
 		}
 		protected static string CleanForJSON(string s)
 		{
-            string reworked = s.Replace("\n", "\\n");
+            string reworked = s.Replace("\"", "\\\"");
+            reworked = reworked.Replace("\n", "\\n");
             //reworked = reworked.Replace(@"\n", @"\\n");
             //reworked = reworked.Replace(@"\b", @"\\b");
             //reworked = reworked.Replace(@"\f", @"\\f");
             //reworked = reworked.Replace(@"\r", @"\\r");
             //reworked = reworked.Replace(@"\t", @"\\t");
-            reworked = reworked.Replace('"', '\"');
-            reworked = reworked.Replace(",", @"\,");
+            //reworked = reworked.Replace("{", @"\{");
+            //reworked = reworked.Replace("}", @"\}");
+            
+            //reworked = reworked.Replace(",", @"\,");
             reworked = reworked.Replace("<", "");
             reworked = reworked.Replace(">", "");
             reworked = reworked.Trim();
