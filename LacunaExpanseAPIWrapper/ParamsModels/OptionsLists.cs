@@ -12,7 +12,7 @@ namespace LacunaExpanseAPIWrapper.ParamsModels
         {
             new ParliamentProposalsModel { RequiredLevel=13, Proposition="Members Only Mining" },
             new ParliamentProposalsModel { RequiredLevel=18, Proposition="Members Only Colonization" },
-            new ParliamentProposalsModel { RequiredLevel=23, Proposition="Nuetralize BHG" },
+            new ParliamentProposalsModel { RequiredLevel=23, Proposition="Neutralize BHG" },
             new ParliamentProposalsModel { RequiredLevel=20, Proposition="Members Only Excavators" },
             new ParliamentProposalsModel { RequiredLevel=18, Proposition="Members Only Stations" }
         };

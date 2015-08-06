@@ -10,8 +10,8 @@ namespace LacunaExpress.ViewCells
 {
     public class ParliamentProposalViewCell : ViewCell
     {
-        public Label PropositionName { get; set; }
-        public Label PropositionDescription { get; set; }
+        public Label PropositionName = new Label();
+        public Label PropositionDescription = new Label();
         StackLayout layout = new StackLayout();
         public ParliamentProposalViewCell()
         {

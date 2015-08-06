@@ -18,8 +18,20 @@ namespace LacunaExpress.Pages.Stations
 
         public Parliament(AccountModel account, string stationName)
         {
-            parliamentOptions.ItemsSource = OptionsLists.ParliamentLockDownProposals;
-            //parliamentOptions.ItemTemplate = new DataTemplate(typeof(ParliamentProposalViewCell));
+            stationNameLbl.Text = stationName;
+
+            var options = OptionsLists.ParliamentLockDownProposals;
+            parliamentOptions.ItemsSource = options;
+            parliamentOptions.ItemTemplate = new DataTemplate(typeof(ParliamentProposalViewCell));
+            parliamentOptions.ItemTapped += (sender, e) =>
+            {
+                //var s = (e as ParliamentProposalViewCell);
+                //if (s.PropositionName.Text.Contains("Mining")){ }
+                //else if (s.PropositionName.Text.Contains("Colonization")){ }
+                //else if (s.PropositionName.Text.Contains("BHG")){ }
+                //else if (s.PropositionName.Text.Contains("Excavator")){ }
+                //else if (s.PropositionName.Text.Contains("Station")){ }
+            };
             Content = new StackLayout
             {
                 Children = {
