@@ -60,6 +60,7 @@
     <Compile Include="OracleOfAnid.cs" />
     <Compile Include="ParamsModels\BuildingArrangement.cs" />
     <Compile Include="ParamsModels\OptionsLists.cs" />
+    <Compile Include="ParamsModels\ParliamentProposalsModel.cs" />
     <Compile Include="Parliament.cs" />
     <Compile Include="PoliceStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

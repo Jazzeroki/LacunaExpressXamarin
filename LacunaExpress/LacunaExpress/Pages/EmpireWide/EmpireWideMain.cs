@@ -20,6 +20,7 @@ namespace LacunaExpress.Pages.EmpireWide
 		{
 			Text = "Station Status Check"
 		};
+        
 		public EmpireWideMain()
 		{
 			

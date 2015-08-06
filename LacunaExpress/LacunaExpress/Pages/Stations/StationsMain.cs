@@ -12,7 +12,7 @@ namespace LacunaExpress.Pages.Stations
 	{
 		string selectedStation;
 		AccountModel activeAccount;
-		Button viewStations = new Button { Text = "View Stations" };
+		Button viewStation = new Button { Text = "View Station" };
 		Button parliamentBtn = new Button { Text = "Parliament" };
 		Label pickerLabel = new Label { Text = "Select a Station" };
 		Picker stationPicker = new Picker
@@ -28,7 +28,8 @@ namespace LacunaExpress.Pages.Stations
 				Children = {
 					pickerLabel,
 					stationPicker,
-					viewStations
+					viewStation, 
+                    parliamentBtn
 				}
 			};
 
@@ -43,16 +44,28 @@ namespace LacunaExpress.Pages.Stations
 					stationPicker.Items.Add(s);
 				}
 			};
-			stationPicker.SelectedIndexChanged += async (sender, e) =>
+            viewStation.IsVisible = false;
+            parliamentBtn.IsVisible = false;
+			stationPicker.SelectedIndexChanged += (sender, e) =>
 			{
 				selectedStation = stationPicker.Items[stationPicker.SelectedIndex];
 				ActivateButtons();
 			};
+            viewStation.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new StationBuildings(activeAccount, selectedStation));
+            };
+            parliamentBtn.Clicked += async (sender, e) =>
+            {
+                if(activeAccount.Stations.Count >0)
+                    await Navigation.PushAsync(new Parliament(activeAccount, selectedStation));
+            };
 		}
 
 		private void ActivateButtons()
 		{
-
-		}
+            viewStation.IsVisible = true;
+            parliamentBtn.IsVisible = true;
+        }
 	}
 }

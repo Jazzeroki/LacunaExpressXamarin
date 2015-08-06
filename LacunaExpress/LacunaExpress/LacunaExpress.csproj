@@ -70,6 +70,8 @@
     <Compile Include="Pages\Mail\MessageList.cs" />
     <Compile Include="Pages\Mail\ReadMessage.cs" />
     <Compile Include="Pages\Master.cs" />
+    <Compile Include="Pages\Stations\Parliament.cs" />
+    <Compile Include="Pages\Stations\StationBuildings.cs" />
     <Compile Include="Pages\Stations\StationsMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\BuildingToolsScripts.cs" />
@@ -77,6 +79,8 @@
     <Compile Include="Scripts\ShipYardScripts.cs" />
     <Compile Include="Scripts\SpaceStationScripts.cs" />
     <Compile Include="Scripts\SpyScripts.cs" />
+    <Compile Include="ViewCells\BuildingViewCell.cs" />
+    <Compile Include="ViewCells\ParliamentProposalViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -110,9 +114,7 @@
       <Name>LacunaExpanseAPIWrapper</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewCells\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Images\Demolish.png" />
     <EmbeddedResource Include="Images\Downgrade.png" />

@@ -105,8 +105,8 @@ namespace LacunaExpress.Pages.Bodies
 		async Task<bool> LoadPage(Boolean typeStation){
 			AccountManager accountMan = new AccountManager();
 			account = await accountMan.GetActiveAccountAsync();
-
-			if (typeStation)
+            var originalAccount = account;
+            if (typeStation)
 			{
 				bodyList.Clear();
 				foreach(var s in account.Stations.Keys)
@@ -127,21 +127,32 @@ namespace LacunaExpress.Pages.Bodies
                         {
                             bdy.Status = "Warning";
                             notifyAllianceOfStations.IsVisible = true;
-                            warningStations.Add(bdy.Name +"{ Planet "+bdy.Name+" "+ response.result.status.body.id+" }");
-                            if (response.result.buildings != null)
-                            {
-                                var parliament = (from p in response.result.buildings
-                                                  where p.Value.url.Equals(Parliament.URL)
-                                                  select new { id = p.Key, level = p.Value.level, }).First();
-                                account.Parliaments.Add(new BuildingCache { planetID = bdy.Name, buildingID = parliament.id, level = Convert.ToInt16(parliament.level) });
-                            }
+                            warningStations.Add(bdy.Name +"{ Planet "+bdy.Name+" "+ response.result.status.body.id+" }");                           
                         }
 						bodyList.Add(bdy);
-                        
-					}
+                        if (response.result.buildings != null)
+                        {
+                            foreach(var b in response.result.buildings)
+                            {
+                                if (account.Parliaments == null)
+                                    account.Parliaments = new List<BuildingCache>();
+                                if(b.Value.url.Contains(Parliament.URL))
+                                    account.Parliaments.Add(new BuildingCache { planetID = b.Value.name, buildingID = b.Key, level = Convert.ToInt16(b.Value.level) });
+                            }
+                            //var parliament = (from p in response.result.buildings
+                            //                  where p.Value.url.Contains(Parliament.URL)
+                            //                  select new { id = p.Key, level = p.Value.level, }).First();
+
+                            //account.Parliaments.Add(new BuildingCache { planetID = bdy.Name, buildingID = parliament.id, level = Convert.ToInt16(parliament.level) });
+
+                        }
+
+                    }
 
 				}
-			}
+                if(account.Parliaments.Count >0)
+                    accountMan.ModifyAccountAsync(account, originalAccount);
+            }
 			else
 			{
 				bodyList.Clear();

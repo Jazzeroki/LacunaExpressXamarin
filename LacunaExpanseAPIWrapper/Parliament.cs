@@ -49,15 +49,15 @@ namespace LacunaExpanseAPIWrapper
 		{
 			return BasicRequest(1, "propose_transfer_station_ownership", sessionID, buildingID, toEmpireID);
 		}
-		public static string ProposeSeizeStar(string sessionID, string buildingID, string starID)
-		{
-			return BasicRequest(1, "propose_seize_star", sessionID, buildingID, starID);
-		}
+		//public static string ProposeSeizeStar(string sessionID, string buildingID, string starID)
+		//{
+		//	return BasicRequest(1, "propose_seize_star", sessionID, buildingID, starID);
+		//}
 		public static string ProposeRenameStar(string sessionID, string buildingID, string starID)
 		{
 			return BasicRequest(1, "propose_rename_star", sessionID, buildingID, starID);
 		}
-		public static string ProposeBroadcaseOnNetwork19(string sessionID, string buildingID, string message)
+		public static string ProposeBroadcastOnNetwork19(string sessionID, string buildingID, string message)
 		{
 			return BasicRequest(1, "propose_broadcast_on_network19", sessionID, buildingID, message);
 		}
