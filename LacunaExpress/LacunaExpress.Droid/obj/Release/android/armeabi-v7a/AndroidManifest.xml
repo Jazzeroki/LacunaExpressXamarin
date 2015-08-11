@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.jazzdevstudio.lacunaexpress" android:versionCode="131074" android:versionName="Beta 0.2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.jazzdevstudio.lacunaexpress" android:versionName="Beta 0.5" android:versionCode="131077">
   <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
   <application android:label="Lacuna Express Dev Edition" android:icon="@drawable/icon" android:name="mono.android.app.Application">
     <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="LacunaExpress" android:name="md507c97a5e9c537bde5febd53583ee5412.MainActivity">

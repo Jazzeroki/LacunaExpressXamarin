@@ -1,12 +1,16 @@
 ﻿<Properties StartupItem="LacunaExpress\LacunaExpress.Droid\LacunaExpress.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.AVD_for_Nexus_7" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LacunaExpanseAPIWrapper\Empire.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.c82edae2" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="LacunaExpress\LacunaExpress\Pages\Mail\MessageList.cs" Line="1" Column="1" />
       <File FileName="c:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\Pages\Master.cs" Line="1" Column="1" />
       <File FileName="..\..\..\..\..\..\Program Files (x86)\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets" Line="1" Column="1" />
-      <File FileName="LacunaExpanseAPIWrapper\BlackHoleGenerator.cs" Line="7" Column="34" />
-      <File FileName="LacunaExpanseAPIWrapper\Empire.cs" Line="11" Column="50" />
+      <File FileName="LacunaExpanseAPIWrapper\BlackHoleGenerator.cs" Line="1" Column="1" />
+      <File FileName="LacunaExpanseAPIWrapper\Empire.cs" Line="1" Column="1" />
+      <File FileName="LacunaExpanseAPIWrapper\Trade.cs" Line="1" Column="1" />
+      <File FileName="LacunaExpress\LacunaExpress\Data\FileStorage.cs" Line="1" Column="1" />
+      <File FileName="LacunaExpress\LacunaExpress\Pages\Map\MapMain.cs" Line="1" Column="1" />
+      <File FileName="LacunaExpress\LacunaExpress.Droid\Data\Data.cs" Line="11" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

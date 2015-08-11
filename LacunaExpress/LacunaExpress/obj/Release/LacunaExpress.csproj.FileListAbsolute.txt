@@ -3,14 +3,12 @@ C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\LacunaExpress.pdb
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\LacunaExpanseAPIWrapper.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\Newtonsoft.Json.dll
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.Extensions.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.Primitives.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\Xamarin.Forms.Core.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\Xamarin.Forms.Platform.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\Xamarin.Forms.Xaml.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\LacunaExpanseAPIWrapper.pdb
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.xml
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.Extensions.xml
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.Primitives.xml
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\Xamarin.Forms.Core.xml
@@ -20,3 +18,5 @@ C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\obj\Release\LacunaExpress.csprojResolveAssemblyReference.cache
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\obj\Release\LacunaExpress.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\obj\Release\LacunaExpress.pdb
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.dll
+C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress\bin\Release\System.Net.Http.xml

@@ -1,6 +1,5 @@
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.Droid.dll.config
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.Droid.dll
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.Droid.pdb
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\FormsViewGroup.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpress.dll
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\Newtonsoft.Json.dll
@@ -21,7 +20,6 @@ C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\bin\Release\LacunaExpanseAPIWrapper.pdb
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\LacunaExpress.Droid.csprojResolveAssemblyReference.cache
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\LacunaExpress.Droid.dll
-C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\LacunaExpress.Droid.pdb
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable\icon.png
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable-hdpi\icon.png
 C:\Users\Jazz\Documents\Visual Studio 2013\Projects\LacunaExpress\LacunaExpress\LacunaExpress.Droid\obj\Release\res\drawable-xhdpi\icon.png

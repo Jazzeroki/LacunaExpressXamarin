@@ -88,7 +88,7 @@ namespace LacunaExpress.Data
 			}
 			
 		}
-		public async Task<List<Response>> ThrottledServerReturns(List<ThrottledServerRequest> requests)
+		public static async Task<List<Response>> ThrottledServerReturns(List<ThrottledServerRequest> requests)
 		{
 			//int requestCounter = 0;
 			//DateTime minute = DateTime.Now;

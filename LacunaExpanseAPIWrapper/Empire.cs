@@ -8,8 +8,8 @@ namespace LacunaExpanseAPIWrapper
 {
 	public class Empire : CoreClass
 	{
-        private static string US1APIKEY { get; } = "6266769d-1f73-4325-a40f-6660c4c6440d";
-        private static string PTAPIKEY { get; } = "anonymous";
+        private static string US1APIKEY = "6266769d-1f73-4325-a40f-6660c4c6440d";
+        private static string PTAPIKEY = "anonymous";
         public static string url = "empire";
 		public static string Login(int requestID, string userName, string password)
 		{	// a login request doesn't have a session id, but username in this place will serialize just fine

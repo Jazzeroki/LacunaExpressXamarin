@@ -35,6 +35,7 @@ namespace LacunaExpress.Pages.Spies
 		Button runSweepsBtn = new Button { Text = "Run Sweeps" };
 		Button viewSpiesBtn = new Button { Text = "View Spies" };
 		Button executePrisonersBtn = new Button { Text = "Execute Prisoners" };
+        Button sendSpies = new Button { Text = "Send Available Spies" };
 		public SpiesMain(AccountModel account, string selectedPlanet)
 		{
 			this.account = account;

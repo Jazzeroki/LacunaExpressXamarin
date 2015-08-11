@@ -8,14 +8,14 @@ namespace LacunaExpanseAPIWrapper
 {
 	public class Trade : Buildings
 	{
-        public static string URL { get; } = "trade";
-        public static string GetShips(string sessionID, string buildingID) => BasicRequest(1, "get_ships", sessionID, buildingID);
-        public static string GetPrisoners(string sessionID, string buildingID) => BasicRequest(1, "get_prisoners", sessionID, buildingID);
-        public static string GetPlans(string sessionID, string buildingID) => BasicRequest(1, "get_plans", sessionID, buildingID);
-        public static string GetPlanSummary(string sessionID, string buildingID) => BasicRequest(1, "get_plan_summary", sessionID, buildingID);
-        public static string GetGlyphs(string sessionID, string buildingID) => BasicRequest(1, "get_glyphs", sessionID, buildingID);
-        public static string GetGlyphSummary(string sessionID, string buildingID) => BasicRequest(1, "get_glyph_summary", sessionID, buildingID);
-        public static string WithdrawFromMarket(string sessionID, string buildingID) => BasicRequest(1, "withdraw_from_market", sessionID, buildingID);
+        public static string URL = "trade";
+		public static string GetShips(string sessionID, string buildingID) { return BasicRequest (1, "get_ships", sessionID, buildingID);}
+		public static string GetPrisoners(string sessionID, string buildingID) { return BasicRequest (1, "get_prisoners", sessionID, buildingID);}
+		public static string GetPlans(string sessionID, string buildingID) { return BasicRequest (1, "get_plans", sessionID, buildingID);}
+		public static string GetPlanSummary(string sessionID, string buildingID) { return BasicRequest (1, "get_plan_summary", sessionID, buildingID);}
+		public static string GetGlyphs(string sessionID, string buildingID) { return BasicRequest (1, "get_glyphs", sessionID, buildingID);}
+		public static string GetGlyphSummary(string sessionID, string buildingID) { return BasicRequest (1, "get_glyph_summary", sessionID, buildingID);}
+		public static string WithdrawFromMarket(string sessionID, string buildingID) { return BasicRequest (1, "withdraw_from_market", sessionID, buildingID);}
 
         /*
 		 * add_to_market ( session_id, building_id, offer, ask, options )
