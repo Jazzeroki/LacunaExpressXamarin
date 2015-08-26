@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LacunaExpress.Data;
 using LacunaExpress.iOS.Data;
 using Foundation;
+using System.Linq;
 
 [assembly: Dependency(typeof(IsolatedStorageios))]
 namespace LacunaExpress.iOS.Data
