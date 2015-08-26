@@ -70,8 +70,8 @@ namespace LacunaExpress.Pages.Spies
 				planetName.Text = selectedPlanet + " " + planetID;
 				LoadSpyInfo(planetID);
 			};
-
-			executePrisonersBtn.Clicked += async (sender, e) =>
+            
+			executePrisonersBtn.Clicked += (sender, e) =>
 			{
 				if (prisonersList.Count > 0)
 				{
@@ -85,7 +85,7 @@ namespace LacunaExpress.Pages.Spies
 					server.ThrottledServer(requests);
 				}
 			};
-			trainSpiesBtn.Clicked += async (sender, e) =>
+			trainSpiesBtn.Clicked += (sender, e) =>
 			{
 				if (intelMinID != null)
 				{
@@ -94,6 +94,7 @@ namespace LacunaExpress.Pages.Spies
 			};
 			runSweepsBtn.Clicked += async (sender, e) =>
 			{
+                await DisplayAlert("Performance", "This script will run a series of up to 6 sweeps using idle spies", "Ok");
 				
 				if (intelMinID != null)
 				{
@@ -143,7 +144,7 @@ namespace LacunaExpress.Pages.Spies
 				server.ThrottledServer(requests);
 			}
 		}
-		async void LoadSpyInfo(string bodyID)
+		private async void LoadSpyInfo(string bodyID)
 		{
 			IsBusy = true;
 			var json = LacunaExpanseAPIWrapper.Body.GetBuildings(1, account.SessionID, bodyID);
@@ -216,7 +217,7 @@ namespace LacunaExpress.Pages.Spies
 			IsBusy = false;
 		}
 
-		async void TrainSpies(List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spies, AccountModel account, string intelMinID, Building intelMin, Building intelTrain, Building mayhemTrain, Building theftTrain, Building politicalTrain, string planetID, int numToTrain)
+		void TrainSpies(List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spies, AccountModel account, string intelMinID, Building intelMin, Building intelTrain, Building mayhemTrain, Building theftTrain, Building politicalTrain, string planetID, int numToTrain)
 		{
 			if (intelMin.efficiency == "100")
 			{

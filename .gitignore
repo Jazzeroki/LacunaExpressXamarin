@@ -1,6 +1,12 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+.suo
+.userprefs
+.vs
+bin/
+obj/
+packages
 
 # Folder config file
 Desktop.ini
@@ -41,3 +47,4 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
