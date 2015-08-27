@@ -84,6 +84,7 @@
     <Compile Include="ResponseModels\Members.cs" />
     <Compile Include="ResponseModels\Messages.cs" />
     <Compile Include="ResponseModels\Mission.cs" />
+    <Compile Include="ResponseModels\MissionCount.cs" />
     <Compile Include="ResponseModels\Orbiting.cs" />
     <Compile Include="ResponseModels\Ore.cs" />
     <Compile Include="ResponseModels\PendingBuild.cs" />

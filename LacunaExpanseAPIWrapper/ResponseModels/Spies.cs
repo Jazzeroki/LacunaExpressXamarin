@@ -12,5 +12,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 		public List<PossibleAssignments> possible_assignments;
 		public AssignedTo assigned_to;
 		public AssignedTo based_from;
+        public MissionCount mission_count;
 	}
 }

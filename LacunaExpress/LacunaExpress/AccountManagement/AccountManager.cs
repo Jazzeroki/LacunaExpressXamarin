@@ -13,7 +13,18 @@ namespace LacunaExpress.AccountManagement
 		private string AccountFile { get { return "Acnt.Jazz"; } }
 		IIsolatedStorage Storage = DependencyService.Get<IIsolatedStorage>();
 
-
+        public static bool CaptchaStillValid(AccountModel account)
+        {
+            var captchaValidUntil = DateTime.Now.AddMinutes(-25);
+            if (account.CaptchaLastRenewed > captchaValidUntil)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 		public async void ModifyAccountAsync(AccountModel modifiedAccount, AccountModel originalAccount)
 		{

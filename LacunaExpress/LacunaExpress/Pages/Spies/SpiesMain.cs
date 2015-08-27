@@ -35,6 +35,7 @@ namespace LacunaExpress.Pages.Spies
 		Button runSweepsBtn = new Button { Text = "Run Sweeps" };
 		Button viewSpiesBtn = new Button { Text = "View Spies" };
 		Button executePrisonersBtn = new Button { Text = "Execute Prisoners" };
+        Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda" };
         Button sendSpies = new Button { Text = "Send Available Spies" };
 		public SpiesMain(AccountModel account, string selectedPlanet)
 		{
@@ -56,21 +57,31 @@ namespace LacunaExpress.Pages.Spies
 					trainSpiesBtn,
 					runSweepsBtn,
 					viewSpiesBtn,
-					executePrisonersBtn
+					executePrisonersBtn,
+                    removeSpiesFromPolicalPropaganda
 
 				}
 
 			};
 			this.Appearing += async (sender, e) =>
 			{
-				await Navigation.PushModalAsync(new CaptchaPage.CaptchaPage(account));
+                if (!AccountManager.CaptchaStillValid(account))
+                {
+                    await Navigation.PushModalAsync(new CaptchaPage.CaptchaPage(account));
+                }			
 				var planetID = (from b in account.Colonies
 								where b.Value.Equals(selectedPlanet)
 								select b.Key).First();
 				planetName.Text = selectedPlanet + " " + planetID;
 				LoadSpyInfo(planetID);
 			};
-            
+            removeSpiesFromPolicalPropaganda.Clicked += async (sender, e) =>
+            {
+                List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spiesOnPoliticalProp = await SpyScripts.FilterSpiesByAssignment(planetSpies, "Political Propaganda");
+                SpyScripts.BatchAssignSpies(account, spiesOnPoliticalProp, "Idle", intelMinID);
+                if (spiesOnPoliticalProp.Count > 30)
+                    await DisplayAlert("Notice", "This may take a couple of minutes to complete", "OK");
+            };
 			executePrisonersBtn.Clicked += (sender, e) =>
 			{
 				if (prisonersList.Count > 0)
@@ -89,7 +100,7 @@ namespace LacunaExpress.Pages.Spies
 			{
 				if (intelMinID != null)
 				{
-					TrainSpies(planetSpies, account, intelMinID, intelMinistry, intelTrain, mayhemTrain, theftTrain, politicalTrain, selectedPlanet, 6);
+					SpyScripts.TrainSpies(planetSpies, account, intelMinID, intelMinistry, intelTrain, mayhemTrain, theftTrain, politicalTrain, selectedPlanet, 6);
 				}
 			};
 			runSweepsBtn.Clicked += async (sender, e) =>
@@ -127,23 +138,7 @@ namespace LacunaExpress.Pages.Spies
 
 		async void Spyrun() { }
 
-		async void MakeAllSpiesIdle(AccountModel account, string intelMinID, List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spies)
-		{
-			List<ThrottledServerRequest> requests = new List<ThrottledServerRequest>();
-			foreach (var spy in spies)
-			{
-				if (spy.assignment != "Idle")
-				{
-					var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Idle");
-					requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-				}
-			}
-			if (requests.Count > 0)
-			{
-				var server = new LacunaExpress.Data.Server();
-				server.ThrottledServer(requests);
-			}
-		}
+
 		private async void LoadSpyInfo(string bodyID)
 		{
 			IsBusy = true;
@@ -217,85 +212,6 @@ namespace LacunaExpress.Pages.Spies
 			IsBusy = false;
 		}
 
-		void TrainSpies(List<LacunaExpanseAPIWrapper.ResponseModels.Spies> spies, AccountModel account, string intelMinID, Building intelMin, Building intelTrain, Building mayhemTrain, Building theftTrain, Building politicalTrain, string planetID, int numToTrain)
-		{
-			if (intelMin.efficiency == "100")
-			{
-				List<ThrottledServerRequest> requests = new List<ThrottledServerRequest>();
-				int intelCounter = (from counterCount in spies
-									where counterCount.assignment.Equals("Intel Training")
-									select counterCount).Count();
-				int politicalCounter = (from counterCount in spies
-										where counterCount.assignment.Equals("Politics Training")
-										select counterCount).Count();
-				int theftCounter = (from counterCount in spies
-									where counterCount.assignment.Equals("Theft Training")
-									select counterCount).Count();
-				int mayhemCounter = (from counterCount in spies
-									 where counterCount.assignment.Equals("Mayhem Training")
-									 select counterCount).Count();
-				int counterEsp = (from counterCount in spies
-								  where counterCount.assignment.Equals("Counter Espionage")
-								  select counterCount).Count();
-				int politicalProp = (from counterCount in spies
-									 where counterCount.assignment.Equals("Political Propaganda")
-									 select counterCount).Count();
-
-				var idleSpies = from s in spies
-								where s.assignment.Contains("Idle")
-								select s;
-
-				//350 + $view->{building}{level} * 75
-				foreach (var spy in idleSpies)
-				{
-					if (Convert.ToInt64(spy.intel) < 350 + (Convert.ToInt64(intelTrain.level) * 75) && intelTrain.efficiency == "100" && intelCounter < numToTrain)
-					{
-						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Intel Training");
-						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-						intelCounter++;
-					}
-					else if (Convert.ToInt64(spy.mayhem) < 350 + (Convert.ToInt64(mayhemTrain.level) * 75) && mayhemTrain.efficiency == "100" && mayhemCounter < numToTrain)
-					{
-						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Mayhem Training");
-						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-						mayhemCounter++;
-					}
-					else if (Convert.ToInt64(spy.politics) < 350 + (Convert.ToInt64(politicalTrain.level) * 75) && politicalTrain.efficiency == "100" && politicalCounter < numToTrain)
-					{
-						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Politics Training");
-						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-						politicalCounter++;
-					}
-					else if (Convert.ToInt64(spy.theft) < 350 + (Convert.ToInt64(theftTrain.level) * 75) && theftTrain.efficiency == "100" && theftCounter < numToTrain)
-					{
-						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Theft Training");
-						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-						theftCounter++;
-					}
-					else if (counterEsp < numToTrain)
-					{//Political Propaganda
-						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Counter Espionage");
-						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-						counterEsp++;
-					}
-					else if (politicalProp < numToTrain)
-					{//Political Propaganda
-						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Political Propaganda");
-						requests.Add(new ThrottledServerRequest(account.Server, Intelligence.URL, json));
-						politicalProp++;
-					}
-					//var json = Security.ExecutePrisoner(account.SessionID, secMinID, prisoner.id);
-					//requests.Add(new ThrottledServerRequest(account.Server, Security.URL, json));
-				}
-
-				if (requests.Count > 0)
-				{
-					var server = new LacunaExpress.Data.Server();
-					server.ThrottledServer(requests);
-				}
-			}
-		}
-		//System.out.println(2600/(30/numbToTrain)+" is the approximate number of hours until max training is reached \nif training building is level 30");
 
 	}
 
