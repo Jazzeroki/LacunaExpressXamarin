@@ -38,10 +38,11 @@ namespace LacunaExpress.Pages.Bodies
 
 			bodies.ItemsSource = bodyList;
 			bodies.ItemTemplate = new DataTemplate(typeof(MenuItem));
-			
 
-			Content = new StackLayout
-			{
+
+            Content = new StackLayout
+            {
+                BackgroundColor = Color.Black,
 				Children = {
 					bodies, 
                     notifyAllianceOfStations
@@ -72,8 +73,8 @@ namespace LacunaExpress.Pages.Bodies
 		}
 		class MenuItem : ViewCell
 		{
-			StackLayout OuterVertical = new StackLayout { Orientation = StackOrientation.Vertical };
-			StackLayout InnerHorizontal = new StackLayout { Orientation = StackOrientation.Horizontal};
+			StackLayout OuterVertical = new StackLayout { Orientation = StackOrientation.Vertical, BackgroundColor = Color.Transparent };
+			StackLayout InnerHorizontal = new StackLayout { Orientation = StackOrientation.Horizontal, BackgroundColor = Color.Transparent };
 
 
 			Label Name = new Label { TextColor = Color.White };
