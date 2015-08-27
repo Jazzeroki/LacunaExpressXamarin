@@ -1,5 +1,5 @@
-﻿<Properties StartupItem="LacunaExpress/LacunaExpress.Droid/LacunaExpress.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+﻿<Properties StartupItem="LacunaExpress/LacunaExpress.iOS/LacunaExpress.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
