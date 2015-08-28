@@ -10,6 +10,7 @@ using LacunaExpanseAPIWrapper;
 using LacunaExpress.Data;
 using LacunaExpress.Pages.Mail;
 using LacunaExpress.AccountManagement;
+using LacunaExpress.Styles;
 
 namespace LacunaExpress.Pages.AccountPages
 {
@@ -42,7 +43,40 @@ namespace LacunaExpress.Pages.AccountPages
 
 		public Login()
 		{
-			switchLayout.Children.Add(activeLbl);
+            //This gets the styles Dictionary and sets it on this page.
+            Resources = Styles.Styles.StyleDictionary;
+
+            #region controls
+            Entry Username = new Entry() { Placeholder = "Empire Name" };
+            Entry Password = new Entry() { Placeholder = "Pass Code" };
+
+
+            Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com" };
+            Label Usernamelbl = new Label() { Text = "Empire Name" };
+            Label Passwordlbl = new Label() { Text = "Password" };
+            Label Resultlbl = new Label() { Text = "" };
+
+            Button Submit = new Button()
+            {
+                Text = "Submit",
+                Style = (Style)Resources["buttonOrangeText"],
+            };
+
+            StackLayout switchLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal
+            };
+            Label activeLbl = new Label
+            {
+                Text = "Make Account Primary"
+            };
+            Switch activeSwitch = new Switch
+            {
+                IsToggled = false
+            };
+            #endregion
+
+            switchLayout.Children.Add(activeLbl);
 			switchLayout.Children.Add(activeSwitch);
 			Content = new StackLayout
 			{
