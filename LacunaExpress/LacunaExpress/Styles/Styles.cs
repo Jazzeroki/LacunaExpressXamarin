@@ -93,7 +93,18 @@ namespace LacunaExpress.Styles
                     },
                 }
             }
-            }
+            },
+
+			{"backgroundStyle", new Style(typeof(Page))
+				{ Setters ={
+					new Setter
+					{
+						Property = Page.BackgroundColorProperty,
+						Value = Color.FromHex("#000080")
+					},
+				}
+			}
+			}
         };
     }
 }

@@ -81,6 +81,7 @@
     <Compile Include="Scripts\SpyScripts.cs" />
     <Compile Include="ViewCells\BuildingViewCell.cs" />
     <Compile Include="ViewCells\ParliamentProposalViewCell.cs" />
+    <Compile Include="Styles\Styles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">
@@ -2062,4 +2063,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
 </Project>
