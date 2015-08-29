@@ -79,6 +79,7 @@
     <Compile Include="Scripts\ShipYardScripts.cs" />
     <Compile Include="Scripts\SpaceStationScripts.cs" />
     <Compile Include="Scripts\SpyScripts.cs" />
+    <Compile Include="Styles\Styles.cs" />
     <Compile Include="ViewCells\BuildingViewCell.cs" />
     <Compile Include="ViewCells\ParliamentProposalViewCell.cs" />
   </ItemGroup>
