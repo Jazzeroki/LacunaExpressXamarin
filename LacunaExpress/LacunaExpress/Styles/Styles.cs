@@ -95,6 +95,23 @@ namespace LacunaExpress.Styles
             }
             },
 
+			{"labelBlackText", new Style(typeof(Label))
+				{ Setters ={
+						new Setter
+						{
+
+							Property = Label.BackgroundColorProperty,
+							Value = Color.Transparent
+						},
+						new Setter
+						{
+							Property = Label.TextColorProperty,
+							Value = Color.Black
+						},
+					}
+				}
+			},
+
 			{"backgroundStyle", new Style(typeof(Page))
 				{ Setters ={
 					new Setter

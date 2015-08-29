@@ -6,6 +6,8 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.AccountPages
 {
 	public class AccountMain : ContentPage

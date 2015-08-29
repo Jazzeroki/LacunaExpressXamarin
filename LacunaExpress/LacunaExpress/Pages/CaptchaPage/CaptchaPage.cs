@@ -7,19 +7,26 @@ using System.Text;
 using Xamarin.Forms;
 using LacunaExpanseAPIWrapper;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.CaptchaPage
 {
 	public class CaptchaPage : ContentPage
 	{
+		//This gets the styles Dictionary and sets it on this page.
+		Resources = Styles.Styles.StyleDictionary;
+
 		string guid;
 		Image captchaImage = new Image();
 		Entry answerEntry = new Entry
 		{
 			Placeholder = "Answer"
+			Style = (Style)Resources["labelBlackText"],
 		};
 		Button answerButton = new Button
 		{
 			Text = "Answer"
+			Style = (Style)Resources["labelBlackText"],
 		};
 		public CaptchaPage(AccountModel account)
 		{
