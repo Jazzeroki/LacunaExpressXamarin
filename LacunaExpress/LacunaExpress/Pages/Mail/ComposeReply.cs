@@ -21,8 +21,8 @@ namespace LacunaExpress.Pages.Mail
             BackgroundColor = Color.Black
         };
 		Entry subject = new Entry() { 
-		Placeholder = "Subject",
-        BackgroundColor = Color.Black
+			Placeholder = "Subject",
+        	BackgroundColor = Color.Black
         };
 		Editor body = new Editor()
 		{
