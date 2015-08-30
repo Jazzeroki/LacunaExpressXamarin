@@ -18,15 +18,19 @@ namespace LacunaExpress.Pages.AccountPages
 		AccountManagement.AccountManager accountManager = new AccountManagement.AccountManager();
 		Button addAccount = new Button
 		{
-			Text = "Add Account"
+			Text = "Add Account",
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
 		};
 		Button modifyAccount = new Button
 		{
-			Text = "Modify Account"
+			Text = "Modify Account",
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
 		};	
 		Button deletAccount = new Button
 		{
-			Text = "Delete Account"
+			Text = "Delete Account",
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+				
 		};
 		Picker accountPicker = new Picker
 			{
