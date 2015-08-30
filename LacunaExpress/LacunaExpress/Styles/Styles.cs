@@ -76,24 +76,6 @@ namespace LacunaExpress.Styles
                 }
             }
             },
-
-            {"labelWhiteText", new Style(typeof(Label))
-                { Setters ={
-                    new Setter
-                    {
-
-                        Property = Button.BackgroundColorProperty,
-                        Value = Color.Transparent
-                    },
-                    new Setter
-                    {
-                        Property = Button.TextColorProperty,
-                        Value = Color.White
-                    },
-                }
-            }
-            },
-
             {"labelOrangeText", new Style(typeof(Label))
                 { Setters ={
                     new Setter
@@ -110,6 +92,22 @@ namespace LacunaExpress.Styles
                 }
             }
             },
+			{"labelWhiteText", new Style(typeof(Label))
+				{ Setters ={
+						new Setter
+						{
+
+							Property = Button.BackgroundColorProperty,
+							Value = Color.Transparent
+						},
+						new Setter
+						{
+							Property = Button.TextColorProperty,
+							Value = Color.White
+						},
+					}
+				}
+			},
 
 			{"labelBlackText", new Style(typeof(Label))
 				{ Setters ={

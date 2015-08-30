@@ -11,22 +11,25 @@ using LacunaExpress.Styles;
 
 namespace LacunaExpress.Pages.CaptchaPage
 {
+
 	public class CaptchaPage : ContentPage
 	{
+		// Just specified the Styles.Styles.StyleDictionary in the code instead for each instance.
+		// Couldn't figure out error.
 		//This gets the styles Dictionary and sets it on this page.
-		Resources = Styles.Styles.StyleDictionary;
+		//Resources = Styles.Styles.StyleDictionary;
 
 		string guid;
 		Image captchaImage = new Image();
 		Entry answerEntry = new Entry
 		{
 			Placeholder = "Answer",
-			Style = (Style)Resources["labelBlackText"]
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
 		};
 		Button answerButton = new Button
 		{
 			Text = "Answer",
-			Style = (Style)Resources["buttonBlackText"]
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
 		};
 		public CaptchaPage(AccountModel account)
 		{

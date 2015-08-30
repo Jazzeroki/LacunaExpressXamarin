@@ -37,6 +37,8 @@ namespace LacunaExpress.Pages.AccountPages
 		{
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
+
 				Padding = new Thickness(6, 6, 6, 6),
 				Children = {
 					accountPicker,

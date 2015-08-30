@@ -17,24 +17,26 @@ namespace LacunaExpress.Pages.About
 		Label questions = new Label();
 		public AboutMain()
 		{
+			BackgroundColor = Color.FromRgb (0, 0, 128);
 			//This gets the styles Dictionary and sets it on this page.
 			Resources = Styles.Styles.StyleDictionary;
 
 			Label top = new Label () {
 				Text = "Lacuna Express is desinged to be a utility and Mail client for The Lacuna Expanse.  Usage of this client is at the users own risk.  Any proceeds from the sale of this client go to help cover the cost of development tools and to pay for account fees with the different app stores.",
-				Style = (Style)Resources["labelBlackText"],
+				Style = (Style)Resources["labelWhiteText"]
 			};
 			//top.Text = "Lacuna Express is desinged to be a utility and Mail client for The Lacuna Expanse.  Usage of this client is at the users own risk.  Any proceeds from the sale of this client go to help cover the cost of development tools and to pay for account fees with the different app stores.";
 
 			Label donate = new Label () {
 				Text = "If you would like to donate to help me cover the costs of tools for writing and deploying this app you can send donations to via paypal falcont40@hotmail.com",
-				Style = (Style)Resources["labelBlackText"],
+				Style = (Style)Resources["labelWhiteText"]
 			};
 			//donate.Text = "If you would like to donate to help me cover the costs of tools for writing and deploying this app you can send donations to via paypal falcont40@hotmail.com";
 
 			Label questions = new Label () {
 				Text = "If you find any bugs or for suggestions or help send an email to JazzDevStudio@gmail.com or an ingame message to Jazz or TheKi",
-				Style = (Style)Resources["labelBlackText"],
+				Style = (Style)Resources["labelWhiteText"]
+
 			};
 			//questions.Text = "If you find any bugs or for suggestions or help send an email to JazzDevStudio@gmail.com or an ingame message to Jazz or TheKi";
 
