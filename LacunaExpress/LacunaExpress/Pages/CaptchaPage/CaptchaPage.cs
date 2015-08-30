@@ -20,13 +20,13 @@ namespace LacunaExpress.Pages.CaptchaPage
 		Image captchaImage = new Image();
 		Entry answerEntry = new Entry
 		{
-			Placeholder = "Answer"
-			Style = (Style)Resources["labelBlackText"],
+			Placeholder = "Answer",
+			Style = (Style)Resources["labelBlackText"]
 		};
 		Button answerButton = new Button
 		{
-			Text = "Answer"
-			Style = (Style)Resources["labelBlackText"],
+			Text = "Answer",
+			Style = (Style)Resources["buttonBlackText"]
 		};
 		public CaptchaPage(AccountModel account)
 		{

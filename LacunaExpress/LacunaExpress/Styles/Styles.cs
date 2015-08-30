@@ -44,6 +44,22 @@ namespace LacunaExpress.Styles
                 }
             }
             },
+			{"buttonBlackText", new Style(typeof(Button))
+				{ Setters ={
+						new Setter
+						{
+
+							Property = Button.BackgroundColorProperty,
+							Value = Color.Transparent
+						},
+						new Setter
+						{
+							Property = Button.TextColorProperty,
+							Value = Color.Black
+						},
+					}
+				}
+			},
             {"buttonOrangeText", new Style(typeof(Button))
                 { Setters ={
                     new Setter
