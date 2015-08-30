@@ -112,7 +112,7 @@ namespace LacunaExpress.Styles
 				}
 			},
 
-			{"backgroundStyle", new Style(typeof(Page))
+			{"backgroundStyle", new Style(typeof(StackLayout))
 				{ Setters ={
 					new Setter
 					{

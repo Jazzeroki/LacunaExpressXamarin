@@ -20,7 +20,7 @@ namespace LacunaExpress.Pages
 
 		public Splash()
 		{
-
+            
 			Content = new StackLayout
 			{
 				Children = {
