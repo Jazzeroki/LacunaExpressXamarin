@@ -24,17 +24,20 @@ namespace LacunaExpress.Pages.CaptchaPage
 		Entry answerEntry = new Entry
 		{
 			Placeholder = "Answer",
-			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			//Style = (Style)Styles.Styles.StyleDictionary["buttonBlackText"]
+			TextColor = Color.Black
 		};
 		Button answerButton = new Button
 		{
 			Text = "Answer",
-			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			TextColor = Color.White
 		};
 		public CaptchaPage(AccountModel account)
 		{
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					captchaImage,
 					answerEntry,

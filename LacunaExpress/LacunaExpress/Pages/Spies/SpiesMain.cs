@@ -20,23 +20,23 @@ namespace LacunaExpress.Pages.Spies
 		List<Prisoner> prisonersList = new List<Prisoner>();
 		List<LacunaExpanseAPIWrapper.ResponseModels.Spies> planetSpies = new List<LacunaExpanseAPIWrapper.ResponseModels.Spies>();
 		string secMinID, intelMinID;
-		Label totalSpies = new Label { TextColor = Color.White };
-		Label spiesOnCounter = new Label { TextColor = Color.White };
-		Label spiesOnIntelTraining = new Label { TextColor = Color.White };
+		Label totalSpies 			  = new Label { TextColor = Color.White };
+		Label spiesOnCounter 		  = new Label { TextColor = Color.White };
+		Label spiesOnIntelTraining 	  = new Label { TextColor = Color.White };
 		Label spiesOnPoliticsTraining = new Label { TextColor = Color.White };
-		Label spiesOnMayhemTraining = new Label { TextColor = Color.White };
-		Label spiesOnTheftTraining = new Label { TextColor = Color.White };
-		Label spiesOnPropaganda = new Label { TextColor = Color.White };
-		Label spiesIdle = new Label { TextColor = Color.White };
-		Label foreignSpies = new Label { TextColor = Color.White };
-		Label prisoners = new Label { TextColor = Color.White };
+		Label spiesOnMayhemTraining   = new Label { TextColor = Color.White };
+		Label spiesOnTheftTraining 	  = new Label { TextColor = Color.White };
+		Label spiesOnPropaganda 	  = new Label { TextColor = Color.White };
+		Label spiesIdle 			  = new Label { TextColor = Color.White };
+		Label foreignSpies 			  = new Label { TextColor = Color.White };
+		Label prisoners 			  = new Label { TextColor = Color.White };
 
-		Button trainSpiesBtn = new Button { Text = "Train Spies" };
-		Button runSweepsBtn = new Button { Text = "Run Sweeps" };
-		Button viewSpiesBtn = new Button { Text = "View Spies" };
-		Button executePrisonersBtn = new Button { Text = "Execute Prisoners" };
-        Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda" };
-        Button sendSpies = new Button { Text = "Send Available Spies" };
+		Button trainSpiesBtn 					= new Button { Text = "Train Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
+		Button runSweepsBtn 					= new Button { Text = "Run Sweeps", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
+		Button viewSpiesBtn 					= new Button { Text = "View Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
+		Button executePrisonersBtn				= new Button { Text = "Execute Prisoners", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
+		Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
+		Button sendSpies 						= new Button { Text = "Send Available Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
 		public SpiesMain(AccountModel account, string selectedPlanet)
 		{
 			this.account = account;
@@ -74,6 +74,7 @@ namespace LacunaExpress.Pages.Spies
 								where b.Value.Equals(selectedPlanet)
 								select b.Key).First();
 				planetName.Text = selectedPlanet + " " + planetID;
+				planetName.TextColor = Color.White;
 				LoadSpyInfo(planetID);
 			};
             removeSpiesFromPolicalPropaganda.Clicked += async (sender, e) =>
@@ -184,25 +185,32 @@ namespace LacunaExpress.Pages.Spies
 					{
 						planetSpies = response.result.spies;
 						totalSpies.Text = "Total Spies: " + response.result.spies.Count;
+						totalSpies.TextColor = Color.White;
 						spiesOnCounter.Text = "Counter Espionage: " + (from counterCount in response.result.spies
 																	   where counterCount.assignment.Equals("Counter Espionage")
 																	   select counterCount).Count().ToString();
-						spiesOnIntelTraining.Text = "Intelligence Training :" + (from counterCount in response.result.spies
+						spiesOnCounter.TextColor = Color.White;
+						spiesOnIntelTraining.Text = "Intelligence Training: " + (from counterCount in response.result.spies
 																				 where counterCount.assignment.Equals("Intel Training")
 																				 select counterCount).Count().ToString();
-						spiesOnMayhemTraining.Text = "Mayhem Training :" + (from counterCount in response.result.spies
+						spiesOnIntelTraining.TextColor = Color.White;
+						spiesOnMayhemTraining.Text = "Mayhem Training: " + (from counterCount in response.result.spies
 																			where counterCount.assignment.Equals("Mayhem Training")
 																			select counterCount).Count().ToString();
-						spiesOnTheftTraining.Text = "Theft Training :" + (from counterCount in response.result.spies
+						spiesOnMayhemTraining.TextColor = Color.White;
+						spiesOnTheftTraining.Text = "Theft Training: " + (from counterCount in response.result.spies
 																		  where counterCount.assignment.Equals("Theft Training")
 																		  select counterCount).Count().ToString();
-						spiesOnPoliticsTraining.Text = "Politics Training :" + (from counterCount in response.result.spies
+						spiesOnTheftTraining.TextColor = Color.White;
+						spiesOnPoliticsTraining.Text = "Politics Training: " + (from counterCount in response.result.spies
 																				where counterCount.assignment.Equals("Politics Training")
 																				select counterCount).Count().ToString();
-						spiesIdle.Text = "Idle :" + (from counterCount in response.result.spies
+						spiesOnPoliticsTraining.TextColor = Color.White;
+						spiesIdle.Text = "Idle: " + (from counterCount in response.result.spies
 													 where counterCount.assignment.Equals("Idle")
 													 select counterCount).Count().ToString();
-						spiesOnPropaganda.Text = "Propaganda :" + (from counterCount in response.result.spies
+						spiesOnPropaganda.TextColor = Color.White;
+						spiesOnPropaganda.Text = "Propaganda: " + (from counterCount in response.result.spies
 																   where counterCount.assignment.Equals("Political Propaganda")
 																   select counterCount).Count().ToString();
 

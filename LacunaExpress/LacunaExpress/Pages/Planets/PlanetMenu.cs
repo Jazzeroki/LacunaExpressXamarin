@@ -19,33 +19,27 @@ namespace LacunaExpress.Pages.Planets
 		};
 		Button spyOptions = new Button
 		{
-			Text = "Spy Tools",
-			TextColor = Color.White
+			Text = "Spy Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
 		};
 		Button shipOptions = new Button
 		{
-			Text = "Ship Tools",
-			TextColor = Color.White
+			Text = "Ship Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
 		};
 		Button buildingOptions = new Button
 		{
-			Text = "Building Tools",
-			TextColor = Color.White
+			Text = "Building Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
 		};
 		Button tradeOptions = new Button
 		{
-			Text = "Trade Tools",
-			TextColor = Color.White
+			Text = "Trade Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
 		};
 		Button buildingsBtn = new Button
 		{
-			Text = "Buildings",
-			TextColor = Color.White
+			Text = "Buildings", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
 		};
 		Button planetMapBtn = new Button
 		{
-			Text = "Planet Map",
-			TextColor = Color.White
+			Text = "Planet Map", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
 		};
 		public PlanetMenu()
 		{

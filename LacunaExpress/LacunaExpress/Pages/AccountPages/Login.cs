@@ -16,16 +16,16 @@ namespace LacunaExpress.Pages.AccountPages
 {
 	public class Login : ContentPage
 	{
-		Entry Username = new Entry() { Placeholder = "Empire Name"};
+		Entry Username = new Entry() { Placeholder = "Empire Name" };
 		Entry Password = new Entry() { Placeholder = "Pass Code" };
 
 
-		Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com"};
-		Label Usernamelbl = new Label() { Text = "Empire Name" };
-		Label Passwordlbl = new Label() { Text = "Password" };
+		Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com", TextColor = Color.White };
+		Label Usernamelbl = new Label() { Text = "Empire Name", TextColor = Color.White };
+		Label Passwordlbl = new Label() { Text = "Password", TextColor = Color.White };
 		Label Resultlbl = new Label() { Text = "" };
 
-		Button Submit = new Button() { Text = "Submit" };
+		Button Submit = new Button() { Text = "Submit", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
 
 		StackLayout switchLayout = new StackLayout
 		{
@@ -47,18 +47,19 @@ namespace LacunaExpress.Pages.AccountPages
             Resources = Styles.Styles.StyleDictionary;
 
             #region controls
-            Entry Username = new Entry() { Placeholder = "Empire Name" };
-            Entry Password = new Entry() { Placeholder = "Pass Code" };
+			Entry Username = new Entry() { Placeholder = "Empire Name" };
+			Entry Password = new Entry() { Placeholder = "Pass Code" };
 
 
-            Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com" };
-            Label Usernamelbl = new Label() { Text = "Empire Name" };
-            Label Passwordlbl = new Label() { Text = "Password" };
+			Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com", TextColor = Color.White };
+			Label Usernamelbl = new Label() { Text = "Empire Name", TextColor = Color.White };
+			Label Passwordlbl = new Label() { Text = "Password", TextColor = Color.White };
             Label Resultlbl = new Label() { Text = "" };
 
             Button Submit = new Button()
             {
                 Text = "Submit",
+				TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
             };
 
             StackLayout switchLayout = new StackLayout
@@ -67,7 +68,8 @@ namespace LacunaExpress.Pages.AccountPages
             };
             Label activeLbl = new Label
             {
-                Text = "Make Account Primary"
+                Text = "Make Account Primary",
+				TextColor = Color.White
             };
             Switch activeSwitch = new Switch
             {
@@ -80,6 +82,7 @@ namespace LacunaExpress.Pages.AccountPages
 			Content = new StackLayout
 			{
 				Padding = new Thickness(6, 6, 6, 6),
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					Usernamelbl,
 					Username,
