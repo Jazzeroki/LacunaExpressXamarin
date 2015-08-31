@@ -14,6 +14,7 @@ using LacunaExpress.Pages.AccountPages;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using LacunaExpanseAPIWrapper.ResponseModels;
+using LacunaExpress.ViewCells.Models;
 
 namespace LacunaExpress.Pages.Bodies
 {
@@ -31,13 +32,16 @@ namespace LacunaExpress.Pages.Bodies
         List<string> warningStations = new List<string>();
 		public BodyStatus(AccountModel account, Boolean typeStation)
 		{
-			//Adding something to the collection otherwise the listview doesn't like to display
-			var b = new BodyStatusModel();
+            #region controls Declaration
+
+            #endregion
+            //Adding something to the collection otherwise the listview doesn't like to display
+            var b = new BodyStatusModel();
 			b.Name = "loading bodies";
 			bodyList.Add(b);
 
 			bodies.ItemsSource = bodyList;
-			bodies.ItemTemplate = new DataTemplate(typeof(MenuItem));
+			bodies.ItemTemplate = new DataTemplate(typeof(ViewCells.PlanetStatusViewCell));
 			bodies.BackgroundColor = Color.FromRgb (0, 0, 128);
 
 
@@ -72,37 +76,7 @@ namespace LacunaExpress.Pages.Bodies
 				bodies.SelectedItem = null;
 			};
 		}
-		class MenuItem : ViewCell
-		{
-			StackLayout OuterVertical = new StackLayout { Orientation = StackOrientation.Vertical, BackgroundColor = Color.Transparent };
-			StackLayout InnerHorizontal = new StackLayout { Orientation = StackOrientation.Horizontal, BackgroundColor = Color.Transparent };
 
-
-			Label Name = new Label { TextColor = Color.White };
-			Label Warning = new Label { TextColor = Color.Red };
-			Label Star = new Label { TextColor = Color.White };
-			Label X = new Label { TextColor = Color.White };
-			Label Y = new Label { TextColor = Color.White };
-			Label Zone = new Label { TextColor = Color.White };
-
-			public MenuItem()
-			{
-				Name.SetBinding(Label.TextProperty, "Name");
-				Warning.SetBinding(Label.TextProperty, "Status");
-				Star.SetBinding(Label.TextProperty, "Star");
-				X.SetBinding(Label.TextProperty, "X");
-				Y.SetBinding(Label.TextProperty, "Y");
-				Zone.SetBinding(Label.TextProperty, "Zone");
-				OuterVertical.Children.Add(Name);
-				OuterVertical.Children.Add(InnerHorizontal);
-				InnerHorizontal.Children.Add(Star);
-				InnerHorizontal.Children.Add(X);
-				InnerHorizontal.Children.Add(Y);
-				InnerHorizontal.Children.Add(Zone);
-				InnerHorizontal.Children.Add(Warning);
-				View = OuterVertical;
-			}
-		}
 		
 		async Task<bool> LoadPage(Boolean typeStation){
 			AccountManager accountMan = new AccountManager();
@@ -125,7 +99,7 @@ namespace LacunaExpress.Pages.Bodies
 						bdy.Zone     = response.result.status.body.zone;
 						bdy.X        = response.result.status.body.x;
 						bdy.Y        = response.result.status.body.y;
-                        if (!stationOk(response))
+                        if (!Scripts.StatusCheckers.StationOk(response))
                         {
                             bdy.Status = "Warning";
                             notifyAllianceOfStations.IsVisible = true;
@@ -172,7 +146,7 @@ namespace LacunaExpress.Pages.Bodies
 						bdy.Zone = response.result.status.body.zone;
 						bdy.X = response.result.status.body.x;
 						bdy.Y = response.result.status.body.y;
-						if (!planetOk(response))
+						if (!Scripts.StatusCheckers.PlanetOk(response))
 							bdy.Status = "Warning";
 						bodyList.Add(bdy);
 					}
@@ -182,74 +156,7 @@ namespace LacunaExpress.Pages.Bodies
 				}
 			}
 			return true;
-		}
-
-		Boolean planetOk(Response r)
-		{
-			if(Convert.ToDouble(r.result.status.body.num_incoming_enemy) > 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.plots_available) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.water_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.ore_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.energy_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.food_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.happiness_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.happiness_hour) < Convert.ToDouble(r.result.status.body.waste_hour))
-				return false;
-			if (Convert.ToDouble(r.result.status.body.waste_stored) == 0)
-				return false;
-			foreach(var p in r.result.buildings)
-			{
-				if (Convert.ToDouble(p.Value.efficiency) < 100)
-					return false;
-				if (p.Value.name.Contains("leeder"))
-					return false;
-				if (p.Value.name.Contains("issure"))
-					return false;
-			}
-			return true;
-		}
-		Boolean stationOk(Response r)
-		{
-			if (Convert.ToDouble(r.result.status.body.num_incoming_enemy) > 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.plots_available) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.water_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.ore_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.energy_hour) < 0)
-				return false;
-			if (Convert.ToDouble(r.result.status.body.food_hour) < 0)
-				return false;
-			foreach (var p in r.result.buildings)
-			{
-				if (Convert.ToDouble(p.Value.efficiency) < 100)
-					return false;
-				if (p.Value.name.Contains("leeder"))
-					return false;
-				if (p.Value.name.Contains("issure"))
-					return false;
-			}
-			return true;
-		}
-		public class BodyStatusModel
-		{
-			public string Status { get; set; }
-			public string Name { get; set; }  
-			public string Star{ get; set; } 
-			public string X{ get; set; } 
-			public string Y{ get; set; } 
-			public string Zone{ get; set; }
-			public Response response { get; set; }
-		}
+		}			
 	}
 	
 }

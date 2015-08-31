@@ -59,7 +59,6 @@ namespace LacunaExpress.Pages.AccountPages
             Button Submit = new Button()
             {
                 Text = "Submit",
-                Style = (Style)Resources["buttonOrangeText"],
             };
 
             StackLayout switchLayout = new StackLayout

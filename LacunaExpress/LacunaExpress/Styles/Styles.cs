@@ -9,9 +9,13 @@ namespace LacunaExpress.Styles
 {
     public class Styles
     {
+        public enum StyleName
+        {
+            buttonStyle, buttonWhiteText, buttonBlackText, labelWhiteText, labelBlackText, backgroundStyle
+        }
         public static ResourceDictionary StyleDictionary = new ResourceDictionary
         {
-            {"buttonStyle", new Style(typeof(Button))
+            {StyleName.buttonStyle.ToString(), new Style(typeof(Button))
                 { Setters ={
                     new Setter
                     {
@@ -28,7 +32,7 @@ namespace LacunaExpress.Styles
             }
             },
 
-            {"buttonWhiteText", new Style(typeof(Button))
+            {StyleName.buttonWhiteText.ToString(), new Style(typeof(Button))
                 { Setters ={
                     new Setter
                     {
@@ -44,7 +48,7 @@ namespace LacunaExpress.Styles
                 }
             }
             },
-			{"buttonBlackText", new Style(typeof(Button))
+			{StyleName.buttonBlackText.ToString(), new Style(typeof(Button))
 				{ Setters ={
 						new Setter
 						{
@@ -60,39 +64,8 @@ namespace LacunaExpress.Styles
 					}
 				}
 			},
-            {"buttonOrangeText", new Style(typeof(Button))
-                { Setters ={
-                    new Setter
-                    {
 
-                        Property = Button.BackgroundColorProperty,
-                        Value = Color.Transparent
-                    },
-                    new Setter
-                    {
-                        Property = Button.TextColorProperty,
-                        Value = Color.FromHex("#ECC80F")
-                    },
-                }
-            }
-            },
-            {"labelOrangeText", new Style(typeof(Label))
-                { Setters ={
-                    new Setter
-                    {
-
-                        Property = Label.BackgroundColorProperty,
-                        Value = Color.Transparent
-                    },
-                    new Setter
-                    {
-                        Property = Label.TextColorProperty,
-                        Value = Color.FromHex("#ECC80F")
-                    },
-                }
-            }
-            },
-			{"labelWhiteText", new Style(typeof(Label))
+			{StyleName.labelWhiteText.ToString(), new Style(typeof(Label))
 				{ Setters ={
 						new Setter
 						{
@@ -109,7 +82,7 @@ namespace LacunaExpress.Styles
 				}
 			},
 
-			{"labelBlackText", new Style(typeof(Label))
+			{StyleName.labelBlackText.ToString(), new Style(typeof(Label))
 				{ Setters ={
 						new Setter
 						{
@@ -126,7 +99,7 @@ namespace LacunaExpress.Styles
 				}
 			},
 
-			{"backgroundStyle", new Style(typeof(StackLayout))
+			{StyleName.backgroundStyle.ToString(), new Style(typeof(StackLayout))
 				{ Setters ={
 					new Setter
 					{
