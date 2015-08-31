@@ -12,9 +12,9 @@ namespace LacunaExpress.Pages.Stations
 	{
 		string selectedStation;
 		AccountModel activeAccount;
-		Button viewStation = new Button { Text = "View Station" };
-		Button parliamentBtn = new Button { Text = "Parliament" };
-		Label pickerLabel = new Label { Text = "Select a Station" };
+		Button viewStation = new Button { Text = "View Station", TextColor = Color.White };
+		Button parliamentBtn = new Button { Text = "Parliament", TextColor = Color.White };
+		Label pickerLabel = new Label { Text = "Select a Station", TextColor = Color.White };
 		Picker stationPicker = new Picker
 		{
 			Title = "Select Station",

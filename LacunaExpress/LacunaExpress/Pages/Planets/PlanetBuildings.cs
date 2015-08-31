@@ -40,6 +40,7 @@ namespace LacunaExpress.Pages.Planets
 			{
 				buildingListView.SelectedItem = null;
 			};
+			buildingListView.BackgroundColor = Color.FromRgb (0, 0, 128);
 		}
 
 		async void LoadBuildingsAsync(string bodyID)

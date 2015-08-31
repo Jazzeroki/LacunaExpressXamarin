@@ -62,8 +62,9 @@ namespace LacunaExpress.Pages.Planets
         List<BuildingImage> buildingImages = new List<BuildingImage>();
 
         Button submitArrangement = new Button{
-            Text = "Submit"
-            };
+            Text = "Submit",
+			//TextColor = Color.White
+        };
         public PlanetMap(AccountModel account, string planetName)
         {
             OuterBuilding.Children.Add(tempBuildingImage);

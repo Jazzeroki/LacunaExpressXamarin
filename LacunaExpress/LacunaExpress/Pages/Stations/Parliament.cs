@@ -19,6 +19,7 @@ namespace LacunaExpress.Pages.Stations
         public Parliament(AccountModel account, string stationName)
         {
             stationNameLbl.Text = stationName;
+			stationNameLbl.TextColor = Color.White;
 
             var options = OptionsLists.ParliamentLockDownProposals;
             parliamentOptions.ItemsSource = options;
@@ -32,6 +33,7 @@ namespace LacunaExpress.Pages.Stations
                 //else if (s.PropositionName.Text.Contains("Excavator")){ }
                 //else if (s.PropositionName.Text.Contains("Station")){ }
             };
+			//parliamentOptions.BackgroundColor = Color.FromRgb (0, 0, 128);
             Content = new StackLayout
             {
 				BackgroundColor = Color.FromRgb (0, 0, 128),

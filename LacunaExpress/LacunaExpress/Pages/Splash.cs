@@ -15,7 +15,8 @@ namespace LacunaExpress.Pages
 		Label welcome = new Label
 		{
 			Text = "Welcome to Lacuna Express",
-			TextColor = Color.White
+			TextColor = Color.White,
+			XAlign = TextAlignment.Center
 		};
 
 
