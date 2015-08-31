@@ -72,6 +72,7 @@ namespace LacunaExpress.Pages.Planets
 				{
 					damagedBuildingIDs = BuildingToolsScripts.GetDamagedBuildingIDs(response.result.buildings);
 					damagedBuildings.Text = "Number of damaged buildings: " + damagedBuildingIDs.Count;
+					damagedBuildings.TextColor = Color.White;
 				}
 			};
 		}
@@ -85,7 +86,9 @@ namespace LacunaExpress.Pages.Planets
 				damagedBuildingIDs = BuildingToolsScripts.GetDamagedBuildingIDs(response.result.buildings);
 				damagedBuildings.Text = "Number of damaged buildings: " + damagedBuildingIDs.Count;
 				avgbuildingLevel.Text = "Average Level: " + BuildingToolsScripts.GetAvgBuildingLevel(response.result.buildings);
+				avgbuildingLevel.TextColor = Color.White;
 				buildingCount.Text = "Number of Buildings: " + response.result.buildings.Count;
+				buildingCount.TextColor = Color.White;
 			}
 		}
 	}
