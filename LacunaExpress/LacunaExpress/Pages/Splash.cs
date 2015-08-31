@@ -14,7 +14,8 @@ namespace LacunaExpress.Pages
 		AccountManagement.AccountManager accountManager = new AccountManagement.AccountManager();
 		Label welcome = new Label
 		{
-			Text = "Welcome to Lacuna Express"
+			Text = "Welcome to Lacuna Express",
+			TextColor = Color.White
 		};
 
 
@@ -23,6 +24,7 @@ namespace LacunaExpress.Pages
             
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					welcome
 				}

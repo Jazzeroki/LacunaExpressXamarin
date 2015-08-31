@@ -25,6 +25,7 @@ namespace LacunaExpress.Pages.Stations
 			
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					pickerLabel,
 					stationPicker,

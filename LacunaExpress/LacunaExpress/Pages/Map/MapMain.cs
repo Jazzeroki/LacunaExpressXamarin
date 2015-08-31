@@ -15,12 +15,14 @@ namespace LacunaExpress.Pages.Map
         AccountModel activeAccount;
         Button cacheStarMapBtn = new Button
         {
-            Text = "Cache Map"
+            Text = "Cache Map",
+			TextColor = Color.White
         };
         public MapMain()
         {
             Content = new StackLayout
             {
+				BackgroundColor = Color.FromRgb (0, 0, 128),
                 Children = {
                     cacheStarMapBtn
                 }

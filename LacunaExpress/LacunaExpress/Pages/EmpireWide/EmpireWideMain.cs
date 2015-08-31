@@ -7,6 +7,8 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.EmpireWide
 {
 	public class EmpireWideMain : ContentPage
@@ -14,11 +16,13 @@ namespace LacunaExpress.Pages.EmpireWide
 		AccountModel account;
 		Button planetStatusCheck = new Button
 		{
-			Text = "Planet Status Check"
+			Text = "Planet Status Check",
+			Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"],
 		};
 		Button stationStatusCheck = new Button
 		{
-			Text = "Station Status Check"
+			Text = "Station Status Check",
+			Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"]
 		};
         
 		public EmpireWideMain()
@@ -26,6 +30,7 @@ namespace LacunaExpress.Pages.EmpireWide
 			
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					planetStatusCheck,
 					stationStatusCheck

@@ -15,21 +15,21 @@ namespace LacunaExpress.Pages.Bodies
         AccountModel account;
         string planetID;
 		Response response;
-		Label planetName = new Label();
-		Label planetLocation = new Label();
-		Label food = new Label();
-		Label water = new Label();
-		Label ore = new Label();
-		Label energy = new Label();
-		Label waste = new Label();
-		Label happiness = new Label();
-		Label bleeders = new Label();
-		Label fissures = new Label();
-		Label enemyIncoming = new Label();
-		Label damagedBuildings = new Label();
+		Label planetName       = new Label { TextColor = Color.White };
+		Label planetLocation   = new Label { TextColor = Color.White };
+		Label food             = new Label { TextColor = Color.White };
+		Label water            = new Label { TextColor = Color.White };
+		Label ore              = new Label { TextColor = Color.White };
+		Label energy           = new Label { TextColor = Color.White };
+		Label waste            = new Label { TextColor = Color.White };
+		Label happiness        = new Label { TextColor = Color.White };
+		Label bleeders         = new Label { TextColor = Color.White };
+		Label fissures         = new Label { TextColor = Color.White };
+		Label enemyIncoming    = new Label { TextColor = Color.White };
+		Label damagedBuildings = new Label { TextColor = Color.White };
 
 		Button destroyBleeders = new Button { IsVisible = false, Text = "Destroy Bleeders" };
-		Button fillFissure = new Button { IsVisible = false, Text = "Fill Fissure/s" };
+		Button fillFissure     = new Button { IsVisible = false, Text = "Fill Fissure/s" };
 		Button repairBuildings = new Button { IsVisible = false, Text = "Repair Building/s" };
 
 		public BodyStatusDetail(Response response, string pName)
@@ -37,6 +37,7 @@ namespace LacunaExpress.Pages.Bodies
 			this.response = response;
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					planetName,
 					planetLocation,
@@ -90,12 +91,12 @@ namespace LacunaExpress.Pages.Bodies
 							select i.Key).First();
                 //planetLocation.Text = response.result.status.body.name;
                 //planetID = response.result.status.body.id
-                food.Text = "Food " + response.result.status.body.food_stored + "/" + response.result.status.body.food_hour;
-                water.Text = "Water " + response.result.status.body.water_stored + "/" + response.result.status.body.water_hour;
-                ore.Text = "Ore " + response.result.status.body.ore_stored + "/" + response.result.status.body.ore_hour;
-                energy.Text = "Energy " + response.result.status.body.energy_stored + "/" + response.result.status.body.energy_hour;
-                happiness.Text = "Happiness " + response.result.status.body.happiness + "/" + response.result.status.body.happiness_hour;
-                waste.Text = "Waste " + response.result.status.body.waste_stored + "/" + response.result.status.body.waste_hour;
+                food.Text      = "Food: " + response.result.status.body.food_stored + "/" + response.result.status.body.food_hour;
+                water.Text     = "Water: " + response.result.status.body.water_stored + "/" + response.result.status.body.water_hour;
+                ore.Text       = "Ore: " + response.result.status.body.ore_stored + "/" + response.result.status.body.ore_hour;
+                energy.Text    = "Energy: " + response.result.status.body.energy_stored + "/" + response.result.status.body.energy_hour;
+                happiness.Text = "Happiness: " + response.result.status.body.happiness + "/" + response.result.status.body.happiness_hour;
+                waste.Text     = "Waste: " + response.result.status.body.waste_stored + "/" + response.result.status.body.waste_hour;
 
                 enemyIncoming.Text = "Enemy Incoming: " + response.result.status.body.incoming_enemy_ships;
 

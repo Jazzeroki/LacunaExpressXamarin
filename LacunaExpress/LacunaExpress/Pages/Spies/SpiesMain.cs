@@ -42,6 +42,7 @@ namespace LacunaExpress.Pages.Spies
 			this.account = account;
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					planetName,
 					totalSpies,

@@ -14,6 +14,7 @@ namespace LacunaExpress.Pages.Planets
     {
         Grid grid = new Grid
         {
+			BackgroundColor = Color.FromRgb (0, 0, 128),
             VerticalOptions = LayoutOptions.FillAndExpand,
             RowDefinitions =
                 {

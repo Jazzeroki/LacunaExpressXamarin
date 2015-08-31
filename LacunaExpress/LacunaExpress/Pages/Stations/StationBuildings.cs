@@ -25,6 +25,7 @@ namespace LacunaExpress.Pages.Stations
             this.account = account;
             Content = new StackLayout
             {
+				BackgroundColor = Color.FromRgb (0, 0, 128),
                 Children = {
                     buildingListView
                 }
@@ -43,6 +44,7 @@ namespace LacunaExpress.Pages.Stations
             {
                 buildingListView.SelectedItem = null;
             };
+			buildingListView.BackgroundColor = Color.FromRgb (0, 0, 128);
         }
 
         async void LoadBuildingsAsync(string bodyID)

@@ -17,11 +17,12 @@ namespace LacunaExpress.Pages.Help
 
 			Label helpOne = new Label () {
 				Text = "Hello ContentPage",
-				Style = (Style)Resources["labelBlackText"],
+				TextColor = Color.White
 			};
 
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Padding = new Thickness(6, 6, 6, 6),
 				Children = {
 					helpOne

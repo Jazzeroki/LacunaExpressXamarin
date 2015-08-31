@@ -27,7 +27,7 @@ namespace LacunaExpress.Pages.Bodies
  			SeparatorColor = Color.Red
 		};
 
-        Button notifyAllianceOfStations = new Button { Text = "Notify Allies of Troubled Stations" };
+		Button notifyAllianceOfStations = new Button { Text = "Notify Allies of Troubled Stations", TextColor = Color.Red };
         List<string> warningStations = new List<string>();
 		public BodyStatus(AccountModel account, Boolean typeStation)
 		{
@@ -38,11 +38,12 @@ namespace LacunaExpress.Pages.Bodies
 
 			bodies.ItemsSource = bodyList;
 			bodies.ItemTemplate = new DataTemplate(typeof(MenuItem));
+			bodies.BackgroundColor = Color.FromRgb (0, 0, 128);
 
 
             Content = new StackLayout
             {
-                BackgroundColor = Color.Black,
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					bodies, 
                     notifyAllianceOfStations
@@ -119,11 +120,11 @@ namespace LacunaExpress.Pages.Bodies
 					{
 						BodyStatusModel bdy = new BodyStatusModel();
 						bdy.response = response;
-						bdy.Name = response.result.status.body.name;
-						bdy.Star = response.result.status.body.star_name;
-						bdy.Zone = response.result.status.body.zone;
-						bdy.X = response.result.status.body.x;
-						bdy.Y = response.result.status.body.y;
+						bdy.Name     = response.result.status.body.name;
+						bdy.Star     = response.result.status.body.star_name;
+						bdy.Zone     = response.result.status.body.zone;
+						bdy.X        = response.result.status.body.x;
+						bdy.Y        = response.result.status.body.y;
                         if (!stationOk(response))
                         {
                             bdy.Status = "Warning";

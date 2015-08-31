@@ -34,7 +34,7 @@ namespace LacunaExpress.Pages.Mail
 		Button compose = new Button
 		{
 			Text = "Compose",
-			TextColor = Color.Black
+			TextColor = Color.White
 		};
 
 		async Task<bool> LoadMessagesAsync(string category)
@@ -102,10 +102,11 @@ namespace LacunaExpress.Pages.Mail
 			messages.HasUnevenRows = true;
 			messages.IsVisible = true;
 			messages.SeparatorColor = Color.Red;
-
+			messages.BackgroundColor = Color.FromRgb (0, 0, 128);
 
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					messages,
 					

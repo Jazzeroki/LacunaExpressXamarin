@@ -8,6 +8,8 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Mail
 {
 	public class ComposeReply : ContentPage
@@ -18,10 +20,12 @@ namespace LacunaExpress.Pages.Mail
 
 		Entry to = new Entry() {
             Placeholder = "To",
+			TextColor = Color.White,
             BackgroundColor = Color.Black
         };
 		Entry subject = new Entry() { 
 			Placeholder = "Subject",
+			TextColor = Color.White,
         	BackgroundColor = Color.Black
         };
 		Editor body = new Editor()
@@ -32,11 +36,13 @@ namespace LacunaExpress.Pages.Mail
         
 		Button send = new Button	
 		{
-			Text = "Send"
+			Text = "Send",
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
 		};
 		Button cancel = new Button
 		{
-			Text = "Cancel"
+			Text = "Cancel",
+			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
 		};
 		public ComposeReply(string sessionID, string server)
 		{
@@ -67,6 +73,7 @@ namespace LacunaExpress.Pages.Mail
             };
             Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					to,
 					subject,

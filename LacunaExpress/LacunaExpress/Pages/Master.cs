@@ -43,6 +43,7 @@ namespace LacunaExpress.Pages
 				Title = "Lacuna Express",
 				Content = new StackLayout
 				{
+					BackgroundColor = Color.FromRgb (0, 0, 128),
 					Children = {
 						menu
 					}
@@ -64,7 +65,6 @@ namespace LacunaExpress.Pages
 			{
 				var text = menu.SelectedItem.ToString();//(menu.SelectedItem as MenuItems).ItemText;
 				menu.SelectedItem = null;
-
 				this.IsPresented = false;
 				await nav.Navigation.PopToRootAsync();
 				switch (text)
@@ -103,11 +103,10 @@ namespace LacunaExpress.Pages
 			var accm = new AccountManagement.AccountManager();
 			 activeAccount = await accm.GetActiveAccountAsync();
 			 if (activeAccount == null)
-			{
+			 {
 				await Navigation.PushModalAsync(new Login());
 				//GetActiveAccount();
-			}
+			 }
 		}
-
 	}
 }

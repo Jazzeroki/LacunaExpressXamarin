@@ -27,6 +27,7 @@ namespace LacunaExpress.Pages.Planets
 		{
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					new Label { Text = "Hello ContentPage" }
 				}

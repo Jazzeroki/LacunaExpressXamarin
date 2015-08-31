@@ -21,24 +21,29 @@ namespace LacunaExpress.Pages.Planets
 		Label bleeders = new Label();
 		Button repairBuildings = new Button
 		{
-			Text = "Repair Buildings"
+			Text = "Repair Buildings",
+			TextColor = Color.White
 		};
 		Button fillWithSpacePorts = new Button
 		{
-			Text = "Fill with Spaceports"
+			Text = "Fill with Spaceports",
+			TextColor = Color.White
 		};
 		Button queueUpgrades = new Button
 		{
-			Text = "Queue Upgrades"
+			Text = "Queue Upgrades",
+			TextColor = Color.White
 		};
 		Button destroyBleeders = new Button
 		{
-			Text = "Destroy Bleeders"
+			Text = "Destroy Bleeders",
+			TextColor = Color.White
 		};
 		public BuildingToolsView(AccountModel account, string planetName)
 		{
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					planetNameLabel,
 					avgbuildingLevel,

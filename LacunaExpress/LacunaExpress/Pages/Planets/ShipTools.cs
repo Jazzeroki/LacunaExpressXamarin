@@ -19,13 +19,15 @@ namespace LacunaExpress.Pages.Planets
 		AccountModel account;
 		Button glyphinator = new Button
 		{
-			Text = "Glyphinator"
+			Text = "Glyphinator",
+			TextColor = Color.White
 		};
 		public ShipTools(AccountModel account, string planetName)
 		{
 			this.account = account;
 			Content = new StackLayout
 			{
+				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					glyphinator
 				}

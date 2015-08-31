@@ -13,30 +13,30 @@ namespace LacunaExpress.Pages.Mail
 {
 	public class ReadMessage : ContentPage
 	{
-		Label Date = new Label { BackgroundColor = Color.Black };
-		Label From = new Label { BackgroundColor = Color.Black };
-		Label To = new Label { BackgroundColor = Color.Black };
-		Label Subject = new Label { BackgroundColor = Color.Black };
-		Label Message = new Label { BackgroundColor = Color.Black };
+		Label Date    = new Label { TextColor = Color.White, BackgroundColor = Color.FromRgb (0, 0, 128) };
+		Label From    = new Label { TextColor = Color.White, BackgroundColor = Color.FromRgb (0, 0, 128) };
+		Label To      = new Label { TextColor = Color.White, BackgroundColor = Color.FromRgb (0, 0, 128) };
+		Label Subject = new Label { TextColor = Color.White, BackgroundColor = Color.FromRgb (0, 0, 128) };
+		Label Message = new Label { TextColor = Color.White, BackgroundColor = Color.FromRgb (0, 0, 128) };
 
 		Button Reply = new Button 
 		{ 
-			TextColor = Color.Black,
+			TextColor = Color.White,
 			Text = "Reply"
 		};
 		Button Archive = new Button
 		{
-			TextColor = Color.Black,
+			TextColor = Color.White,
 			Text = "Archive"
 		};
 		Button Forward = new Button
 		{
-			TextColor = Color.Black,
+			TextColor = Color.White,
 			Text = "Forward"
 		};
 		Button Delete = new Button
 		{
-			TextColor = Color.Black,
+			TextColor = Color.White,
 			Text = "Delete"
 		};
 		
@@ -47,6 +47,7 @@ namespace LacunaExpress.Pages.Mail
 			To.Text = message.to;
 			Subject.Text = message.subject;
 			Message.Text = message.body;
+			Message.BackgroundColor = Color.FromRgb (0, 0, 128);
 			Content = new StackLayout
 			{
 				Children = {
@@ -60,7 +61,7 @@ namespace LacunaExpress.Pages.Mail
 						Orientation = StackOrientation.Horizontal,
 						Children = {Reply, Archive, Forward, Delete},
                         VerticalOptions = LayoutOptions.End, 
-                        BackgroundColor = Color.Black
+						BackgroundColor = Color.FromRgb (0, 0, 128),
                     }
 				}
 			};
