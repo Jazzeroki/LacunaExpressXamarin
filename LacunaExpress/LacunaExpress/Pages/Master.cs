@@ -35,24 +35,31 @@ namespace LacunaExpress.Pages
 		public Master()
 		{
 			nav = new NavigationPage(new Splash());
-			//nav = new NavigationPage(new blank());
+            //nav = new NavigationPage(new blank());
+
+            var mainLayout = new StackLayout
+            {
+                BackgroundColor = Color.FromRgb(0, 0, 128),
+                Children = {
+                        menu
+                    }
+            };
+        
 			nav.Title = "Lacuna Express";
 			this.Detail = nav;
 			this.Master = new ContentPage
 			{
 				Title = "Lacuna Express",
-				Content = new StackLayout
-				{
-					BackgroundColor = Color.FromRgb (0, 0, 128),
-					Children = {
-						menu
-					}
-				}
+				Content = mainLayout
 			};
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                menu.SeparatorColor = Color.Black;
+                mainLayout.Padding = new Thickness(0, 20, 0, 0);
+            }
 
 
-
-			nav.BackgroundColor = Color.Black;
+            nav.BackgroundColor = Color.Black;
 			nav.ToolbarItems.Add(new ToolbarItem
 			{
 				//Text = "Search",
