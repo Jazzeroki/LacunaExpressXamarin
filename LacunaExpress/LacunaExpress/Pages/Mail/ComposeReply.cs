@@ -20,13 +20,13 @@ namespace LacunaExpress.Pages.Mail
 
 		Entry to = new Entry() {
             Placeholder = "To",
-			TextColor = Color.White,
-            BackgroundColor = Color.Black
+			TextColor = Color.Black,
+            BackgroundColor = Color.White
         };
 		Entry subject = new Entry() { 
 			Placeholder = "Subject",
-			TextColor = Color.White,
-        	BackgroundColor = Color.Black
+			TextColor = Color.Black,
+        	BackgroundColor = Color.White
         };
 		Editor body = new Editor()
 		{
@@ -38,13 +38,13 @@ namespace LacunaExpress.Pages.Mail
 		{
 			Text = "Send",
 			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			TextColor = Color.White, /*BorderWidth = 2,*/ BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button cancel = new Button
 		{
 			Text = "Cancel",
 			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			TextColor = Color.White, /*BorderWidth = 2,*/ BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		public ComposeReply(string sessionID, string server)
 		{
