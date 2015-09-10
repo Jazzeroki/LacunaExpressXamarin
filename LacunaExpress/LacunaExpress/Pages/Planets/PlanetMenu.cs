@@ -19,27 +19,27 @@ namespace LacunaExpress.Pages.Planets
 		};
 		Button spyOptions = new Button
 		{
-			Text = "Spy Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
+			Text = "Spy Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button shipOptions = new Button
 		{
-			Text = "Ship Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
+			Text = "Ship Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button buildingOptions = new Button
 		{
-			Text = "Building Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
+			Text = "Building Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button tradeOptions = new Button
 		{
-			Text = "Trade Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
+			Text = "Trade Tools", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button buildingsBtn = new Button
 		{
-			Text = "Buildings", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
+			Text = "Buildings", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button planetMapBtn = new Button
 		{
-			Text = "Planet Map", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green
+			Text = "Planet Map", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		public PlanetMenu()
 		{

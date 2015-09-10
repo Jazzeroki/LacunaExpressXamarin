@@ -31,12 +31,12 @@ namespace LacunaExpress.Pages.Spies
 		Label foreignSpies 			  = new Label { TextColor = Color.White };
 		Label prisoners 			  = new Label { TextColor = Color.White };
 
-		Button trainSpiesBtn 					= new Button { Text = "Train Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
-		Button runSweepsBtn 					= new Button { Text = "Run Sweeps", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
-		Button viewSpiesBtn 					= new Button { Text = "View Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
-		Button executePrisonersBtn				= new Button { Text = "Execute Prisoners", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
-		Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
-		Button sendSpies 						= new Button { Text = "Send Available Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.Green };
+		Button trainSpiesBtn 					= new Button { Text = "Train Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button runSweepsBtn 					= new Button { Text = "Run Sweeps", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button viewSpiesBtn 					= new Button { Text = "View Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button executePrisonersBtn				= new Button { Text = "Execute Prisoners", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button sendSpies 						= new Button { Text = "Send Available Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
 		public SpiesMain(AccountModel account, string selectedPlanet)
 		{
 			this.account = account;

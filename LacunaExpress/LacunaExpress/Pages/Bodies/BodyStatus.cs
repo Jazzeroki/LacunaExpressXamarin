@@ -28,7 +28,7 @@ namespace LacunaExpress.Pages.Bodies
  			SeparatorColor = Color.Red
 		};
 
-		Button notifyAllianceOfStations = new Button { Text = "Notify Allies of Troubled Stations", TextColor = Color.Red };
+		Button notifyAllianceOfStations = new Button { Text = "Notify Allies of Troubled Stations", TextColor = Color.Red, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
         List<string> warningStations = new List<string>();
 		public BodyStatus(AccountModel account, Boolean typeStation)
 		{

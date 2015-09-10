@@ -22,22 +22,22 @@ namespace LacunaExpress.Pages.Planets
 		Button repairBuildings = new Button
 		{
 			Text = "Repair Buildings",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button fillWithSpacePorts = new Button
 		{
 			Text = "Fill with Spaceports",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button queueUpgrades = new Button
 		{
 			Text = "Queue Upgrades",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button destroyBleeders = new Button
 		{
 			Text = "Destroy Bleeders",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		public BuildingToolsView(AccountModel account, string planetName)
 		{

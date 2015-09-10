@@ -16,7 +16,7 @@ namespace LacunaExpress.Pages.Map
         Button cacheStarMapBtn = new Button
         {
             Text = "Cache Map",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
         };
         public MapMain()
         {

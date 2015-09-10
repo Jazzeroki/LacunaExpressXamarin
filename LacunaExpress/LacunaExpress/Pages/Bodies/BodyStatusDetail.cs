@@ -28,9 +28,9 @@ namespace LacunaExpress.Pages.Bodies
 		Label enemyIncoming    = new Label { TextColor = Color.White };
 		Label damagedBuildings = new Label { TextColor = Color.White };
 
-		Button destroyBleeders = new Button { IsVisible = false, Text = "Destroy Bleeders" };
-		Button fillFissure     = new Button { IsVisible = false, Text = "Fill Fissure/s" };
-		Button repairBuildings = new Button { IsVisible = false, Text = "Repair Building/s" };
+		Button destroyBleeders = new Button { IsVisible = false, Text = "Destroy Bleeders", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button fillFissure     = new Button { IsVisible = false, Text = "Fill Fissure/s", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button repairBuildings = new Button { IsVisible = false, Text = "Repair Building/s", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
 
 		public BodyStatusDetail(Response response, string pName)
 		{

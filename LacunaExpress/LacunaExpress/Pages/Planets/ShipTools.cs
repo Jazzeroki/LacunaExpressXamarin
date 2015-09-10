@@ -20,7 +20,7 @@ namespace LacunaExpress.Pages.Planets
 		Button glyphinator = new Button
 		{
 			Text = "Glyphinator",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		public ShipTools(AccountModel account, string planetName)
 		{

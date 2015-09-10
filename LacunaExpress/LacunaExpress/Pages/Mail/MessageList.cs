@@ -34,7 +34,7 @@ namespace LacunaExpress.Pages.Mail
 		Button compose = new Button
 		{
 			Text = "Compose",
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 
 		async Task<bool> LoadMessagesAsync(string category)

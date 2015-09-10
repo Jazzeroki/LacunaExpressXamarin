@@ -12,8 +12,8 @@ namespace LacunaExpress.Pages.Stations
 	{
 		string selectedStation;
 		AccountModel activeAccount;
-		Button viewStation = new Button { Text = "View Station", TextColor = Color.White };
-		Button parliamentBtn = new Button { Text = "Parliament", TextColor = Color.White };
+		Button viewStation = new Button { Text = "View Station", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button parliamentBtn = new Button { Text = "Parliament", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
 		Label pickerLabel = new Label { Text = "Select a Station", TextColor = Color.White };
 		Picker stationPicker = new Picker
 		{

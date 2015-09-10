@@ -63,7 +63,7 @@ namespace LacunaExpress.Pages.Planets
 
         Button submitArrangement = new Button{
             Text = "Submit",
-			//TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
         };
         public PlanetMap(AccountModel account, string planetName)
         {

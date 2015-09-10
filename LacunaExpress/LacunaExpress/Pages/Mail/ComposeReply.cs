@@ -37,12 +37,14 @@ namespace LacunaExpress.Pages.Mail
 		Button send = new Button	
 		{
 			Text = "Send",
-			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button cancel = new Button
 		{
 			Text = "Cancel",
-			Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		public ComposeReply(string sessionID, string server)
 		{

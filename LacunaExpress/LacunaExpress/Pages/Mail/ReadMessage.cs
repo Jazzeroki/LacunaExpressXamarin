@@ -21,23 +21,23 @@ namespace LacunaExpress.Pages.Mail
 
 		Button Reply = new Button 
 		{ 
-			TextColor = Color.White,
-			Text = "Reply"
+			Text = "Reply",
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button Archive = new Button
 		{
-			TextColor = Color.White,
-			Text = "Archive"
+			Text = "Archive",
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button Forward = new Button
 		{
-			TextColor = Color.White,
-			Text = "Forward"
+			Text = "Forward",
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button Delete = new Button
 		{
-			TextColor = Color.White,
-			Text = "Delete"
+			Text = "Delete",
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		
 		public ReadMessage(string sessionID, string server, Messages message)

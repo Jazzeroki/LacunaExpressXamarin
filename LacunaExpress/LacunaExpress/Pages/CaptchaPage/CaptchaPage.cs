@@ -31,7 +31,7 @@ namespace LacunaExpress.Pages.CaptchaPage
 		{
 			Text = "Answer",
 			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		public CaptchaPage(AccountModel account)
 		{

@@ -17,12 +17,14 @@ namespace LacunaExpress.Pages.EmpireWide
 		Button planetStatusCheck = new Button
 		{
 			Text = "Planet Status Check",
-			Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"],
+			//Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"],
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
 		Button stationStatusCheck = new Button
 		{
 			Text = "Station Status Check",
-			Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"]
+			//Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"]
+			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
 		};
         
 		public EmpireWideMain()
