@@ -29,11 +29,13 @@ namespace LacunaExpress.Pages.Map
                 //BackgroundColor = Color.Blue,
                 //FontAttributes = FontAttributes.Bold
             };
-			var mainLayout = new StackLayout {
-				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.BackgroundStackLayout.ToString()],
-				Children = {cacheStarMapBtn}
-			};
-			Content = mainLayout;
+            Content = new StackLayout
+            {
+				BackgroundColor = Color.FromRgb (0, 0, 128),
+                Children = {
+                    cacheStarMapBtn
+                }
+            };
             this.Appearing += async (sender, e) =>
             {
                 AccountManagement.AccountManager accountMngr = new AccountManagement.AccountManager();
