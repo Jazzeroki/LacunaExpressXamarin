@@ -28,20 +28,16 @@ namespace LacunaExpress.Pages.CaptchaPage
             Entry answerEntry = new Entry
             {
                 Placeholder = "Answer",
-                Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
-                //TextColor = Color.Black
+                //Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+                TextColor = Color.Black
             };
             Button answerButton = new Button
             {
                 Text = "Answer",
-                //Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-                TextColor = Color.White,
-                BorderWidth = 2,
-                BorderColor = Color.White,
-                BackgroundColor = Color.Blue,
-                FontAttributes = FontAttributes.Bold
+				TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+				//Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
             };
-            Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
@@ -50,6 +46,13 @@ namespace LacunaExpress.Pages.CaptchaPage
 					answerButton
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
 			answerButton.Clicked += async (sender, e) =>{
 				if (answerEntry.Text.Length > 0)
 				{
