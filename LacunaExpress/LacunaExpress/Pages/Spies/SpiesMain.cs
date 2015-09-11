@@ -44,7 +44,14 @@ namespace LacunaExpress.Pages.Spies
 		Button sendSpies 						= new Button { Text = "Send Available Spies", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
 		public SpiesMain(AccountModel account, string selectedPlanet)
 		{
-			this.account = account;
+            buttonScroll.Content = buttonHolder;
+            buttonHolder.Children.Add(trainSpiesBtn);
+            buttonHolder.Children.Add(runSweepsBtn);
+            buttonHolder.Children.Add(viewSpiesBtn);
+            buttonHolder.Children.Add(executePrisonersBtn);
+            buttonHolder.Children.Add(removeSpiesFromPolicalPropaganda);
+            buttonHolder.Children.Add(sendSpies);
+            this.account = account;
 			Content = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
@@ -60,11 +67,7 @@ namespace LacunaExpress.Pages.Spies
 					spiesIdle,
 					foreignSpies,
 					prisoners,
-					trainSpiesBtn,
-					runSweepsBtn,
-					viewSpiesBtn,
-					executePrisonersBtn,
-                    removeSpiesFromPolicalPropaganda
+                    buttonScroll
 
 				}
 
