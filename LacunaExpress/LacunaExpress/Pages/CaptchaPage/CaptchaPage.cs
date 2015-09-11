@@ -20,7 +20,7 @@ namespace LacunaExpress.Pages.CaptchaPage
 		//Resources = Styles.Styles.StyleDictionary;
 
 		string guid;
-		Image captchaImage = new Image();
+		Image captchaImage = new Image { Aspect = Aspect.AspectFill };
 		Entry answerEntry = new Entry
 		{
 			Placeholder = "Answer",
