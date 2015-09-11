@@ -20,6 +20,9 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# Other not needed files
+*.cache
+
 # Windows shortcuts
 *.lnk
 
