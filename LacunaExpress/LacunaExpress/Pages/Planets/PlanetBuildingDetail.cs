@@ -6,6 +6,8 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Planets
 {
 	public class PlanetBuildingDetail : ContentPage

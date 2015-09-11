@@ -12,6 +12,8 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Stations
 {
     public class StationBuildings : ContentPage

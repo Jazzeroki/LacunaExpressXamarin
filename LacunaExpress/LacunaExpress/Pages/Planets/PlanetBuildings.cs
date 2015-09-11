@@ -8,6 +8,8 @@ using LacunaExpress.DataModels;
 using LacunaExpress.Data;
 using LacunaExpress.ViewCells;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Planets
 {
 	public class PlanetBuildings : ContentPage

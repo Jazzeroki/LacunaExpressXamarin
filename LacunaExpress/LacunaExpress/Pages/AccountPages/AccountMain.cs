@@ -19,20 +19,17 @@ namespace LacunaExpress.Pages.AccountPages
 		Button addAccount = new Button
 		{
 			Text = "Add Account",
-			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button modifyAccount = new Button
 		{
 			Text = "Modify Account",
-			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};	
 		Button deletAccount = new Button
 		{
 			Text = "Delete Account",
-			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 				
 		};
 		Picker accountPicker = new Picker

@@ -6,14 +6,16 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Stations
 {
 	public class StationsMain : ContentPage
 	{
 		string selectedStation;
 		AccountModel activeAccount;
-		Button viewStation = new Button { Text = "View Station", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button parliamentBtn = new Button { Text = "Parliament", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button viewStation = new Button { Text = "View Station", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button parliamentBtn = new Button { Text = "Parliament", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
 		Label pickerLabel = new Label { Text = "Select a Station", TextColor = Color.White };
 		Picker stationPicker = new Picker
 		{

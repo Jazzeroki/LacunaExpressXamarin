@@ -18,13 +18,13 @@ namespace LacunaExpress.Pages.EmpireWide
 		{
 			Text = "Planet Status Check",
 			//Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"],
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button stationStatusCheck = new Button
 		{
 			Text = "Station Status Check",
 			//Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
         
 		public EmpireWideMain()

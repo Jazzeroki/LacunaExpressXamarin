@@ -18,6 +18,8 @@ using LacunaExpress.Pages.Map;
 using LacunaExpress.Pages.About;
 using LacunaExpress.Pages.Help;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages
 {
 	public class Master : MasterDetailPage

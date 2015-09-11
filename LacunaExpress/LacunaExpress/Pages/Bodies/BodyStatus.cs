@@ -16,6 +16,8 @@ using System.Collections.ObjectModel;
 using LacunaExpanseAPIWrapper.ResponseModels;
 using LacunaExpress.ViewCells.Models;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Bodies
 {
 	public class BodyStatus : ContentPage

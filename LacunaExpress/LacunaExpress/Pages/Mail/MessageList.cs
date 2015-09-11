@@ -14,6 +14,8 @@ using LacunaExpress.Data;
 using LacunaExpress.Pages.AccountPages;
 using System.Threading.Tasks;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Mail
 {
 
@@ -34,7 +36,7 @@ namespace LacunaExpress.Pages.Mail
 		Button compose = new Button
 		{
 			Text = "Compose",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 
 		async Task<bool> LoadMessagesAsync(string category)

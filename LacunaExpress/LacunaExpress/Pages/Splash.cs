@@ -7,6 +7,8 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages
 {
 	public class Splash : ContentPage

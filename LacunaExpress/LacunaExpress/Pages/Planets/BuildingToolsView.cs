@@ -8,6 +8,8 @@ using System.Text;
 using Xamarin.Forms;
 using LacunaExpress.Scripts;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Planets
 {
 	public class BuildingToolsView : ContentPage
@@ -22,22 +24,22 @@ namespace LacunaExpress.Pages.Planets
 		Button repairBuildings = new Button
 		{
 			Text = "Repair Buildings",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button fillWithSpacePorts = new Button
 		{
 			Text = "Fill with Spaceports",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button queueUpgrades = new Button
 		{
 			Text = "Queue Upgrades",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button destroyBleeders = new Button
 		{
 			Text = "Destroy Bleeders",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		public BuildingToolsView(AccountModel account, string planetName)
 		{

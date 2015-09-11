@@ -8,6 +8,8 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Bodies
 {
 	public class BodyStatusDetail : ContentPage
@@ -28,9 +30,9 @@ namespace LacunaExpress.Pages.Bodies
 		Label enemyIncoming    = new Label { TextColor = Color.White };
 		Label damagedBuildings = new Label { TextColor = Color.White };
 
-		Button destroyBleeders = new Button { IsVisible = false, Text = "Destroy Bleeders", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button fillFissure     = new Button { IsVisible = false, Text = "Fill Fissure/s", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button repairBuildings = new Button { IsVisible = false, Text = "Repair Building/s", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button destroyBleeders = new Button { IsVisible = false, Text = "Destroy Bleeders", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button fillFissure     = new Button { IsVisible = false, Text = "Fill Fissure/s", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button repairBuildings = new Button { IsVisible = false, Text = "Repair Building/s", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
 
 		public BodyStatusDetail(Response response, string pName)
 		{

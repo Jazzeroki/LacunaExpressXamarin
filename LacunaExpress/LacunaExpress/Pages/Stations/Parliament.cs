@@ -9,6 +9,8 @@ using LacunaExpanseAPIWrapper.ParamsModels;
 using Xamarin.Forms;
 using LacunaExpress.ViewCells;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Stations
 {
     public class Parliament : ContentPage

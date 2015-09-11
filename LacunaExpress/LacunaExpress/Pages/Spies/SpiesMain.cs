@@ -10,6 +10,8 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Spies
 {
 	public class SpiesMain : ContentPage
@@ -34,12 +36,12 @@ namespace LacunaExpress.Pages.Spies
         StackLayout buttonHolder = new StackLayout();
         ScrollView buttonScroll = new ScrollView();
 
-		Button trainSpiesBtn 					= new Button { Text = "Train Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button runSweepsBtn 					= new Button { Text = "Run Sweeps", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button viewSpiesBtn 					= new Button { Text = "View Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button executePrisonersBtn				= new Button { Text = "Execute Prisoners", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
-		Button sendSpies 						= new Button { Text = "Send Available Spies", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button trainSpiesBtn 					= new Button { Text = "Train Spies", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button runSweepsBtn 					= new Button { Text = "Run Sweeps", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button viewSpiesBtn 					= new Button { Text = "View Spies", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button executePrisonersBtn				= new Button { Text = "Execute Prisoners", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button removeSpiesFromPolicalPropaganda = new Button { Text = "Remove From Political Propaganda", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
+		Button sendSpies 						= new Button { Text = "Send Available Spies", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
 		public SpiesMain(AccountModel account, string selectedPlanet)
 		{
 			this.account = account;

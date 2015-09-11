@@ -9,6 +9,8 @@ using LacunaExpanseAPIWrapper;
 using LacunaExpress.Data;
 using LacunaExpanseAPIWrapper.ResponseModels;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Mail
 {
 	public class ReadMessage : ContentPage
@@ -22,22 +24,22 @@ namespace LacunaExpress.Pages.Mail
 		Button Reply = new Button 
 		{ 
 			Text = "Reply",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button Archive = new Button
 		{
 			Text = "Archive",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button Forward = new Button
 		{
 			Text = "Forward",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button Delete = new Button
 		{
 			Text = "Delete",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		
 		public ReadMessage(string sessionID, string server, Messages message)

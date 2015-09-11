@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using LacunaExpress.Scripts;
 using LacunaExpanseAPIWrapper;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Planets
 {
 	public class ShipTools : ContentPage
@@ -20,7 +22,7 @@ namespace LacunaExpress.Pages.Planets
 		Button glyphinator = new Button
 		{
 			Text = "Glyphinator",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		public ShipTools(AccountModel account, string planetName)
 		{

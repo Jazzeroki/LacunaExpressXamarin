@@ -28,14 +28,12 @@ namespace LacunaExpress.Pages.CaptchaPage
             Entry answerEntry = new Entry
             {
                 Placeholder = "Answer",
-                //Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
                 TextColor = Color.Black
             };
             Button answerButton = new Button
             {
                 Text = "Answer",
-				TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
-				//Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
             };
 			var mainLayout = new StackLayout
 			{

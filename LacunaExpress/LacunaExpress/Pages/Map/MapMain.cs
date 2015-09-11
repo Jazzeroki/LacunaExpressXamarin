@@ -8,6 +8,8 @@ using System.Text;
 using Xamarin.Forms;
 using LacunaExpress.Scripts;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Map
 {
     public class MapMain : ContentPage

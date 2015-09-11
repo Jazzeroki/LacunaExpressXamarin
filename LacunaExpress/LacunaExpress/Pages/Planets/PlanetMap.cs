@@ -8,6 +8,8 @@ using System.Reflection.Emit;
 using System.Text;
 using Xamarin.Forms;
 
+using LacunaExpress.Styles;
+
 namespace LacunaExpress.Pages.Planets
 {
     public class PlanetMap : ContentPage
@@ -63,7 +65,7 @@ namespace LacunaExpress.Pages.Planets
 
         Button submitArrangement = new Button{
             Text = "Submit",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
         };
         public PlanetMap(AccountModel account, string planetName)
         {

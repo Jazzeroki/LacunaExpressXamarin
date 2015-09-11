@@ -25,7 +25,7 @@ namespace LacunaExpress.Pages.AccountPages
 		Label Passwordlbl = new Label() { Text = "Password", TextColor = Color.White };
 		Label Resultlbl = new Label() { Text = "" };
 
-		Button Submit = new Button() { Text = "Submit", TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold };
+		Button Submit = new Button() { Text = "Submit", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
 
 		StackLayout switchLayout = new StackLayout
 		{
@@ -59,7 +59,7 @@ namespace LacunaExpress.Pages.AccountPages
             Button Submit = new Button()
             {
                 Text = "Submit",
-				TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
             };
 
             StackLayout switchLayout = new StackLayout
