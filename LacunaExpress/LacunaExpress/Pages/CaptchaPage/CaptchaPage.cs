@@ -17,25 +17,31 @@ namespace LacunaExpress.Pages.CaptchaPage
 		// Just specified the Styles.Styles.StyleDictionary in the code instead for each instance.
 		// Couldn't figure out error.
 		//This gets the styles Dictionary and sets it on this page.
-		//Resources = Styles.Styles.StyleDictionary;
+		
 
 		string guid;
 		Image captchaImage = new Image { Aspect = Aspect.AspectFill };
-		Entry answerEntry = new Entry
-		{
-			Placeholder = "Answer",
-			//Style = (Style)Styles.Styles.StyleDictionary["buttonBlackText"]
-			TextColor = Color.Black
-		};
-		Button answerButton = new Button
-		{
-			Text = "Answer",
-			//Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
-		};
+
 		public CaptchaPage(AccountModel account)
 		{
-			Content = new StackLayout
+            Resources = Styles.Styles.StyleDictionary;
+            Entry answerEntry = new Entry
+            {
+                Placeholder = "Answer",
+                Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+                //TextColor = Color.Black
+            };
+            Button answerButton = new Button
+            {
+                Text = "Answer",
+                //Style = (Style)Styles.Styles.StyleDictionary["buttonWhiteText"]
+                TextColor = Color.White,
+                BorderWidth = 2,
+                BorderColor = Color.White,
+                BackgroundColor = Color.Blue,
+                FontAttributes = FontAttributes.Bold
+            };
+            Content = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {

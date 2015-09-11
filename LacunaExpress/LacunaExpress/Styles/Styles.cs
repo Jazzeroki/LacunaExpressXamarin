@@ -11,10 +11,40 @@ namespace LacunaExpress.Styles
     {
         public enum StyleName
         {
-            buttonStyle, buttonWhiteText, buttonBlackText, labelWhiteText, labelBlackText, backgroundStyle
+            RegularButton, buttonStyle, buttonWhiteText, buttonBlackText, labelWhiteText, labelBlackText, backgroundStyle
         }
         public static ResourceDictionary StyleDictionary = new ResourceDictionary
         {
+            {StyleName.RegularButton.ToString(), new Style(typeof(Button))
+                { Setters ={
+                    new Setter
+                    {
+                        Property = Button.BackgroundColorProperty,
+                        Value = Color.Blue
+                    },
+                    new Setter
+                    {
+                        Property = Button.TextColorProperty,
+                        Value = Color.White
+                    },
+                    new Setter
+                    {
+                        Property = Button.BorderWidthProperty,
+                        Value = 2
+                    },
+                    new Setter
+                    {
+                        Property = Button.BorderColorProperty,
+                        Value = Color.White
+                    },
+                    new Setter
+                    {
+                        Property = Button.FontAttributesProperty,
+                        Value = FontAttributes.Bold
+                    },
+                }
+            }
+            },
             {StyleName.buttonStyle.ToString(), new Style(typeof(Button))
                 { Setters ={
                     new Setter

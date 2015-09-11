@@ -83,6 +83,7 @@
     <Compile Include="Styles\Styles.cs" />
     <Compile Include="ViewCells\BuildingViewCell.cs" />
     <Compile Include="ViewCells\Models\BodyStatusModel.cs" />
+    <Compile Include="ViewCells\OptionAndInfoButtonViewCell.cs" />
     <Compile Include="ViewCells\ParliamentProposalViewCell.cs" />
     <Compile Include="ViewCells\PlanetStatus.cs" />
   </ItemGroup>

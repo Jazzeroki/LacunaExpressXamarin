@@ -13,13 +13,20 @@ namespace LacunaExpress.Pages.Map
     public class MapMain : ContentPage
     {
         AccountModel activeAccount;
-        Button cacheStarMapBtn = new Button
-        {
-            Text = "Cache Map",
-			TextColor = Color.White, BorderWidth = 2, BorderColor = Color.White, BackgroundColor = Color.Blue, FontAttributes = FontAttributes.Bold
-        };
+        
         public MapMain()
         {
+            Resources = Styles.Styles.StyleDictionary;
+            Button cacheStarMapBtn = new Button
+            {
+                Text = "Cache Map",
+                Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+                //TextColor = Color.White,
+                //BorderWidth = 2,
+                //BorderColor = Color.White,
+                //BackgroundColor = Color.Blue,
+                //FontAttributes = FontAttributes.Bold
+            };
             Content = new StackLayout
             {
 				BackgroundColor = Color.FromRgb (0, 0, 128),
