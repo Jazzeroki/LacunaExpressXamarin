@@ -12,6 +12,7 @@ namespace LacunaExpress.Pages
 	public class Splash : ContentPage
 	{
 		AccountManagement.AccountManager accountManager = new AccountManagement.AccountManager();
+
 		Label welcome = new Label
 		{
 			Text = "Welcome to Lacuna Express",
@@ -19,18 +20,22 @@ namespace LacunaExpress.Pages
 			XAlign = TextAlignment.Center
 		};
 
-
 		public Splash()
 		{
-            
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
+				Padding = new Thickness(5),
 				Children = {
 					welcome
 				}
 			};
 
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
 			LoadAccountsIntoPicker();
 		}
 
