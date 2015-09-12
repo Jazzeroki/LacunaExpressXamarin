@@ -31,7 +31,7 @@ namespace LacunaExpress.Pages.Planets
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
-					new Label { Text = "Hello ContentPage" }
+					new Label { Text = "" }
 				}
 			};
 

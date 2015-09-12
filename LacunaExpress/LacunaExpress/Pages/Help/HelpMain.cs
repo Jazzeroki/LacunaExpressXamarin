@@ -18,7 +18,7 @@ namespace LacunaExpress.Pages.Help
 			Resources = Styles.Styles.StyleDictionary;
 
 			Label helpOne = new Label () {
-				Text = "Hello ContentPage",
+				Text = "",
 				TextColor = Color.White
 			};
 

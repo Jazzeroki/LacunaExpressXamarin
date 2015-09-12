@@ -114,7 +114,7 @@ namespace LacunaExpress.Pages.Mail
 					
 					messageCategories,
 					compose
-					//new Label { Text = "Hello ContentPage" }
+					//new Label { Text = "" }
 				}
 			};
 
