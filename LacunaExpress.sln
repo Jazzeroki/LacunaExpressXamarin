@@ -375,7 +375,7 @@ Global
 		$24.IncludeStaticEntities = True
 		$0.VersionControlPolicy = $26
 		$26.inheritsSet = Mono
-		version = 0.4
+		version = 0.6
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
