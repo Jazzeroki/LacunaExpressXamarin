@@ -38,6 +38,7 @@ namespace LacunaExpress.Pages
 			{
 				mainLayout.Padding = new Thickness (0, 20, 0, 0);
 			}
+
 			LoadAccountsIntoPicker();
 		}
 

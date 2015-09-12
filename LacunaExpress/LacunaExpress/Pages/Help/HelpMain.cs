@@ -22,7 +22,7 @@ namespace LacunaExpress.Pages.Help
 				TextColor = Color.White
 			};
 
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Padding = new Thickness(6, 6, 6, 6),
@@ -30,6 +30,12 @@ namespace LacunaExpress.Pages.Help
 					helpOne
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
 		}
 	}
 }

@@ -21,13 +21,20 @@ namespace LacunaExpress.Pages.Planets
 		public PlanetBuildings(AccountModel account, string planetName)
 		{
 			this.account = account;
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					buildingListView
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
 			this.Appearing += (sender, e) =>
 			{
 				var planetID = (from b in account.Colonies

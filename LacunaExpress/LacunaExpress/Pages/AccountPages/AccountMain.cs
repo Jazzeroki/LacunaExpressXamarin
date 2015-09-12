@@ -39,7 +39,7 @@ namespace LacunaExpress.Pages.AccountPages
 			};
 		public AccountMain()
 		{
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 
@@ -50,6 +50,13 @@ namespace LacunaExpress.Pages.AccountPages
 					deletAccount
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
 			deletAccount.Clicked += (sender, e) =>
 			{
 				accountManager.ClearAccount();

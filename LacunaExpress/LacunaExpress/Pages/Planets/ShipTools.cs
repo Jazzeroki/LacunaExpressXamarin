@@ -27,13 +27,20 @@ namespace LacunaExpress.Pages.Planets
 		public ShipTools(AccountModel account, string planetName)
 		{
 			this.account = account;
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					glyphinator
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
 			glyphinator.Clicked += async (sender, e) =>
 			{
 				var systems = MapScripts.GetAllBodiesInRange30(account, 0, 0);

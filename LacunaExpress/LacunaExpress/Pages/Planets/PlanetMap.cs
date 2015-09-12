@@ -179,7 +179,7 @@ namespace LacunaExpress.Pages.Planets
                 }
             }
 
-            Content = new StackLayout
+			var mainLayout = new StackLayout
             {
                 Children = {
                     planetlbl,
@@ -188,6 +188,12 @@ namespace LacunaExpress.Pages.Planets
                 }
 
             };
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
 
             this.Appearing += (sender, e) =>
             {

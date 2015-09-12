@@ -43,7 +43,7 @@ namespace LacunaExpress.Pages.About
 			};
 			//questions.Text = "If you find any bugs or for suggestions or help send an email to JazzDevStudio@gmail.com or an ingame message to Jazz or TheKi";
 
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				Padding = new Thickness(6, 6, 6, 6),
 				Children = {
@@ -52,6 +52,12 @@ namespace LacunaExpress.Pages.About
 					questions
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
 		}
 	}
 }

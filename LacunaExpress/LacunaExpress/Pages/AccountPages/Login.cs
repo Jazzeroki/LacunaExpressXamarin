@@ -79,7 +79,7 @@ namespace LacunaExpress.Pages.AccountPages
 
             switchLayout.Children.Add(activeLbl);
 			switchLayout.Children.Add(activeSwitch);
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				Padding = new Thickness(6, 6, 6, 6),
 				BackgroundColor = Color.FromRgb (0, 0, 128),
@@ -94,6 +94,12 @@ namespace LacunaExpress.Pages.AccountPages
 					Resultlbl
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
 
 			Submit.Clicked += async (sender, e) =>
 			{

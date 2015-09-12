@@ -43,7 +43,7 @@ namespace LacunaExpress.Pages.Planets
 		};
 		public BuildingToolsView(AccountModel account, string planetName)
 		{
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
@@ -58,6 +58,13 @@ namespace LacunaExpress.Pages.Planets
 					destroyBleeders
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
 			this.Appearing += (sender, e) =>
 			{
 				planetID = (from b in account.Colonies

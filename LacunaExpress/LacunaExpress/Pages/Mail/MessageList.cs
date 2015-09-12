@@ -106,7 +106,7 @@ namespace LacunaExpress.Pages.Mail
 			messages.SeparatorColor = Color.Red;
 			messages.BackgroundColor = Color.FromRgb (0, 0, 128);
 
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
@@ -117,6 +117,13 @@ namespace LacunaExpress.Pages.Mail
 					//new Label { Text = "Hello ContentPage" }
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
 			this.Appearing += async (sender, e) =>{
 				await LoadMessagesAsync("All");
 			};

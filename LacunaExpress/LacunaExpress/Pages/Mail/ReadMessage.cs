@@ -50,7 +50,7 @@ namespace LacunaExpress.Pages.Mail
 			Subject.Text = message.subject;
 			Message.Text = message.body;
 			Message.BackgroundColor = Color.FromRgb (0, 0, 128);
-			Content = new StackLayout
+			var mainLayout = new StackLayout
 			{
 				Children = {
 					Date, From, To, Subject,
@@ -67,6 +67,12 @@ namespace LacunaExpress.Pages.Mail
                     }
 				}
 			};
+
+			Content = mainLayout;
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				mainLayout.Padding = new Thickness (0, 20, 0, 0);
+			}
 
 			Reply.Clicked += async (sender, e) =>{
 				//await Navigation.PopAsync();
