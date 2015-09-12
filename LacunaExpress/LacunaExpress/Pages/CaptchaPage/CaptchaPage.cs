@@ -20,7 +20,12 @@ namespace LacunaExpress.Pages.CaptchaPage
 		
 
 		string guid;
-		Image captchaImage = new Image { Aspect = Aspect.AspectFill };
+		Image captchaImage = new Image {
+			VerticalOptions = LayoutOptions.Center,
+			Aspect = Aspect.Fill,
+			WidthRequest = 50, 
+			HeightRequest = 80
+		};
 
 		public CaptchaPage(AccountModel account)
 		{
@@ -28,8 +33,9 @@ namespace LacunaExpress.Pages.CaptchaPage
             Entry answerEntry = new Entry
             {
                 Placeholder = "Answer",
-                TextColor = Color.Black
-            };
+                TextColor = Color.Black,
+				VerticalOptions = LayoutOptions.Center,
+			};
             Button answerButton = new Button
             {
                 Text = "Answer",
@@ -37,7 +43,7 @@ namespace LacunaExpress.Pages.CaptchaPage
             };
 			var mainLayout = new StackLayout
 			{
-				BackgroundColor = Color.FromRgb (0, 0, 128),
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.MainLayout.ToString()],
 				Children = {
 					captchaImage,
 					answerEntry,
