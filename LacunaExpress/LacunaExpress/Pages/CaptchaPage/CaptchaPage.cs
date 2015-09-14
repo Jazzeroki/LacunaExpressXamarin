@@ -30,21 +30,28 @@ namespace LacunaExpress.Pages.CaptchaPage
 		public CaptchaPage(AccountModel account)
 		{
             Resources = Styles.Styles.StyleDictionary;
+			BoxView topSpacer = new BoxView
+			{
+				BackgroundColor = Color.Transparent,
+				VerticalOptions = LayoutOptions.StartAndExpand,
+			};
             Entry answerEntry = new Entry
             {
                 Placeholder = "Answer",
-                TextColor = Color.Black,
-				VerticalOptions = LayoutOptions.Center,
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.EntryStyle.ToString()],				
+				VerticalOptions = LayoutOptions.CenterAndExpand,
 			};
             Button answerButton = new Button
             {
                 Text = "Answer",
-				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()],
+				VerticalOptions = LayoutOptions.EndAndExpand,
             };
 			var mainLayout = new StackLayout
 			{
 				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.MainLayout.ToString()],
 				Children = {
+					topSpacer,
 					captchaImage,
 					answerEntry,
 					answerButton
@@ -74,10 +81,18 @@ namespace LacunaExpress.Pages.CaptchaPage
 							accountMan.ModifyAccountAsync(account, oldacnt);
 							await Navigation.PopModalAsync();
 						}
+						else
+						{
+							answerButton.IsEnabled = true;
+							GetCaptcha(account);
+							answerEntry.Text = "";
+						}
 					}
 					else
 					{
 						answerButton.IsEnabled = true;
+						GetCaptcha(account);
+						answerEntry.Text = "";
 					}
 				}
 			};

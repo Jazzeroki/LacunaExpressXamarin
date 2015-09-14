@@ -16,7 +16,15 @@ namespace LacunaExpress.Pages.Spies
 {
 	public class SpiesMain : ContentPage
 	{
-		Label planetName = new Label();
+		Label planetName = new Label
+		{
+			BackgroundColor = Color.Black,
+			TextColor = Color.Blue,
+			FontAttributes = FontAttributes.Bold,
+			XAlign = TextAlignment.Center,
+			HeightRequest = 40,
+			YAlign = TextAlignment.Center
+		};
 		AccountModel account;
 		Building intelTrain, mayhemTrain, politicalTrain, theftTrain, intelMinistry;
 		List<Prisoner> prisonersList = new List<Prisoner>();
@@ -54,8 +62,9 @@ namespace LacunaExpress.Pages.Spies
             this.account = account;
 			var mainLayout = new StackLayout
 			{
-				BackgroundColor = Color.FromRgb (0, 0, 128),
-				Children = {
+				//BackgroundColor = Color.FromRgb (0, 0, 128),
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.MainLayout.ToString()],
+                Children = {
 					planetName,
 					totalSpies,
 					spiesOnCounter,

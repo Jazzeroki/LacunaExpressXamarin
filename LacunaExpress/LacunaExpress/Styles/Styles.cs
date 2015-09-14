@@ -11,10 +11,47 @@ namespace LacunaExpress.Styles
     {
         public enum StyleName
         {
-            MainLayout,RegularButton, buttonStyle, buttonWhiteText, buttonBlackText, labelWhiteText, labelBlackText, backgroundStyle
+            TitleLabel, MainLayout,RegularButton, EntryStyle, buttonStyle, buttonWhiteText, buttonBlackText, labelWhiteText, labelBlackText, backgroundStyle
         }
         public static ResourceDictionary StyleDictionary = new ResourceDictionary
         {
+			{StyleName.TitleLabel.ToString(), new Style(typeof(Label))
+				{ Setters ={
+					new Setter
+					{
+						Property = Label.FontSizeProperty,
+						Value = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
+					},
+					new Setter
+					{
+						Property = Label.TextColorProperty,
+						Value = Color.Yellow,
+					},
+					new Setter
+					{
+						Property = Label.FontAttributesProperty,
+						Value = FontAttributes.Bold,
+					},
+
+				}
+			}
+			},
+			{StyleName.EntryStyle.ToString(), new Style(typeof(Entry))
+				{ Setters ={
+					new Setter
+					{
+						Property = Entry.BackgroundColorProperty,
+						Value = Color.Black,
+					},
+					new Setter
+					{
+						Property = Entry.TextColorProperty,
+						Value = Color.White,
+					},
+
+				}
+			}
+			},
 			{StyleName.MainLayout.ToString(), new Style(typeof(StackLayout))
 				{ Setters ={
 					new Setter

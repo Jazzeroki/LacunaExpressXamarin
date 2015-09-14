@@ -45,19 +45,47 @@ namespace LacunaExpress.Pages.AccountPages
 		{
             //This gets the styles Dictionary and sets it on this page.
             Resources = Styles.Styles.StyleDictionary;
+			BoxView topheader = new BoxView
+			{
+				VerticalOptions = LayoutOptions.StartAndExpand
+			};
 
             #region controls
-			Entry Username = new Entry() { Placeholder = "Empire Name" };
-			Entry Password = new Entry() { Placeholder = "Pass Code" };
+			Entry Username = new Entry()
+			{
+				Placeholder = "Empire Name",
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.EntryStyle.ToString()]
+			};
+			Entry Password = new Entry()
+			{
+				Placeholder = "Pass Code",
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.EntryStyle.ToString()]
+			};
 
-
-			Label Serverlbl = new Label() { Text = "https://us1.lacunaexpanse.com", TextColor = Color.White };
-			Label Usernamelbl = new Label() { Text = "Empire Name", TextColor = Color.White };
-			Label Passwordlbl = new Label() { Text = "Password", TextColor = Color.White };
+			Label ServerTitle = new Label()
+			{
+				VerticalOptions = LayoutOptions.Center,
+				Text = "Server",
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()],
+			};
+			Label Serverlbl = new Label()
+			{
+				Text = "https://us1.lacunaexpanse.com",
+				TextColor = Color.Gray,
+				FontAttributes = FontAttributes.Italic,
+			};
+			Label Usernamelbl = new Label()
+			{
+				VerticalOptions = LayoutOptions.Center,
+				Text = "Empire Name",
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()],
+			};
+			Label Passwordlbl = new Label() { Text = "Password", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()], };
             Label Resultlbl = new Label() { Text = "" };
 
             Button Submit = new Button()
             {
+				VerticalOptions = LayoutOptions.EndAndExpand,
                 Text = "Submit",
 				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
             };
@@ -69,8 +97,8 @@ namespace LacunaExpress.Pages.AccountPages
             Label activeLbl = new Label
             {
                 Text = "Make Account Primary",
-				TextColor = Color.White
-            };
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()],
+			};
             Switch activeSwitch = new Switch
             {
                 IsToggled = false
@@ -84,6 +112,7 @@ namespace LacunaExpress.Pages.AccountPages
 				Padding = new Thickness(6, 6, 6, 6),
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
+					topheader,
 					Usernamelbl,
 					Username,
 					Passwordlbl,
