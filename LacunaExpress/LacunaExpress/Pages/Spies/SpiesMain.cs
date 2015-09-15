@@ -148,7 +148,7 @@ namespace LacunaExpress.Pages.Spies
 					}
 					foreach (var spy in spiesToUse)
 					{
-						var server = new LacunaExpress.Data.Server();
+						var server = new Data.Server();
 						var json = Intelligence.AssignSpy(account.SessionID, intelMinID, spy.id, "Security Sweep");
 						var response = await server.GetHttpResultStringAsyncAsString(account.Server, Intelligence.URL, json);
 						if (response != null)

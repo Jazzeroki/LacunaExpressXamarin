@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LacunaExpanseAPIWrapper.ResponseModels;
 
 namespace LacunaExpress.Scripts
 {
@@ -148,5 +149,29 @@ namespace LacunaExpress.Scripts
             }
             return filteredSpies;
         }
+		public async Task<List<Prisoner>> GetPrisoners(AccountModel account, string SecurityMinstryID, string PlanetID)
+		{
+			var server = new Data.Server();
+			var json = Security.ViewPrisoners(account.SessionID, SecurityMinstryID, "");
+			var response = await server.GetHttpResultAsync(account.Server, Security.URL, json);
+			if (response != null)
+			{
+				return response.result.prisoners;
+			}
+			else
+				return new List<Prisoner>();
+		}
+		public async void ExecutePrisonersOnPlanet(AccountModel account, string SecurityMinstryID, string PlanetID, List<Prisoner> prisonerList)
+		{
+			List<ThrottledServerRequest> requests = new List<ThrottledServerRequest>();
+			foreach (var prisoner in prisonerList)
+			{
+				var json = Security.ExecutePrisoner(account.SessionID, SecurityMinstryID, prisoner.id);
+				requests.Add(new ThrottledServerRequest(account.Server, Security.URL, json));
+			}
+			var server = new Data.Server();
+			server.ThrottledServer(requests);
+		}
+
     }
 }
