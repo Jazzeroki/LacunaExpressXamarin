@@ -16,7 +16,7 @@ namespace LacunaExpress.Pages.Spies
 {
 	public class SpiesMain : ContentPage
 	{
-		Label planetName = new Label
+		Label planetNameLabel = new Label
 		{
 			BackgroundColor = Color.Black,
 			TextColor = Color.Blue,
@@ -29,7 +29,7 @@ namespace LacunaExpress.Pages.Spies
 		Building intelTrain, mayhemTrain, politicalTrain, theftTrain, intelMinistry;
 		List<Prisoner> prisonersList = new List<Prisoner>();
 		List<LacunaExpanseAPIWrapper.ResponseModels.Spies> planetSpies = new List<LacunaExpanseAPIWrapper.ResponseModels.Spies>();
-		string secMinID, intelMinID;
+		string secMinID, intelMinID, planetName, planetID;
 		Label totalSpies 			  = new Label { TextColor = Color.White };
 		Label spiesOnCounter 		  = new Label { TextColor = Color.White };
 		Label spiesOnIntelTraining 	  = new Label { TextColor = Color.White };
@@ -65,7 +65,7 @@ namespace LacunaExpress.Pages.Spies
 				//BackgroundColor = Color.FromRgb (0, 0, 128),
 				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.MainLayout.ToString()],
                 Children = {
-					planetName,
+					planetNameLabel,
 					totalSpies,
 					spiesOnCounter,
 					spiesOnIntelTraining,
@@ -93,13 +93,18 @@ namespace LacunaExpress.Pages.Spies
                 if (!AccountManager.CaptchaStillValid(account))
                 {
                     await Navigation.PushModalAsync(new CaptchaPage.CaptchaPage(account));
-                }			
-				var planetID = (from b in account.Colonies
+                }
+				planetName = selectedPlanet;			
+				planetID = (from b in account.Colonies
 								where b.Value.Equals(selectedPlanet)
 								select b.Key).First();
-				planetName.Text = selectedPlanet + " " + planetID;
-				planetName.TextColor = Color.White;
+				planetNameLabel.Text = selectedPlanet + " " + planetID;
+				planetNameLabel.TextColor = Color.White;
 				LoadSpyInfo(planetID);
+			};
+			sendSpies.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new SendSpies(account, intelMinID, planetID));
 			};
             removeSpiesFromPolicalPropaganda.Clicked += async (sender, e) =>
             {
@@ -108,19 +113,10 @@ namespace LacunaExpress.Pages.Spies
                 if (spiesOnPoliticalProp.Count > 30)
                     await DisplayAlert("Notice", "This may take a couple of minutes to complete", "OK");
             };
-			executePrisonersBtn.Clicked += (sender, e) =>
+			executePrisonersBtn.Clicked += async (sender, e) =>
 			{
-				if (prisonersList.Count > 0)
-				{
-					List<ThrottledServerRequest> requests = new List<ThrottledServerRequest>();
-					foreach (var prisoner in prisonersList)
-					{
-						var json = Security.ExecutePrisoner(account.SessionID, secMinID, prisoner.id);
-						requests.Add(new ThrottledServerRequest(account.Server, Security.URL, json));
-					}
-					var server = new LacunaExpress.Data.Server();
-					server.ThrottledServer(requests);
-				}
+				var prisoners = await SpyScripts.GetPrisoners(account, secMinID);
+				SpyScripts.ExecutePrisonersOnPlanet(account, secMinID, prisoners);
 			};
 			trainSpiesBtn.Clicked += (sender, e) =>
 			{

@@ -64,6 +64,7 @@
     <Compile Include="Pages\Planets\PlanetMap.cs" />
     <Compile Include="Pages\Planets\PlanetMenu.cs" />
     <Compile Include="Pages\Planets\ShipTools.cs" />
+    <Compile Include="Pages\Spies\SendSpies.cs" />
     <Compile Include="Pages\Spies\SpiesMain.cs" />
     <Compile Include="Pages\Splash.cs" />
     <Compile Include="Pages\AccountPages\Login.cs" />

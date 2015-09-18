@@ -149,7 +149,7 @@ namespace LacunaExpress.Scripts
             }
             return filteredSpies;
         }
-		public async Task<List<Prisoner>> GetPrisoners(AccountModel account, string SecurityMinstryID, string PlanetID)
+		public async static  Task<List<Prisoner>> GetPrisoners(AccountModel account, string SecurityMinstryID)
 		{
 			var server = new Data.Server();
 			var json = Security.ViewPrisoners(account.SessionID, SecurityMinstryID, "");
@@ -161,7 +161,7 @@ namespace LacunaExpress.Scripts
 			else
 				return new List<Prisoner>();
 		}
-		public async void ExecutePrisonersOnPlanet(AccountModel account, string SecurityMinstryID, string PlanetID, List<Prisoner> prisonerList)
+		public async static void ExecutePrisonersOnPlanet(AccountModel account, string SecurityMinstryID, List<Prisoner> prisonerList)
 		{
 			List<ThrottledServerRequest> requests = new List<ThrottledServerRequest>();
 			foreach (var prisoner in prisonerList)
@@ -169,8 +169,11 @@ namespace LacunaExpress.Scripts
 				var json = Security.ExecutePrisoner(account.SessionID, SecurityMinstryID, prisoner.id);
 				requests.Add(new ThrottledServerRequest(account.Server, Security.URL, json));
 			}
-			var server = new Data.Server();
-			server.ThrottledServer(requests);
+			if (requests.Count > 0)
+			{
+				var server = new Data.Server();
+				server.ThrottledServer(requests);
+			}
 		}
 
     }
