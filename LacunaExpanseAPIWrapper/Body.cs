@@ -11,6 +11,10 @@ namespace LacunaExpanseAPIWrapper
 {
     public class Body : CoreClass
     {
+		public enum GetBuildableLocationsOptions
+		{
+			Four, Nine
+		}
         public static string url = "body";
         public static string GetBuildings(int requestID, string sessionID, string bodyID)
         {
@@ -100,6 +104,29 @@ namespace LacunaExpanseAPIWrapper
         {
             return BasicRequest(requestID, "abandon", sessionID, bodyID);
         }
+		public static string GetBuildableLocations(int requestID, string sessionID)
+		{
+			return BasicRequest(requestID, "get_buildable_locations", sessionID);
+		}
+		public static string GetBuildableLocations(int requestID, string sessionID, GetBuildableLocationsOptions options)
+		{
+			if(options == GetBuildableLocationsOptions.Four)
+				return BasicRequest(requestID, "get_buildable_locations", sessionID, "4");
+			else
+				return BasicRequest(requestID, "get_buildable_locations", sessionID, "9");
+		}
+		public static string ViewLaws(int requestID, string sessionID, string claimingStationID)
+		{
+			return BasicRequest(requestID, "view_laws", sessionID, claimingStationID);
+		}
 
-    }
+		/*
+
+
+set_colony_notes
+session_id
+body_id
+options
+	*/
+	}
 }

@@ -16,6 +16,8 @@ using Android.App;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 
+[assembly: Application(Theme = "@android:style/Theme.Holo")]//adding to overide Samsungs Style overides
+
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
