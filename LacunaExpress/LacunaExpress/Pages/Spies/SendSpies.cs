@@ -104,9 +104,10 @@ namespace LacunaExpress.Pages.Spies
 						};
 						SpyList.Add(spy);
 					}
-					var ships = from s in response.result.ships
-								select s.type.
+					//var ships = from s in response.result.ships
+					//			select s.type.
 				}
+			
 			};
 			sendSpies.Clicked += async (sender, e) =>
 			{
