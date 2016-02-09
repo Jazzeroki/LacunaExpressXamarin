@@ -16,7 +16,7 @@ using LacunaExpress.Pages.Planets;
 using LacunaExpress.Pages.EmpireWide;
 using LacunaExpress.Pages.Map;
 using LacunaExpress.Pages.About;
-using LacunaExpress.Pages.Help;
+//using LacunaExpress.Pages.Help;
 
 using LacunaExpress.Styles;
 
@@ -29,7 +29,7 @@ namespace LacunaExpress.Pages
 
 		static List<string> menuItems = new List<string>
 		{
-			"Planets", "Stations", "Mail", "Empire", "Map", "Account", "Help", "About"
+			"Planets", "Stations", "Mail", "Empire", "Map", "Account", "About"
 		};
 
 		ListView menu = new ListView { ItemsSource = menuItems };
@@ -94,9 +94,6 @@ namespace LacunaExpress.Pages
 						break;
 					case "Account":
 						await nav.Navigation.PushAsync(new AccountMain());
-						break;
-					case "Help":
-						await nav.Navigation.PushAsync(new HelpMain());
 						break;
 					case "About":
 						await nav.Navigation.PushAsync(new AboutMain());
