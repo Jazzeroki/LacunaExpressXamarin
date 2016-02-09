@@ -21,7 +21,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
-    <ReleaseVersion>0.6</ReleaseVersion>
+    <ReleaseVersion>0.7</ReleaseVersion>
     <AndroidLinkSkip />
     <AndroidStoreUncompressedFileExtensions />
   </PropertyGroup>
