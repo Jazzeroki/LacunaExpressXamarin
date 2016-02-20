@@ -127,11 +127,6 @@ namespace LacunaExpress.Pages.Bodies
                 fissures.Text = "Fissures: " + fissureCount;
                 bleeders.Text = "Bleeders: " + bleederCount;
             };
-
-			
-
-			
-
 		}
 	}
 }

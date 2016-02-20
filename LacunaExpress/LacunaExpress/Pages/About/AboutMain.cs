@@ -41,7 +41,6 @@ namespace LacunaExpress.Pages.About
 				//Style = (Style)Resources["labelWhiteText"]
 
 			};
-			//questions.Text = "If you find any bugs or for suggestions or help send an email to JazzDevStudio@gmail.com or an ingame message to Jazz or TheKi";
 
 			var mainLayout = new StackLayout
 			{

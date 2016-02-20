@@ -39,11 +39,11 @@ namespace LacunaExpress.Pages.Planets
 			Text = "Trade Tools", 
 			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
-		Button buildingsBtn = new Button
-		{
-			Text = "Buildings", 
-			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
-		};
+//		Button buildingsBtn = new Button
+//		{
+//			Text = "Buildings", 
+//			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+//		};
 		Button planetMapBtn = new Button
 		{
 			Text = "Planet Map", 
@@ -61,7 +61,7 @@ namespace LacunaExpress.Pages.Planets
 					spyOptions,
 					shipOptions,
 					buildingOptions,
-					tradeOptions,
+//					tradeOptions,
 					buildingsBtn,
 					planetMapBtn
 
