@@ -17,13 +17,11 @@ namespace LacunaExpress.Pages.EmpireWide
 		Button planetStatusCheck = new Button
 		{
 			Text = "Planet Status Check",
-			//Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"],
 			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
 		Button stationStatusCheck = new Button
 		{
 			Text = "Station Status Check",
-			//Style = (Style)Styles.Styles.StyleDictionary["labelWhiteText"]
 			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
         
