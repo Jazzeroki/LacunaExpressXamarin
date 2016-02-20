@@ -57,10 +57,10 @@ namespace LacunaExpress.Pages.EmpireWide
 			{
 				await Navigation.PushAsync(new BodyStatus(account, true));
 			};
-			/*speciesStats.Clicked += async (sender, e) =>
+			speciesStats.Clicked += async (sender, e) =>
 			{
-				await Navigation.PushAsync(new SpeciesStats(account, false));
-			};*/
+				await Navigation.PushAsync(new SpeciesStats(account, true));
+			};
 
 			this.Appearing += async (sender, e) =>
 			{

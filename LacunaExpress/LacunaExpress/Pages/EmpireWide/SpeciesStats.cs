@@ -15,6 +15,7 @@ namespace LacunaExpress.Pages.EmpireWide
 	public class SpeciesStats : ContentPage
 	{
 		AccountModel account;
+		Response response;
 		Label Name           = new Label { TextColor = Color.White };
 		Label Description    = new Label { TextColor = Color.White };
 		Label MinOrbit       = new Label { TextColor = Color.White };
