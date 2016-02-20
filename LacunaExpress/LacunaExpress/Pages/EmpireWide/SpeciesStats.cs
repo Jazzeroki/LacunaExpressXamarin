@@ -32,9 +32,9 @@ namespace LacunaExpress.Pages.EmpireWide
 		Label Trade          = new Label { TextColor = Color.White };
 		Label Growth         = new Label { TextColor = Color.White };
 
-		public SpeciesStats(Response response, string pName)
+		public SpeciesStats(AccountModel account)
 		{
-			//this.response = response;
+			this.response = response;
 			var mainLayout = new StackLayout
 			{
 				BackgroundColor = Color.FromRgb (0, 0, 128),
@@ -65,8 +65,8 @@ namespace LacunaExpress.Pages.EmpireWide
 
 			this.Appearing += async (sender, e) => 
 			{
-				AccountManager acntMgr = new AccountManager();
-				account = await acntMgr.GetActiveAccountAsync();
+				//AccountManager acntMgr = new AccountManager();
+				//account = await acntMgr.GetActiveAccountAsync();
 				Name.Text            = "Name: "           + response.result.status.empire.view_species_stats;
 //				Description.Text     = "Description: "    + response.result.species.description;
 //				MinOrbit.Text        = "Min Orbit: "      + response.result.species.min_orbit;

@@ -1,5 +1,6 @@
 ﻿using LacunaExpress.AccountManagement;
 using LacunaExpress.Pages.Bodies;
+using LacunaExpress.Pages.EmpireWide;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,7 +60,7 @@ namespace LacunaExpress.Pages.EmpireWide
 			};
 			speciesStats.Clicked += async (sender, e) =>
 			{
-				await Navigation.PushAsync(new SpeciesStats(account, true));
+				await Navigation.PushAsync(new SpeciesStats(account));
 			};
 
 			this.Appearing += async (sender, e) =>
