@@ -129,11 +129,8 @@ namespace LacunaExpress.Pages.Bodies
                             //                  select new { id = p.Key, level = p.Value.level, }).First();
 
                             //account.Parliaments.Add(new BuildingCache { planetID = bdy.Name, buildingID = parliament.id, level = Convert.ToInt16(parliament.level) });
-
                         }
-
                     }
-
 				}
                 if(account.Parliaments.Count >0)
                     accountMan.ModifyAccountAsync(account, originalAccount);
