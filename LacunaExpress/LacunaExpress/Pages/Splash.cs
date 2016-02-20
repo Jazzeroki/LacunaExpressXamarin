@@ -19,7 +19,7 @@ namespace LacunaExpress.Pages
 		{
 			Text = "Welcome to Lacuna Express",
 			TextColor = Color.White,
-			XAlign = TextAlignment.Center
+			HorizontalTextAlignment = TextAlignment.Center
 		};
 
 		public Splash()

@@ -27,7 +27,7 @@ namespace LacunaExpress
 			//		VerticalOptions = LayoutOptions.Center,
 			//		Children = {
 			//			new Label {
-			//				XAlign = TextAlignment.Center,
+			//				HorizontalTextAlignment = TextAlignment.Center,
 			//				Text = p
 			//			}
 			//		}

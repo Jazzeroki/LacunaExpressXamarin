@@ -49,7 +49,7 @@ namespace LacunaExpress.Pages.Planets
         };
 
         string planetID;
-        Label planetlbl = new Label { XAlign = TextAlignment.Center };
+		Label planetlbl = new Label { HorizontalTextAlignment = TextAlignment.Center };
         Label tempPlanetBuildingName = new Label();
         Label tempPlanetBuildingLevel = new Label();
         Image tempBuildingImage = new Image();

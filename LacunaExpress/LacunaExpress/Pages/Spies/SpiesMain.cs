@@ -21,9 +21,9 @@ namespace LacunaExpress.Pages.Spies
 			BackgroundColor = Color.Black,
 			TextColor = Color.Blue,
 			FontAttributes = FontAttributes.Bold,
-			XAlign = TextAlignment.Center,
+			HorizontalTextAlignment = TextAlignment.Center,
 			HeightRequest = 40,
-			YAlign = TextAlignment.Center
+			VerticalTextAlignment = TextAlignment.Center
 		};
 		AccountModel account;
 		Building intelTrain, mayhemTrain, politicalTrain, theftTrain, intelMinistry;

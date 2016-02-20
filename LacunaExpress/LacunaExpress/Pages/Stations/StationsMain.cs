@@ -16,7 +16,7 @@ namespace LacunaExpress.Pages.Stations
 		AccountModel activeAccount;
 		Button viewStation = new Button { Text = "View Station", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
 		Button parliamentBtn = new Button { Text = "Parliament", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()] };
-		Label pickerLabel = new Label { Text = "Select a Station", TextColor = Color.White };
+		Label pickerLabel = new Label { Text = "Select a Station", TextColor = Color.White, HorizontalTextAlignment = TextAlignment.Center };
 		Picker stationPicker = new Picker
 		{
 			Title = "Select Station",

@@ -34,16 +34,16 @@ namespace LacunaExpress.Pages.Planets
 			Text = "Building Tools", 
 			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
-		Button tradeOptions = new Button
-		{
-			Text = "Trade Tools", 
-			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
-		};
-//		Button buildingsBtn = new Button
+//		Button tradeOptions = new Button
 //		{
-//			Text = "Buildings", 
+//			Text = "Trade Tools", 
 //			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 //		};
+		Button buildingsBtn = new Button
+		{
+			Text = "Buildings", 
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+		};
 		Button planetMapBtn = new Button
 		{
 			Text = "Planet Map", 

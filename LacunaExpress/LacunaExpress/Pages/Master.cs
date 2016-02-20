@@ -16,7 +16,6 @@ using LacunaExpress.Pages.Planets;
 using LacunaExpress.Pages.EmpireWide;
 using LacunaExpress.Pages.Map;
 using LacunaExpress.Pages.About;
-//using LacunaExpress.Pages.Help;
 
 using LacunaExpress.Styles;
 
