@@ -25,7 +25,7 @@ namespace LacunaExpress.Pages.About
 			};
 
 			Label donate = new Label () {
-				Text = "If you would like to donate to help me cover the costs of tools for writing and deploying this app you can send donations to via paypal falcont40@hotmail.com.",
+				Text = "If you would like to donate to help me cover the costs of tools for writing and deploying this app you can send donations to me via paypal at falcont40@hotmail.com.",
 				TextColor = Color.White
 				//Style = (Style)Resources["labelWhiteText"]
 			};
