@@ -14,25 +14,7 @@ namespace LacunaExpress
 	{
 		public App()
 		{
-			//MainPage = new Splash();
 			MainPage = new Master();
-			//MainPage = new blank();
-			////var s = new Empire();
-			//var p = Empire.Login(1, "356", "helloworld");
-			//// The root page of your application
-			//MainPage = new ContentPage
-			//{
-			//	Content = new StackLayout
-			//	{
-			//		VerticalOptions = LayoutOptions.Center,
-			//		Children = {
-			//			new Label {
-			//				HorizontalTextAlignment = TextAlignment.Center,
-			//				Text = p
-			//			}
-			//		}
-			//	}
-			//};
 		}
 
 		protected override void OnStart()
