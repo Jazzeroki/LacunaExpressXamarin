@@ -80,7 +80,11 @@ namespace LacunaExpress.Pages.AccountPages
 				Text = "Empire Name",
 				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()],
 			};
-			Label Passwordlbl = new Label() { Text = "Password", Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()], };
+			Label Passwordlbl = new Label()
+			{
+				Text = "Password",
+				Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.TitleLabel.ToString()],
+			};
             Label Resultlbl = new Label() { Text = "" };
 
             Button Submit = new Button()
