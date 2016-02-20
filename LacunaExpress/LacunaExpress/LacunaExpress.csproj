@@ -92,6 +92,7 @@
     <Compile Include="ViewCells\PlanetStatus.cs" />
     <Compile Include="ViewCells\ShipsForSpiesViewCell.cs" />
     <Compile Include="ViewCells\SpySelectionViewCell.cs" />
+    <Compile Include="Pages\EmpireWide\SpeciesStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http">

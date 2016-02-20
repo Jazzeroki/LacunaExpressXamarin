@@ -24,6 +24,11 @@ namespace LacunaExpress.Pages.EmpireWide
 			Text = "Station Status Check",
 			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
 		};
+		Button speciesStats = new Button
+		{
+			Text = "View Species",
+			Style = (Style)Styles.Styles.StyleDictionary[Styles.Styles.StyleName.RegularButton.ToString()]
+		};
         
 		public EmpireWideMain()
 		{
@@ -33,7 +38,8 @@ namespace LacunaExpress.Pages.EmpireWide
 				BackgroundColor = Color.FromRgb (0, 0, 128),
 				Children = {
 					planetStatusCheck,
-					stationStatusCheck
+					stationStatusCheck,
+					speciesStats,
 				}
 			};
 
@@ -51,6 +57,10 @@ namespace LacunaExpress.Pages.EmpireWide
 			{
 				await Navigation.PushAsync(new BodyStatus(account, true));
 			};
+			/*speciesStats.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new SpeciesStats(account, false));
+			};*/
 
 			this.Appearing += async (sender, e) =>
 			{

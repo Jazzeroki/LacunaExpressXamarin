@@ -124,6 +124,7 @@
     <Compile Include="TheDillonForge.cs" />
     <Compile Include="Trade.cs" />
     <Compile Include="Transporter.cs" />
+    <Compile Include="ResponseModels\Species.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Connectivity.Plugin, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">

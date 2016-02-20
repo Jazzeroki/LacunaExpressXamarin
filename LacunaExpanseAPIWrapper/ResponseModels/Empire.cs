@@ -12,6 +12,6 @@ namespace LacunaExpanseAPIWrapper.ResponseModels
 		public Dictionary<string, string> planets, space_stations, colonies, stations; //stations and colonies are seperated lists of planets and colonies planets is a combined list
 		public string self_destruct_active, name, status_message, self_destruct_date, is_isolationist, latest_message_id, home_planet_id;
 		public string tech_level, id, essentia, server, alignment, primary_embassy_id, next_station_cost, insurrect_value, alliance_id;
-			
+		public string view_species_stats;	
 	}
 }
